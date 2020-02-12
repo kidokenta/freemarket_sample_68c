@@ -30,7 +30,7 @@
 }
 
 .text-field {
-  width: 280px;
+  width: 300px;
   height: 30px;
   border-radius: 5px;
   padding: 0 5px;
@@ -41,7 +41,7 @@
 }
 
 .text-field-name {
-  width: 130px;
+  width: 135px;
   height: 30px;
   border-radius: 5px;
   padding: 0 5px;
@@ -57,7 +57,7 @@
   appearance: none;
   border: 1px solid #999;
   background: #eee;
-  width: 90px;
+  width: 96px;
   height: 30px;
   margin: 5px 0 15px 0;
   background-color: white;
