@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_025742) do
+ActiveRecord::Schema.define(version: 2020_02_12_054702) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_name", null: false
@@ -36,9 +36,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_025742) do
     t.string "first_name", null: false
     t.string "famiry_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.integer "birthday_y", null: false
-    t.integer "birthday_m", null: false
-    t.integer "birthday_d", null: false
     t.integer "image"
     t.text "profile"
     t.integer "status"
@@ -56,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_025742) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
