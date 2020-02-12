@@ -62,3 +62,16 @@
   margin: 5px 0 15px 0;
   background-color: white;
 }
+
+.action {
+  text-align: left;
+}
+
+.submit--btn {
+  width: 290px;
+  line-height: 40px;
+  height: 40px;
+  margin: 30px 0;
+  color:white;
+  background-color: royalblue;
+}
