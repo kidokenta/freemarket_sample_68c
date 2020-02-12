@@ -37,7 +37,7 @@
             }
             .from_a {
               width: 100%;
-              display: flex;
+              /* display: flex; */
               margin-bottom: 5px;
               }
               .searchBox--input {
