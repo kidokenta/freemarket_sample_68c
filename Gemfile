@@ -77,3 +77,5 @@ gem 'rails-i18n'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'pry-doc'
+
+gem 'jquery-rails'
