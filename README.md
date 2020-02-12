@@ -17,14 +17,18 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false, unique: true, index:true|
+|id|int||
+|nickname|string|null: false|
 |image|string||
 |familyname|string|null: false|
 |firstname|string|null: false|
 |familyname-kana|string|null: false|
 |firstname-kana|string|null: false|
-|birthday|date|null: false|
+|birthday-y|integer|null: false|
+|birthday-m|integer|null: false|
+|birthday-d|integer|null: false|
 |status|integer||
+|deleted_at|integer|datetime|
 |postal_code|integer|null: false|
 |adress_prefecture|string|null: false|
 |status|||
@@ -33,79 +37,30 @@ Things you may want to cover:
 |adress_prefecture|string|null: false|
 |adress_town|string|null: false|
 |adress_number|string|null: false|
-|adress_name|string||
+|adress_name|string|null: false|
 |phonenumber|integer||
-|email|string|null: false, unique: true|
-|password|string|null: false, unique: true|
-|re-password|string|null: false, unique: true|
-|buy-item|reference|foreign_key: true|
-|sell-item|reference|foreign_key: true|
+|email|||
+|password|||
+|re-password|||
 
 ### Association
-has_many :items
-has_many :likes
 
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|id|int||
 |item_name|string|null: false|
 |images|string|null: false|
 |item_explain|string|null: false|
 |category_id|integer||
 |brand_id|integer||
-|status||null: false|
-|condition|string|null: false|
-|shipping_fee|integer|null: false|
-|shipping_days|integer|null: false|
-|region|string|null: false|
-|price|integer|null: false|
-|seller_user|reference|null: false, foreign_key: true|
-|buyer_user|reference|null: false, foreign_key: true|
-|category|reference|null: false, foreign_key: true|
-|brand|reference|foreign_key: true|
-
-### Association
-belongs_to :user
-has_many :categories
-has_many :brands
-has_many :likes
-
-## brands テーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|int||
-|brand_name|string|null: false|
-|item|reference|null: false, foreign_key: true|
- 
-### Association
-belongs_to :item
-
-## categories テーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|int||
-|category_name|string|null: false|
-|item|reference|null: false, foreign_key: true|
-
-### Association
-belongs_to :item
-
-## likes テーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|int||
-|user|reference|null: false, foreign_key: true|
-|item|reference|null: false, foreign_key: true|
-
-### Association
-belongs_to :user
-belongs_to :item
-
-
- 
-
-
+|status|||
+|brand_id|integer||
+|brand_id|integer||
+|brand_id|integer||
+|brand_id|integer||
+|brand_id|integer||
 
 
 * Database initialization
