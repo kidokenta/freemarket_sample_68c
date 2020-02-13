@@ -1,4 +1,7 @@
-= render partial:"header"
+-if !user_signed_in? 
+  = render partial:"header1" 
+-else
+  = render partial:"header2"
 .main
   = render partial: "mainvisual"
   = render partial: "topintroduction"
