@@ -13,6 +13,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @seller_user = User.find_by(id: @item.seller_user_id)
+    # 各条件はhelperに記載
   end
 
   private
