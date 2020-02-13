@@ -73,7 +73,7 @@
       
       
     }
-    .sellcontent{
+    .sellcontent1{
       height:355px;
       border-bottom:1px solid #ccc;
       display:block;
@@ -153,7 +153,34 @@
 
       }
       
-      
+    }
+    .sellcontent-explain{
+      height:371px;
+      width:700px;
+      background:gray;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      .sellcontent-explain-left{
+        background:blue;
+        height:80%;
+        width:20%;
+        margin-left:10px;
+        .sellcontent-explain-left-title{
+          height:14px;
+          width:150px;
+          padding-bottom:10px;
+          padding-left:10px;
+          font-weight:bold;
+
+        }
+      }
+      .sellcontent-explain-right{
+        background:red;
+        height:80%;
+        width:70%;
+        padding-left:10px;
+      }
     }
  
     }
