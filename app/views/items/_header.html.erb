@@ -1,0 +1,56 @@
+<section class="header">
+<!doctype html>
+<html>
+  <head>
+    <meta content="text/html; charaset=UTF-8" http-equiv="Content-Type">
+      <title>FURIMA</title>
+      <meta name="csrf-param" content="authenticity_token">
+      <meta name="csrf_token" content="IbSlA8gY9IPjIFROBrFHKefTOqP6PjLCuGTLYiTTWixEJUwo0r+hLdG3Ys3xwXypDKHNE7dKk4rXZuPZeE2EKQ==" >
+      <link rel="stylesheet" href="items.css"><!-- cssのファイルの場所を指定 --> 
+    </head>
+    <body>
+      <header class="pcHeader">
+       <div class="headerInner">
+         <div class="mainHeader">
+          <h1 class="mainHeader_icon">
+            <a haef="/">
+              <img src="/logo.png" class="image_size_m"><!--HURIMAアイコン-->
+            </a>
+            </h1>
+        <div class="searchBox">
+          <form action="#" accept-charset="UTF-8" method="get" class="from_a">
+            <input name="utf8" type="hidden" value="✓">
+            <input class="searchBox--input" id="searchInput" name="key" placeholder="キーワードから探す">
+            <button type="submit">
+              <div class="searchBox__icon">
+                <img src="icon-search 1.png"class="img_b">
+              </div>
+            </button>
+            <!-- <input type="hiden" name="authenticity_token" value="get"> -->
+            </form>
+          </div>
+          <ul class="resltLists"></ul>
+        </div>
+      <div class="nav">
+        <ul class="listsleft">
+          <li class="listsleft__item listsleft__item--first">
+            <div class=btm_a id="catBtn" href="#">カテゴリー</div>
+            <div class="tree displayNone">
+              </li>
+
+          <li class="listsLeft__item">
+            <div class=btm_a id="brandBtn" href="#">ブランド</div>
+            <ul class="brandsPulldown displayNone">
+            </ul>
+          </li></ul>
+        <ul class="listsRight">
+          <li class="listsRight__item listsRight__item--login">
+            <%= link_to "ログイン", new_user_session_path, class: "btm_a" %>
+            </li>
+          <li class="listsRight__item listsRight__item--new">
+            <%= link_to "新規会員登録", new_user_registration_path, class: "btm_a" %>
+            </li>
+            </ul>
+            </section>
+
+        
