@@ -1,0 +1,70 @@
+<!-- ヘッダー -->
+<% if user_signed_in? %>
+  <%=  render partial: "header2" %>
+<% else %>
+  <%=  render partial: "header1" %>
+<% end %>
+
+<div class="item--show">
+  <div class="item--show--main">
+    <div class="item--show--main--title">
+      <%= @item.item_name %>
+    </div>
+    <div class="item--show--main--contents">
+      <div class="item--show--main--contents__left">
+        <img src="<%= "#{@item.imeges}" %>">
+      </div>
+      <div class="item--show--main--contents__right">
+        <table class="item-show-table">
+          <tr>
+            <td>出品者</td>
+            <td><%= link_to @seller_user.nickname , user_path(@seller_user)%></td>
+          </tr>
+          <tr>
+            <td>カテゴリー</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>ブランド</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>商品のサイズ</td>
+            <td><%= @item.item_size %></td>
+          </tr>
+          <tr>
+            <td>商品の状態</td>
+            <td><%= condition %></td>
+          </tr>
+          <tr>
+            <td>送料の負担</td>
+            <td><%= shipping_fee %></td>
+          </tr>
+          <tr>
+            <td>配送方法</td>
+            <td><%= shipping_company %></td>
+          </tr>
+          <tr>
+            <td>発送元地域</td>
+            <td><%= @item.shipping_region %></td>
+          </tr>
+          <tr>
+            <td>発送日の目安</td>
+            <td><%= shipping_days %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="item--show--main--price">
+      <span id="price"><%= @item.price %> </span>
+      <span id="tax">(税込)</span><span id="shipping_fee"><%= shipping_fee %></span>
+    </div>
+  </div>
+</div>
+
+<%# ユーザー＝出品者or notで条件分岐 %>
+<% if @item.seller_user_id = current_user.id %>
+
+<% else %>
+
+<% end %>
