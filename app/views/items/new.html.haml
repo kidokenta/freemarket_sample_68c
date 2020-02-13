@@ -1,0 +1,30 @@
+.newwrapper
+  .newtitle
+    mercari
+  .newpagemain
+    .singlehead
+      商品の情報を入力
+    .sellform
+      .sell-upload-box
+        .upload-box-header
+          出品画像　
+          %span.require 必須
+          %p.upbtext 最大10枚までアップロードできます
+        .sell-upload-box-drop
+          .drop-box-text
+            %p
+              ドラッグアンドドロップ
+              %br/
+              またはクリックしてファイルをアップロード
+    .sellcontent
+      .sellcontentwrapper1
+        .content-title1
+          商品名
+          %span.require 必須
+        %input.content-text1{:placeholder => "商品名 (必須40文字まで)", :type => "text"}/
+      .sellcontentwrapper2
+        .content-title2
+          商品の説明
+          %span.require 必須
+        %input.content-text2{:placeholder => "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など\r\n2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでお進めです。", :type => "textarea"}/
+  .newfooter
