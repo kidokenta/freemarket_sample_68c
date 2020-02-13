@@ -366,9 +366,8 @@
         
       }
       .sellcontent-price{
-        height:299px;
+        height:199px;
         width:700px;
-        border-bottom:1px solid #ccc;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -417,6 +416,9 @@
            .contentpricebox{
              height:40px;
              width:80px;
+             float:right;
+             position: relative;
+             bottom:20px;
            }
 
           }
@@ -448,10 +450,59 @@
           }
         }
       }
+      .sellcontent-last{
+        height:159px;
+        width:700px;
+        align-items:center;
+        .sellcontent-last-in{
+          height:159px;
+          width:620px;
+          margin:0 auto;
+        }
 
+        .inputbtn{
+          height:50px;
+          width:100px;
+          background:red;
+          color:white;
+          font-size:14px;
+          border-radius: 10px;
+        }
+        .inputbtnreturn{
+          height:50px;
+          width:100px;
+          background:blue;
+          color:white;
+          font-size:14px;
+          border-radius:10px;
+        }
+      }
+      
+      
+      
     }
- 
-    }
-  
 
+    .new-footer{
+      height:220px;
+      width:100%;
+      .new-footer-first ul{
+        display: flex;
+        list-style: none;
+        width:80%;
+        margin:0 auto;
+        margin-top:20px;
+        .new-footer-firsts{
+          padding-left:30px;
+        }
+      }
+      .new-footer-second{
+        width:10%;
+        margin:0 auto;
+        margin-top:20px;
+      }
+    }
+  }
   
+  .kiyaku{
+    background:red;
+  }
