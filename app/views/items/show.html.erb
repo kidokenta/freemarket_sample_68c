@@ -17,39 +17,39 @@
       <div class="item--show--main--contents__right">
         <table class="item-show-table">
           <tr>
-            <td>出品者</td>
+            <td class="item-show-td">出品者</td>
             <td><%= link_to @seller_user.nickname , user_path(@seller_user)%></td>
           </tr>
           <tr>
-            <td>カテゴリー</td>
+            <td class="item-show-td">カテゴリー</td>
             <td></td>
           </tr>
           <tr>
-            <td>ブランド</td>
+            <td class="item-show-td">ブランド</td>
             <td></td>
           </tr>
           <tr>
-            <td>商品のサイズ</td>
+            <td class="item-show-td">商品のサイズ</td>
             <td><%= @item.item_size %></td>
           </tr>
           <tr>
-            <td>商品の状態</td>
+            <td class="item-show-td">商品の状態</td>
             <td><%= condition %></td>
           </tr>
           <tr>
-            <td>送料の負担</td>
+            <td class="item-show-td">送料の負担</td>
             <td><%= shipping_fee %></td>
           </tr>
           <tr>
-            <td>配送方法</td>
+            <td class="item-show-td">配送方法</td>
             <td><%= shipping_company %></td>
           </tr>
           <tr>
-            <td>発送元地域</td>
+            <td class="item-show-td">発送元地域</td>
             <td><%= @item.shipping_region %></td>
           </tr>
           <tr>
-            <td>発送日の目安</td>
+            <td class="item-show-td">発送日の目安</td>
             <td><%= shipping_days %></td>
           </tr>
         </table>
