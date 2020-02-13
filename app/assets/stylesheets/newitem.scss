@@ -1,0 +1,162 @@
+.newwrapper{
+  background:rgb(245, 245, 245);
+  height:100vh;
+  width:100vw;
+  overflow: scroll;
+  .newtitle{
+    height:128px;
+    line-height:128px;
+    text-align: center;
+    font-size:40px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  }
+  .newpagemain{
+    background:white;
+    width:700px;
+    margin:0 auto;
+    .singlehead{
+      height:97px;
+      text-align: center;
+      line-height:97px;
+      font-size:22px;
+      font-weight:bold;
+      border-bottom:1px solid rgb(230, 228, 228);
+    }
+    .sellform{
+      background-color: white;
+      border-bottom:1px solid rgb(230, 228, 228);
+      .sell-upload-box{
+        height:300px;
+        .upload-box-header{
+          height:16px;
+          width:540px;
+          margin: 0 auto;
+          margin-left:50px;
+          position:relative;
+          top:30px;
+          font-weight:bold;
+          .require{
+            background: #ea352d;;
+            color:white;
+            font-weight:bold;
+            border-radius: 5px;
+            height:5px;
+            width:10px;
+            font-size:15px;
+            padding:2px;
+            position: relative;
+            bottom:2px;
+          }
+          .upbtext{
+            font-weight:normal;
+            padding-top:2px;
+            padding-top:5px;
+            font-size:14px;
+          }
+        }
+        .sell-upload-box-drop{
+          background:#f5f5f5;
+          height:162px;
+          width:620px;
+          margin: 0 auto;
+          position:relative;
+          top:60px;
+          border: 1px dashed #ccc;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          .drop-box-text{
+            text-align: center;
+          }
+        }
+      }
+      
+      
+    }
+    .sellcontent{
+      height:355px;
+      border-bottom:1px solid #ccc;
+      display:block;
+      .sellcontentwrapper1{
+        height:70px;
+        width:620px;
+        margin:0 auto;
+        position:relative;
+        top:40px;
+
+        .content-title1{
+          height:14px;
+          width:150px;
+          padding-bottom:10px;
+          padding-left:10px;
+          font-weight:bold;
+          .require{
+            background: #ea352d;;
+            color:white;
+            font-weight:bold;
+            border-radius: 5px;
+            height:5px;
+            width:10px;
+            font-size:15px;
+            padding:2px;
+            position: relative;
+            bottom:2px;
+            left:5px;
+          }
+         
+
+        }
+        .content-text1{
+          height:48px;
+          width:620px;
+          ::placeholder{
+            color:red;
+          }
+
+        }
+
+      }
+      .sellcontentwrapper2{
+        height:164px;
+        width:620px;
+        margin:0 auto;
+        position:relative;
+        top:90px;
+        .content-title2{
+          height:14px;
+          width:150px;
+          padding-bottom:10px;
+          padding-left:10px;
+          font-weight:bold;
+          .require{
+            background: #ea352d;;
+            color:white;
+            font-weight:bold;
+            border-radius: 5px;
+            height:5px;
+            width:10px;
+            font-size:15px;
+            padding:2px;
+            position: relative;
+            bottom:2px;
+            left:5px;
+          }
+        }
+        .content-text2{
+          height:142px;
+          width:620px;
+          ::placeholder{
+            color:red;
+          }
+
+        }
+
+      }
+      
+      
+    }
+ 
+    }
+  }
+
+  
