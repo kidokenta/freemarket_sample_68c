@@ -1,0 +1,24 @@
+<!-- ヘッダー -->
+<% if user_signed_in? %>
+  <%=  render partial: "header2" %>
+<% else %>
+  <%=  render partial: "header1" %>
+<% end %>
+
+<div class="item--show">
+  <div class="item--show--main">
+    <div class="item--show--main--title">
+      <%= @item.item_name %>
+    </div>
+    <div class="item--show--main__left"></div>
+    <div class="item--show--main__right"></div>
+    <div class="item--show--main--price"></div>
+  </div>
+</div>
+
+<%# ユーザー＝出品者or notで条件分岐 %>
+<% if @item.seller_user_id = current_user.id %>
+  <%=  render partial: "" %>
+<% else %>
+  <%=  render partial: "" %>
+<% end %>
