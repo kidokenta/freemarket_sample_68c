@@ -1,3 +1,5 @@
+$aaa = red;
+
 .session--header {
   width: 100vw;
   height: 80px;
@@ -26,11 +28,15 @@
   margin: 0 auto;
 }
 
-.field label {
+.must {
+  background-color: red;
+  color: white;
+  padding: 0 5px;
+  margin-left: 10px;
 }
 
 .text-field {
-  width: 300px;
+  width: 290px;
   height: 30px;
   border-radius: 5px;
   padding: 0 5px;
