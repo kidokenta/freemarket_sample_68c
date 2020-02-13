@@ -35,11 +35,11 @@
         %p.sellcontent-explain-category
           カテゴリー
           %span.require 必須
-        %input.content-explain1  
+        %select.content-explain1  
         %p.sellcontent-explain-status
           商品の状態
           %span.require 必須
-        %input.content-explain2
+        %select.content-explain2
     .sellcontent-shipping 
       .sellcontent-shipping-left
         %p.sellcontent-shipping-left-title
@@ -79,5 +79,25 @@
           %p.sellcontent-price-profitbox-title
             販売利益
     .sellcontent-last
-      %button.inputbtn
-  .newfooter
+      .sellcontent-last-in
+        %button.inputbtn 出品する
+        %button.inputbtnreturn 戻る
+        %p.kiyaku
+        禁止されている出品、行為を必ずご確認ください。
+        %br
+        %p.kiyaku
+        またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+        %br
+        %p.kiyaku
+        また、出品をもちまして加盟店規約に同意したことになります。
+  .new-footer
+    .new-footer-first
+      %ul
+        %li.new-footer-firsts
+          プライバシーポリシー  
+        %li.new-footer-firsts
+          メルカリ利用規約
+        %li.new-footer-firsts
+          特定商取引に関する表記
+    .new-footer-second
+      ©️merukari
