@@ -16,7 +16,7 @@
               ドラッグアンドドロップ
               %br/
               またはクリックしてファイルをアップロード
-    .sellcontent
+    .sellcontent1
       .sellcontentwrapper1
         .content-title1
           商品名
@@ -26,5 +26,78 @@
         .content-title2
           商品の説明
           %span.require 必須
-        %input.content-text2{:placeholder => "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など\r\n2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでお進めです。", :type => "textarea"}/
-  .newfooter
+        %input.content-text2{:placeholder => "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など)", :type => "textarea"}
+    .sellcontent-explain
+      .sellcontent-explain-left
+        %p.sellcontent-explain-left-title
+          商品の詳細
+      .sellcontent-explain-right
+        %p.sellcontent-explain-category
+          カテゴリー
+          %span.require 必須
+        %select.content-explain1  
+        %p.sellcontent-explain-status
+          商品の状態
+          %span.require 必須
+        %select.content-explain2
+    .sellcontent-shipping 
+      .sellcontent-shipping-left
+        %p.sellcontent-shipping-left-title
+          配送について
+          %span.hatenabtn ?
+      .sellcontent-shipping-right 
+        .sellcontent-shipping-hutan
+          %p.sellcontent-shipping-hutan-title
+            配送料の負担
+            %span.require 必須
+          %input.content-hutan  
+        .sellcontent-shipping-region
+          %p.sellcontent-shipping-region-title
+            発送元の地域
+            %span.require 必須
+          %input.content-region 
+        .sellcontent-shipping-days  
+          %p.sellcontent-shipping-days-title
+            発送までの日数
+            %span.require 必須
+          %input.content-days
+    .sellcontent-price
+      .sellcontent-price-left
+        %p.sellcontent-price-left-title
+          販売価格(300~9,999,999)
+          %span.hatenabtn ?
+      .sellcontent-price-right
+        .sellcontent-price-pricebox
+          %p.sellcontent-price-pricebox-title
+            価格
+            %span.require 必須
+          %input.contentpricebox
+        .sellcontent-price-feebox
+          %p.sellcontent-price-feebox-title
+            販売手数料(10%)
+        .sellcontent-price-profitbox
+          %p.sellcontent-price-profitbox-title
+            販売利益
+    .sellcontent-last
+      .sellcontent-last-in
+        %button.inputbtn 出品する
+        %button.inputbtnreturn 戻る
+        %p.kiyaku
+        禁止されている出品、行為を必ずご確認ください。
+        %br
+        %p.kiyaku
+        またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+        %br
+        %p.kiyaku
+        また、出品をもちまして加盟店規約に同意したことになります。
+  .new-footer
+    .new-footer-first
+      %ul
+        %li.new-footer-firsts
+          プライバシーポリシー  
+        %li.new-footer-firsts
+          メルカリ利用規約
+        %li.new-footer-firsts
+          特定商取引に関する表記
+    .new-footer-second
+      ©️merukari
