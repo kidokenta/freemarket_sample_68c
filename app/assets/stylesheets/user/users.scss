@@ -1,5 +1,3 @@
-$base_fontcolor:#3CCACE;
-
 .session--header {
   width: 100vw;
   height: 80px;
@@ -28,7 +26,7 @@ $base_fontcolor:#3CCACE;
       width: 300px;
       margin: 0 auto;
       .must {
-        background-color: red;
+        background-color: $base_fontcolor;
         color: white;
         padding: 0 5px;
         margin-left: 10px;
