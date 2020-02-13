@@ -1,3 +1,5 @@
+$base_fontcolor:#3CCACE;
+
 .session--header {
   width: 100vw;
   height: 80px;
@@ -14,7 +16,6 @@
   #sessoin--title {
     margin-bottom: 30px;
     margin-top: 30px;
-    font-size: 30px;
   }
   .first-field {
     .form-title {
@@ -60,7 +61,7 @@
   margin: 0 auto;
   #next-form-btn {
     margin-top: 20px;
-    background-color: cadetblue;
+    background-color: $base_fontcolor;
     color: white;
     height: 30px;
     line-height: 30px;
@@ -105,7 +106,7 @@
   .submit--btn {
     width: 300px;
     margin-top: 20px;
-    background-color: cadetblue;
+    background-color: $base_fontcolor;
     color: white;
     height: 30px;
     line-height: 30px;
@@ -116,7 +117,7 @@
     margin: 0 auto;
     #back-form-btn {
       margin-top: 20px;
-      background-color: cadetblue;
+      background-color: $base_fontcolor;
       color: white;
       height: 30px;
       line-height: 30px;
