@@ -1,0 +1,147 @@
+.session--header {
+  width: 100vw;
+  height: 80px;
+  text-align: center;
+  #session--header--icon {
+    height: 40px;
+    padding-top: 20px;
+  }
+}
+
+
+.session--main {
+  text-align: center;
+  #sessoin--title {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+  .first-field {
+    .field {
+      text-align: left;
+      width: 300px;
+      margin: 0 auto;
+      .must {
+        background-color: red;
+        color: white;
+        padding: 0 5px;
+        margin-left: 10px;
+      }
+      .text-field {
+        width: 290px;
+        height: 30px;
+        border-radius: 5px;
+        padding: 0 5px;
+        font-size: 15px;
+        margin: 5px 0 15px 0;
+        border:gray 1px solid;
+        outline: none;
+      }
+      .text-field-name {
+        width: 135px;
+        height: 30px;
+        border-radius: 5px;
+        padding: 0 5px;
+        font-size: 15px;
+        margin: 5px 0 15px 0;
+        border:gray 1px solid;
+        outline: none;
+      }
+    }
+  }
+}
+.next-btn-area {
+  width: 300px;
+  margin: 0 auto;
+  #next-form-btn {
+    margin-top: 20px;
+    background-color: cadetblue;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    &:hover {
+    }
+  }
+  
+}
+
+
+.next-field {
+  display: none;
+  .field {
+    text-align: left;
+    width: 300px;
+    margin: 0 auto;
+    .must {
+      background-color: red;
+      color: white;
+      padding: 0 5px;
+      margin-left: 10px;
+    }
+    .text-field {
+      width: 290px;
+      height: 30px;
+      border-radius: 5px;
+      padding: 0 5px;
+      font-size: 15px;
+      margin: 5px 0 15px 0;
+      border:gray 1px solid;
+      outline: none;
+    }
+    .text-field-name {
+      width: 135px;
+      height: 30px;
+      border-radius: 5px;
+      padding: 0 5px;
+      font-size: 15px;
+      margin: 5px 0 15px 0;
+      border:gray 1px solid;
+      outline: none;
+    }
+  }
+  .birthday--select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #999;
+    background: #eee;
+    width: 96px;
+    height: 30px;
+    margin: 5px 0 15px 0;
+    background-color: white;
+  }
+  .action {
+    text-align: left;
+  }
+  .submit--btn {
+    width: 290px;
+    line-height: 40px;
+    height: 40px;
+    margin: 30px 0;
+    color:white;
+    background-color: royalblue;
+  }
+  .back-btn-area {
+    width: 300px;
+    margin: 0 auto;
+    #back-form-btn {
+      margin-top: 20px;
+      background-color: cadetblue;
+      color: white;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+}
+
+.open {
+  display: block;
+}
+.close {
+  display: none;
+}
+
+
+
+
+
