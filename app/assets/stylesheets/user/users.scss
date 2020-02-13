@@ -1,3 +1,5 @@
+$base_fontcolor:#3CCACE;
+
 .session--header {
   width: 100vw;
   height: 80px;
@@ -12,11 +14,15 @@
 .session--main {
   text-align: center;
   #sessoin--title {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-top: 30px;
-    font-size: 30px;
   }
   .first-field {
+    .form-title {
+      font-size: 15px;
+      padding-bottom: 30px;
+      margin-top: 20px;
+    }  
     .field {
       text-align: left;
       width: 300px;
@@ -38,7 +44,7 @@
         outline: none;
       }
       .text-field-name {
-        width: 135px;
+        width: 130px;
         height: 30px;
         border-radius: 5px;
         padding: 0 5px;
@@ -55,19 +61,23 @@
   margin: 0 auto;
   #next-form-btn {
     margin-top: 20px;
-    background-color: cadetblue;
+    background-color: $base_fontcolor;
     color: white;
     height: 30px;
     line-height: 30px;
+    font-size: 15px;
     &:hover {
     }
   }
-  
 }
-
 
 .next-field {
   display: none;
+  .form-title {
+    font-size: 15px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+  }  
   .field {
     text-align: left;
     width: 300px;
@@ -88,48 +98,30 @@
       border:gray 1px solid;
       outline: none;
     }
-    .text-field-name {
-      width: 135px;
-      height: 30px;
-      border-radius: 5px;
-      padding: 0 5px;
-      font-size: 15px;
-      margin: 5px 0 15px 0;
-      border:gray 1px solid;
-      outline: none;
-    }
-  }
-  .birthday--select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 1px solid #999;
-    background: #eee;
-    width: 96px;
-    height: 30px;
-    margin: 5px 0 15px 0;
-    background-color: white;
   }
   .action {
-    text-align: left;
+    width: 300px;
+    margin: 0 auto;
   }
   .submit--btn {
-    width: 290px;
-    line-height: 40px;
-    height: 40px;
-    margin: 30px 0;
-    color:white;
-    background-color: royalblue;
+    width: 300px;
+    margin-top: 20px;
+    background-color: $base_fontcolor;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
   }
   .back-btn-area {
     width: 300px;
     margin: 0 auto;
     #back-form-btn {
       margin-top: 20px;
-      background-color: cadetblue;
+      background-color: $base_fontcolor;
       color: white;
       height: 30px;
       line-height: 30px;
+      font-size: 15px;
     }
   }
 }
