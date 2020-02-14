@@ -78,7 +78,7 @@ belongs_to :user
 |comment|reference|foreign_key :true|
 ### Association
 belongs_to :user dependent: :destroy
-belongs_to :categorie
+belongs_to :category
 belongs_to :brands
 has_many :likes
 has_many :images
@@ -110,7 +110,7 @@ belongs_to :item
 |ancestry|string|null: false|
 
 ### Association
-belongs_to :item
+has_many :item
 
 ## likes テーブル
 |Column|Type|Options|
