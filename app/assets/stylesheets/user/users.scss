@@ -21,6 +21,16 @@
       padding-bottom: 30px;
       margin-top: 20px;
     }  
+    .submit--btn {
+      width: 300px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      background-color: $base_fontcolor;
+      color: white;
+      height: 30px;
+      line-height: 30px;
+      font-size: 15px;
+    }    
     .field {
       text-align: left;
       width: 300px;
@@ -42,7 +52,7 @@
         outline: none;
       }
       .text-field-name {
-        width: 130px;
+        width: 134px;
         height: 30px;
         border-radius: 5px;
         padding: 0 5px;
@@ -51,12 +61,24 @@
         border:gray 1px solid;
         outline: none;
       }
+      .birthday--select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 5px 0 15px 0;
+        padding: 7px 65px 7px 10px;
+        line-height: 1.1em;
+        border-radius: 5px;
+        border: gray solid 1px;
+        background-color: white;
+      }
     }
   }
 }
 .next-btn-area {
   width: 300px;
   margin: 0 auto;
+  margin-bottom: 50px;
   #next-form-btn {
     margin-top: 20px;
     background-color: $base_fontcolor;
@@ -97,7 +119,7 @@
       outline: none;
     }
   }
-  .action {
+  .actions {
     width: 300px;
     margin: 0 auto;
   }
