@@ -37,9 +37,9 @@ Things you may want to cover:
 |comment|reference|foreign_key :true|
 
 ### Association
-has_many :items
+has_many :items　
 has_many :likes
-belongs_to :adresses
+has_one :adresses
 has_many :orders
 has_many :comments
 
@@ -48,10 +48,10 @@ has_many :comments
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|integer|null: false|
-|adress_prefecture|string|null: false|
-|adress_town|string|null: false|
-|adress_number|string|null: false|
-|adress_name|string||
+|prefecture|string|null: false|
+|town|string|null: false|
+|number|string|null: false|
+|name|string||
 
 ### Association
 belongs_to :user
@@ -77,7 +77,7 @@ belongs_to :user
 |order|reference|foreign_key: true|
 |comment|reference|foreign_key :true|
 ### Association
-belongs_to :user
+belongs_to :user dependent: :destroy
 belongs_to :categories
 belongs_to :brands
 has_many :likes
@@ -88,15 +88,10 @@ has_many :comments
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image1|string|null: false|
-|image2|string||
-|image3|string||
-|image4|string||
-|image5|string||
-|image6|string||
-
+|item|reference|foreign_key :true|
+|images|string|null: false|
 ### Association
-belongs_to :item
+belongs_to :item dependent: :destroy
 
 
 ## brands テーブル
@@ -124,8 +119,8 @@ belongs_to :item
 |item|reference|null: false, foreign_key: true|
 
 ### Association
-belongs_to :user
-belongs_to :item
+belongs_to :user dependent: :destroy
+belongs_to :item dependent: :destroy
 
 ## ordersテーブル
 |Column|Type|Options|
@@ -134,8 +129,8 @@ belongs_to :item
 |buyer_user|reference|null: false, foreign_key: true|
 
 ### Association
-belongs_to :item
-belongs_to :user
+belongs_to :item dependent: :destroy
+belongs_to :user dependent: :destroy
 
 
 ## commentsテーブル
@@ -147,7 +142,7 @@ belongs_to :user
 
 ### Association
 
-belongs_to :item
+belongs_to :item dependent: :destroy
 belongs_to :user
 
 
