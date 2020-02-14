@@ -25,16 +25,12 @@ Things you may want to cover:
 |birthday|date|null: false|
 |status|integer||
 |adress_prefecture|string|null: false|
-|status|||
 |deleted_at|integer|datetime|
 |phonenumber|integer||
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 |re-password|string|null: false, unique: true|
 |buy-item|reference|foreign_key: true|
-|sell-item|reference|foreign_key: true|
-|order|reference|foreign_key: true|
-|comment|reference|foreign_key :true|
 
 ### Association
 has_many :items　
@@ -110,7 +106,7 @@ belongs_to :item
 |ancestry|string|null: false|
 
 ### Association
-has_many :item
+has_many :items
 
 ## likes テーブル
 |Column|Type|Options|
