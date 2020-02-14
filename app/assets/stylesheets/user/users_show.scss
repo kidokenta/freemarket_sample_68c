@@ -10,24 +10,70 @@
     height: 1000px;
     background-color:lime;
     margin: 0 40px 0 0;
-    // nav.mypage-nav{
-      
-    // }
+    nav.mypage-nav{
+      height: 100%;
+      width:100%;
+      background-color: silver;
+      ul.mypage-nav-list{
+        width: 100%;
+        height: 50px;
+        li.side_li{
+          height: 50px;
+          width: 100%;
+          background-color: tan;
+          a.side_a{
+            height: 100%;
+            width: 100%;
+            background-color: teal;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            &:hover{
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+     }
   }
   .l-content{
     height: 865px;
     width: 700px;
-    background-color: lightyellow;
     .mypage-user-icon{
       height: 200px;
       width: 100%;
-      background-color: mediumpurple;
+      background-image:image-url("material/pict/bg-back.jpg");
       display: flex;
       align-items: center;
       .usericon{
         height: 100px;
         width: 100%;
-        background-color: mintcream;
+        
+        figure {
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+          img.icon_img{
+              vertical-align: middle;
+              height: 100%;
+              width: 100%;
+            }
+          }
+          h2.bold {
+            margin: 8px 0 0;
+            font-size: 16px;
+            text-align: center;
+
+          }
+          .mypage-number{
+            display: flex;
+            justify-content: center;
+          }
         }
       }
     }
@@ -35,13 +81,35 @@
       height: 200px;
       width: 100%;
       background-color: magenta;
+      .mypage-tabs{
+        background: #eee;
+        height: 80px;
+        width:100%;
+        display: block;
+        display: flex;
+        text-align: center;
+        li.active {
+          background: #fff;
+          width: 50%;
+          height: 100%;
+          display: inline-block;
+         }
+         li.notactive{
+           height: 100%;
+           width: 50%;
+           display: inline-block;
+         }
+      }
+      .tab-container{
+        height: 200px;
+        width: 100%;
+        background-color:royalblue;
+      }
     }
     .mypage-tab-container{
-      height: 360px;
-      width: 100%;
-      margin: 40px 0 0;
-      background-color: midnightblue;
+    height: 300px;
+    width: 100%;
+    background-color: salmon;
+    margin-top: 150px;
     }
   }
-
-
