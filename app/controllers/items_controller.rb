@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @new_items = Item.all.order(created_at: "desc").limit(3)
+    @new_images = Image.all.order(created_at: "desc").limit(3)
   end
   
   def new
@@ -29,5 +30,5 @@ class ItemsController < ApplicationController
   def redirect_root
     redirect_to root_path unless user_signed_in?
   end
-  
+
 end
