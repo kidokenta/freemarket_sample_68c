@@ -43,7 +43,6 @@
         text-align: left;
       }
       }
-
       h3.title{
         display: block;
         font-size: 1.17em;
@@ -59,20 +58,20 @@ section.pickupCountainer{
   padding: 80px 0 0;
   height: 100%;
 }
-.productBox{
-  text-align: center;
-}
-
-  .pickupCountainer{
+  h2.productaHead{
     text-align: center;
   }
-  
-    h2.productHead{}
-    h2.productHead__new-item{
-      color: $base_fontcolor;
-      font-size: 24px;
-      padding-top: 10px;
+  h2.productHead__new-item{
+    color: $base_fontcolor;
+    font-size: 24px;
+    padding-top: 10px;
+    new-item-link{
       text-decoration: none;
+    }
+  }
+
+    .pickupCountainer{
+      text-align: center;
     }
 
   .productLists{
