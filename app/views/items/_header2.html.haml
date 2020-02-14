@@ -37,4 +37,6 @@
                       = link_to "いいね一覧", root_path, class: "btm_a"
                     %li.listsRight__item.listsRight__item--mypage
                       = link_to "マイページ", root_path, class: "btm_a"
+                    %li.listsRight__item.listsRight__item--mypage
+                      = link_to "ログアウト！！", destroy_user_session_path, class: "btm_a", :method => "delete"
                      
