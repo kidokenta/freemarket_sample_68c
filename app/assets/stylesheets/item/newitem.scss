@@ -451,7 +451,7 @@
         }
       }
       .sellcontent-last{
-        height:159px;
+        height:190px;
         width:700px;
         align-items:center;
         .sellcontent-last-in{
@@ -459,24 +459,30 @@
           width:620px;
           margin:0 auto;
           .sellcontent-last-in-btns{
-            background:green;
             height:120px;
-            display:block;
+            margin-top:10px;
             .inputbtn{
               height:50px;
-              width:100px;
+              width:80%;
               background:red;
               color:white;
               font-size:14px;
               border-radius: 10px;
+              position: relative;
+              left:65px;
+              cursor: pointer;
             }
             .inputbtnreturn{
               height:50px;
               width:100px;
-              background:blue;
+              background:gray;
               color:white;
               font-size:14px;
               border-radius:10px;
+              position: relative;
+              top:60px;
+              right:230px;
+              cursor: pointer;
             }
 
           }
@@ -499,7 +505,7 @@
         list-style: none;
         width:700px;
         margin:0 auto;
-        margin-top:20px;
+        margin-top:40px;
         .new-footer-firsts{
           padding-left:40px;
         }
