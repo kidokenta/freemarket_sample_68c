@@ -1,7 +1,7 @@
 .topKeyFeatures
   %h2.head
     FURIMAの特徴
-
+    .under-line
   .items
     .items__section-item
       %img.top-icon{:src => "/icon-01.png"}/
@@ -19,15 +19,35 @@
       %p.item__detail
         お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
-%section.pickupContainer
-  %h2.head ピックアップカテゴリー
-  .productBox
-    .productHead
-      %a{:href => "#"}
-        %h3.title 新規投稿商品
-  .productBox
-    .productHead
-      %a{:href => "#"}
-        %h3.title アーカイバ
+.pickupCountainer
+  %h2.productHead
+    ピックアップカテゴリー
+  %h2.productHead__new-item
+    = link_to '新規投稿商品'
 
+  .productLists
+    = @new_items.each do |item|
+      .productList
+        .productList-img
+        -#   = image_tag images.to_s
+        -# .produstList-body
+        -#   %ul
+        -#     %li
+        -#       =item_name
+        -#     %li
+        -#       =price
+        -#     %li <（税込）
+
+
+
+-# .pickupContainer
+-#   %h2.productHead
+-#     ピックアップブランド
+-#   %h2.productHead__new-item
+-#     アーカイバ
+-#     = link_to "#"
+-#   .productList
+-#     .img.new-item
+-#     .img.new-item
+-#     .img.new-item
 
