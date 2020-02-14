@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_051734) do
+ActiveRecord::Schema.define(version: 2020_02_14_073915) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,21 +33,8 @@ ActiveRecord::Schema.define(version: 2020_02_14_051734) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "item_name", null: false
-    t.string "item_explain", null: false
-    t.integer "category_id"
-    t.integer "brand_id"
-    t.integer "condition", null: false
-    t.integer "shipping_fee", null: false
-    t.integer "shipping_days", null: false
-    t.integer "shipping_company"
-    t.integer "price", null: false
-    t.integer "seller_user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "item_size"
-    t.string "shipping_region"
-    t.text "images"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,21 +52,6 @@ ActiveRecord::Schema.define(version: 2020_02_14_051734) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.string "famiry_name", null: false
-    t.string "first_name", null: false
-    t.string "famiry_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "image"
-    t.text "profile"
-    t.integer "status"
-    t.integer "postal_code", null: false
-    t.string "adress_prefecture", null: false
-    t.string "adress_town", null: false
-    t.string "adress_number", null: false
-    t.string "adress_name"
-    t.integer "phonenumber"
-    t.datetime "delete_at"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -87,7 +59,6 @@ ActiveRecord::Schema.define(version: 2020_02_14_051734) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
