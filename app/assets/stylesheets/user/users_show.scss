@@ -4,14 +4,13 @@
   background-color: lightseagreen;
   display: flex;
   justify-content: center;
-  align-items: center;
   .l-side {
     width: 280px;
-    height: 1000px;
+    height: max-content;
     background-color:lime;
-    margin: 0 40px 0 0;
+    margin: 100px 40px 0 0;
     nav.mypage-nav{
-      height: 100%;
+      height: max-content;
       width:100%;
       background-color: silver;
       ul.mypage-nav-list{
@@ -43,6 +42,7 @@
     height: 865px;
     width: 700px;
     .mypage-user-icon{
+      margin-top: 100px;
       height: 200px;
       width: 100%;
       background-image:image-url("material/pict/bg-back.jpg");
@@ -103,13 +103,42 @@
       .tab-container{
         height: 200px;
         width: 100%;
-        background-color:royalblue;
+        background-color:white;
       }
     }
     .mypage-tab-container{
-    height: 300px;
+    height: max-content;
     width: 100%;
     background-color: salmon;
     margin-top: 150px;
+    .mypage-tab-head {
+      padding: 0 4%;
+      background: #fafafa;
+      font-size: 20px;
+      line-height: 72px;
+      text-align: center;
+      }
+    ul.mypage-tabs{
+      background: #eee;
+      display: flex;
+      font-size: 20px;
+      text-align: center;
+      line-height: 100px;
+      li.active{
+        height: 100px;
+        width: 50%;
+        display: inline-block;
+        }
+      li.notactive{
+        height: 100px;
+        width: 50%;
+        display: inline-block;
+        }
+      }
+      .tab-content{
+        height: 160px;
+        width: 100%;
+        background-color: white;
+      }
     }
   }
