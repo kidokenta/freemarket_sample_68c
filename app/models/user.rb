@@ -15,4 +15,8 @@ class User < ApplicationRecord
   validates :adress_town        , presence: true
   validates :adress_number      , presence: true
 
+  has_many :items
+  has_many :likes
+  has_many :comments
+  has_many :orders
 end
