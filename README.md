@@ -1,10 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
 
 * System dependencies
@@ -68,10 +63,6 @@ belongs_to :user
 |price|integer|null: false|
 |seller_user|reference|null: false, foreign_key: true|
 |buyer_user|reference|null: false, foreign_key: true|
-|category|reference|null: false, foreign_key: true|
-|brand|reference|foreign_key: true|
-|order|reference|foreign_key: true|
-|comment|reference|foreign_key :true|
 ### Association
 belongs_to :user dependent: :destroy
 belongs_to :category
