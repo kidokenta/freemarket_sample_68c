@@ -11,5 +11,5 @@ $(function(){
     $(".first-field").removeClass("close");
     $("#next-form-btn").removeClass("close");
   });
-
+  
 })

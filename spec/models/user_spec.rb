@@ -44,30 +44,6 @@ describe User do
       expect(user.errors[:birthday]).to include("を入力してください")
     end
     
-    it "postal_codeが空では登録できないこと" do
-      user = build(:user, postal_code: "")
-      user.valid?
-      expect(user.errors[:postal_code]).to include("を入力してください")
-    end
-    
-    it "adress_prefectureが空では登録できないこと" do
-      user = build(:user, adress_prefecture: "")
-      user.valid?
-      expect(user.errors[:adress_prefecture]).to include("を入力してください")
-    end
-    
-    it "adress_townが空では登録できないこと" do
-      user = build(:user, adress_town: "")
-      user.valid?
-      expect(user.errors[:adress_town]).to include("を入力してください")
-    end
-    
-    it "adress_numberが空では登録できないこと" do
-      user = build(:user, adress_number: "")
-      user.valid?
-      expect(user.errors[:adress_number]).to include("を入力してください")
-    end
-    
     it "emailが空では登録できないこと" do
       user = build(:user, email: "")
       user.valid?
@@ -135,10 +111,6 @@ describe User do
       expect(user).to be_valid
     end
     
-    it "adress_nameがなくても登録できること" do
-      user = build(:user, adress_name: "")
-      expect(user).to be_valid
-    end
   end
 end
 
