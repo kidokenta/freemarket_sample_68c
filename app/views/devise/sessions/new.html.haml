@@ -1,6 +1,6 @@
 %body
   %header.session--header
-    %img#session--header--icon{:src => "/logo.png"}/
+    = image_tag("/logo.png", id: "session--header--icon")
   .session--main
     %h2#sessoin--title ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
