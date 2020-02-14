@@ -19,29 +19,27 @@
       %p.item__detail
         お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
-.section.pickupCountainer
-  .pickupCountainer
-    %h2.productHead
-      ピックアップカテゴリー
-    %h2.productHead__new-item
-      = link_to '新規投稿商品', '#', class: "new-items-link"
+.pickupCountainer
+  %h2.productHead
+    ピックアップカテゴリー
+  %h2.productHead__new-item
+    = link_to '新規投稿商品', '#', class: "new-items-link"
+  .productLists
+    - @new_items.each do |item|
+      .productList
+        .productList-img
+          %img.new-item{:src => "#{item.images}"}/
+        .produstList-body
+          .productList-body-detail
+          %ul
+            %li.item
+              =item.item_name
+            %li.item
+              ="#{item.price}円"
+            %li.item （税込）
+          .productList-body-like
 
-    .productLists
-      = @new_items.each do |item|
-        .productList
-          .productList-img
-            = image_tag images.to_s
-          .produstList-body
-            %ul
-              %li
-                =items.item_name
-              %li
-                =items.price
-              %li <（税込）
-  .pickupCountainer
-
-
-
+  -# .pickupCountainer
 -# .pickupContainer
 -#   %h2.productHead
 -#     ピックアップブランド
