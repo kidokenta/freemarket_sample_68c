@@ -3,6 +3,13 @@
 -else
   = render partial:"items/header2"
 .container
+  .l-side
+    %nav.mypage-nav
+  .l-content
+    %section.mypage-user-icon
+      .usericon
+    .mypage-tab-container-notification-todo
+    .mypage-tab-container
 = render partial:"items/appBanner"
 = render partial:"items/footer"
 %a.purchase{:href => "/items/new"}

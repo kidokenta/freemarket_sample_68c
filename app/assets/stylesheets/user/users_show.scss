@@ -1,0 +1,47 @@
+.container{
+  height: 1020px;
+  width: 100%;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .l-side {
+    width: 280px;
+    height: 1000px;
+    background-color:lime;
+    margin: 0 40px 0 0;
+    // nav.mypage-nav{
+      
+    // }
+  }
+  .l-content{
+    height: 865px;
+    width: 700px;
+    background-color: lightyellow;
+    .mypage-user-icon{
+      height: 200px;
+      width: 100%;
+      background-color: mediumpurple;
+      display: flex;
+      align-items: center;
+      .usericon{
+        height: 100px;
+        width: 100%;
+        background-color: mintcream;
+        }
+      }
+    }
+    .mypage-tab-container-notification-todo{
+      height: 200px;
+      width: 100%;
+      background-color: magenta;
+    }
+    .mypage-tab-container{
+      height: 360px;
+      width: 100%;
+      margin: 40px 0 0;
+      background-color: midnightblue;
+    }
+  }
+
+
