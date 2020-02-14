@@ -9,7 +9,7 @@
       = @item.item_name
     .item--show--main--contents
       .item--show--main--contents__left
-        %img{:src => "#{@item.imeges}"}/
+        -# %img{:src => "#{@item.imeges}"}/
       .item--show--main--contents__right
         %table.item-show-table
           %tr
@@ -44,5 +44,13 @@
         = @item.price
       %span#tax (税込)
       %span#shipping_fee= shipping_fee
-- if @item.seller_user_id = current_user.id
-- else
+  - if !user_signed_in?
+    サインインしてないよ
+  - else
+    - if @item.seller_user_id = current_user.id
+      = render partial: "edit-btm"
+      = render partial: "comment-form"
+    - else
+      = render partial: "show-buybtm"
+      = render partial: "comment-form"
+
