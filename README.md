@@ -25,7 +25,6 @@
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 |re-password|string|null: false, unique: true|
-|buy-item|reference|foreign_key: true|
 
 ### Association
 has_many :items　
