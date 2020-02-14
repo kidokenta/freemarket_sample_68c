@@ -24,35 +24,45 @@ Things you may want to cover:
 |firstname-kana|string|null: false|
 |birthday|date|null: false|
 |status|integer||
-|postal_code|integer|null: false|
 |adress_prefecture|string|null: false|
 |status|||
 |deleted_at|integer|datetime|
-|postal_code|integer|null: false|
-|adress_prefecture|string|null: false|
-|adress_town|string|null: false|
-|adress_number|string|null: false|
-|adress_name|string||
 |phonenumber|integer||
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 |re-password|string|null: false, unique: true|
 |buy-item|reference|foreign_key: true|
 |sell-item|reference|foreign_key: true|
+|order|reference|foreign_key: true|
+|comment|reference|foreign_key :true|
 
 ### Association
 has_many :items
 has_many :likes
+belongs_to :adresses
+has_many :orders
+has_many :comments
+
+## addressesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|adress_prefecture|string|null: false|
+|adress_town|string|null: false|
+|adress_number|string|null: false|
+|adress_name|string||
+
+### Association
+belongs_to :user
+
 
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|item_name|string|null: false|
-|images|string|null: false|
+|name|string|null: false|
 |item_explain|string|null: false|
-|category_id|integer||
-|brand_id|integer||
 |status|integer|null: false|
 |condition|integer|null: false|
 |shipping_fee|integer|null: false|
@@ -64,18 +74,35 @@ has_many :likes
 |buyer_user|reference|null: false, foreign_key: true|
 |category|reference|null: false, foreign_key: true|
 |brand|reference|foreign_key: true|
-
+|order|reference|foreign_key: true|
+|comment|reference|foreign_key :true|
 ### Association
 belongs_to :user
-has_many :categories
-has_many :brands
+belongs_to :categories
+belongs_to :brands
 has_many :likes
+has_many :images
+has_many :orders
+has_many :comments
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image1|string|null: false|
+|image2|string||
+|image3|string||
+|image4|string||
+|image5|string||
+|image6|string||
+
+### Association
+belongs_to :item
+
 
 ## brands テーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|int||
-|brand_name|string|null: false|
+|name|string|null: false|
 |item|reference|null: false, foreign_key: true|
  
 ### Association
@@ -84,8 +111,8 @@ belongs_to :item
 ## categories テーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_name|string|null: false|
-|item|reference|null: false, foreign_key: true|
+|name|string|null: false|
+|ancestry|string|null: false|
 
 ### Association
 belongs_to :item
@@ -107,6 +134,8 @@ belongs_to :item
 |buyer_user|reference|null: false, foreign_key: true|
 
 ### Association
+belongs_to :item
+belongs_to :user
 
 
 ## commentsテーブル
@@ -117,6 +146,9 @@ belongs_to :item
 |user|reference|null: false, foreign_key: true|
 
 ### Association
+
+belongs_to :item
+belongs_to :user
 
 
 
