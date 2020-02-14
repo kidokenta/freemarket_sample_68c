@@ -1,0 +1,22 @@
+section.appBanner{
+  background-image:image-url("material/pict/bg-appBanner-pict.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 100px 40px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+.inner{
+  color: #fff;
+  text-align: center;}
+    h2.innner__title{
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;}
+    p.inner__text{
+      font-size: 35px;}
+  .inner__icon{
+    margin-top: 10px;}
+  .productList{
+    display: flex;
+  }
