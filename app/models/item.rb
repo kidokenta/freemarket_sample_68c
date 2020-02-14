@@ -7,6 +7,6 @@ class Item < ApplicationRecord
   validates :shipping_days, presence: true
   validates :shipping_company, presence: true
   validates :region, presence: true
-  validates :item_name, presence: true, length: { maximum: 7 }
+  validates :price, presence: true, length: { maximum: 6 ,minimum: 3}
   validates :seller_user_id, presence: true
 end

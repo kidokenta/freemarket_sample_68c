@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_054702) do
+ActiveRecord::Schema.define(version: 2020_02_13_110133) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_name", null: false
-    t.string "imeges", null: false
     t.string "item_explain", null: false
     t.integer "category_id"
     t.integer "brand_id"
@@ -22,12 +21,13 @@ ActiveRecord::Schema.define(version: 2020_02_12_054702) do
     t.integer "shipping_fee", null: false
     t.integer "shipping_days", null: false
     t.integer "shipping_company"
-    t.integer "region", null: false
     t.integer "price", null: false
     t.integer "seller_user_id", null: false
     t.integer "buyer_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "item_size"
+    t.string "shipping_region"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

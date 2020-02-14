@@ -45,17 +45,24 @@
                 height: 36px;
                 padding: 0 0 0 5px;
                 }
-                button {
+                .button_b2 {
                   width: 36px;
                   border: 0;
                   cursor: pointer;
                   background-color: #3CCACE;
                   padding: 8px;
                   }
-                .img_b{
-                  width: 100%;
-                  vertical-align: bottom;
-                  }  
+                  .searchBox__icon{
+                    width: 24px;
+                    border: 0;
+                    cursor: pointer;
+                    background-color: #3CCACE;
+                    padding: 8px;
+                    }
+                    .img_b{
+                      width: 100%;
+                      vertical-align: bottom;
+                      }  
       .nav {
         font-size: 14px;
         display: flex;

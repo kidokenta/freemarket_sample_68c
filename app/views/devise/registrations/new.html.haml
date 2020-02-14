@@ -2,9 +2,9 @@
   %header.session--header
     %img#session--header--icon{:src => "/logo.png"}/
   .session--main
+    = devise_error_messages
     %h2#sessoin--title 新規登録
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
       .first-field
         %p.form-title お客様情報入力
         .field
