@@ -9,7 +9,8 @@
         .sell-upload-box
           .upload-box-header
             出品画像
-           %p.upbtext 最大10枚までアップロードできます
+            %span.require 必須
+            %p.upbtext 最大10枚までアップロードできます
           .sell-upload-box-drop
             =f.label :images, class:"labelform" do
               .drop-box-text
@@ -22,11 +23,13 @@
         .sellcontentwrapper1
           .content-title1
             商品名
-           = f.text_field :name, class:"content-text1", placeholder: "商品名 (必須40文字まで)", type: "text"
+            %span.require 必須
+            = f.text_field :name, class:"content-text1", placeholder: "商品名 (必須40文字まで)", type: "text"
         .sellcontentwrapper2
           .content-title2
             商品の説明
-          =f.text_field :explain, class:"content-text2", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など)", type: "textarea"
+            %span.require 必須
+            =f.text_field :explain, class:"content-text2", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など)", type: "textarea"
       .sellcontent-explain
         .sellcontent-explain-left
           %p.sellcontent-explain-left-title
