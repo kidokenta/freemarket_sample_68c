@@ -10,7 +10,7 @@
       .productList
         =link_to '', '#',class: "item-card-link"
         .productList-img
-          %img.new-item{src: "#{image.image}"}/
+          =image_tag "#{image.image}", class:"new-item"
         .productList-body
           %h2.item-title
             =item.name
@@ -33,7 +33,7 @@
       .productList
         =link_to '', '#',class: "item-card-link"
         .productList-img
-          %img.new-item{src: "#{image.image}"}/
+          =image_tag "#{image.image}", class: "new-item"
         .productList-body
           %h2.item-title
             =item.name
