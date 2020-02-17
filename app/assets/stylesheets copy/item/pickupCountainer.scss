@@ -1,6 +1,7 @@
 .pickupContainer{
   text-align: center;
   padding: 26px;
+  box-sizing: border-box;
   h2.productHead{
   &__new-item{
     font-size: 24px;

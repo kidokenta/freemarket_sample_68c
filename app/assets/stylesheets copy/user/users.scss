@@ -1,0 +1,159 @@
+.session--header {
+  width: 100vw;
+  height: 80px;
+  text-align: center;
+  #session--header--icon {
+    height: 40px;
+    padding-top: 20px;
+  }
+}
+
+
+.session--main {
+  text-align: center;
+  #sessoin--title {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .first-field {
+    .form-title {
+      font-size: 15px;
+      padding-bottom: 30px;
+      margin-top: 20px;
+    }  
+    .submit--btn {
+      width: 300px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      background-color: $base_fontcolor;
+      color: white;
+      height: 30px;
+      line-height: 30px;
+      font-size: 15px;
+    }    
+    .field {
+      text-align: left;
+      width: 300px;
+      margin: 0 auto;
+      .must {
+        background-color: red;
+        color: white;
+        padding: 0 5px;
+        margin-left: 10px;
+      }
+      .text-field {
+        width: 290px;
+        height: 30px;
+        border-radius: 5px;
+        padding: 0 5px;
+        font-size: 15px;
+        margin: 5px 0 15px 0;
+        border:gray 1px solid;
+        outline: none;
+      }
+      .text-field-name {
+        width: 134px;
+        height: 30px;
+        border-radius: 5px;
+        padding: 0 5px;
+        font-size: 15px;
+        margin: 5px 0 15px 0;
+        border:gray 1px solid;
+        outline: none;
+      }
+      .birthday--select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 5px 0 15px 0;
+        padding: 7px 65px 7px 10px;
+        line-height: 1.1em;
+        border-radius: 5px;
+        border: gray solid 1px;
+        background-color: white;
+      }
+    }
+  }
+}
+.next-btn-area {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  #next-form-btn {
+    margin-top: 20px;
+    background-color: $base_fontcolor;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    // &:hover {
+    // }
+  }
+}
+
+.next-field {
+  display: none;
+  .form-title {
+    font-size: 15px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+  }  
+  .field {
+    text-align: left;
+    width: 300px;
+    margin: 0 auto;
+    .must {
+      background-color: red;
+      color: white;
+      padding: 0 5px;
+      margin-left: 10px;
+    }
+    .text-field {
+      width: 290px;
+      height: 30px;
+      border-radius: 5px;
+      padding: 0 5px;
+      font-size: 15px;
+      margin: 5px 0 15px 0;
+      border:gray 1px solid;
+      outline: none;
+    }
+  }
+  .actions {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .submit--btn {
+    width: 300px;
+    margin-top: 20px;
+    background-color: $base_fontcolor;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+  }
+  .back-btn-area {
+    width: 300px;
+    margin: 0 auto;
+    #back-form-btn {
+      margin-top: 20px;
+      background-color: $base_fontcolor;
+      color: white;
+      height: 30px;
+      line-height: 30px;
+      font-size: 15px;
+    }
+  }
+}
+
+.open {
+  display: block;
+}
+.close {
+  display: none;
+}
+
+
+
+
+
