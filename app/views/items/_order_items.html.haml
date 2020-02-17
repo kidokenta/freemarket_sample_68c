@@ -1,0 +1,30 @@
+.l-container
+  .tab-panel
+    %h2.mypage-tab-head
+      出品した商品
+    %ul.tab-group
+      %li.tab.tab-A.is-active 出品中
+      %li.tab.tab-B 待機中
+      %li.tab.tab-C 購入済み
+    / タブを切り替えて表示するコンテンツ
+    .panel-group
+      .panel.tab-content-A
+        Content-A
+        %ul.mypage-item-list.tab-pane.active
+          %li
+            .mypage-item-link
+              .figure
+                %img.is-higher-widt{:src => "/logo.png"}/
+              .mypage-item-body.show-stock-item
+                .mypage-body-text
+                  text
+                .listing-item-count
+
+                .listing-item-count
+                
+      .panel.tab-content-B Content-B
+      .panel.tab-content-C Content-C
+    
+            
+            
+           
