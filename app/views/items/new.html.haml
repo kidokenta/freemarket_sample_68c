@@ -9,6 +9,56 @@
         .sell-upload-box
           .upload-box-header
             出品画像
+  .newtitle
+    mercari
+  .newpagemain
+    .singlehead
+      商品の情報を入力
+    .sellform
+      .sell-upload-box
+        .upload-box-header
+          出品画像
+          %span.require 必須
+          %p.upbtext 最大10枚までアップロードできます
+        .sell-upload-box-drop
+          .drop-box-text
+            %p
+              ドラッグアンドドロップ
+              %br/
+              またはクリックしてファイルをアップロード
+    .sellcontent1
+      .sellcontentwrapper1
+        .content-title1
+          商品名
+          %span.require 必須
+        %input.content-text1{placeholder: "商品名 (必須40文字まで)", type: "text"}/
+      .sellcontentwrapper2
+        .content-title2
+          商品の説明
+          %span.require 必須
+        %input.content-text2{placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など)", type: "textarea"}
+    .sellcontent-explain
+      .sellcontent-explain-left
+        %p.sellcontent-explain-left-title
+          商品の詳細
+      .sellcontent-explain-right
+        %p.sellcontent-explain-category
+          カテゴリー
+          %span.require 必須
+        %select.content-explain1  
+        %p.sellcontent-explain-status
+          商品の状態
+          %span.require 必須
+        %select.content-explain2
+    .sellcontent-shipping 
+      .sellcontent-shipping-left
+        %p.sellcontent-shipping-left-title
+          配送について
+          %span.hatenabtn ?
+      .sellcontent-shipping-right 
+        .sellcontent-shipping-hutan
+          %p.sellcontent-shipping-hutan-title
+            配送料の負担
             %span.require 必須
             %p.upbtext 最大10枚までアップロードできます
           .sell-upload-box-drop
