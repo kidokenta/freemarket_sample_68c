@@ -1,7 +1,6 @@
 @import "reset";
 @import "define"; 
 @import "footer";
-@import "visual-bottom";
 @import "user/users";
 @import "user/users_show.scss";
 @import "item/index";
@@ -13,7 +12,8 @@
 @import "item/show";
 @import "item/topIntroduction";
 @import "item/topMiddleDl";
-@import "item/visual-bottom";
+@import "item/topKeyFeatures";
 @import "item/appBanner";
 @import "item/edit_btm";
 @import "item/comment-form";
+@import "item/pickupCountainer";
