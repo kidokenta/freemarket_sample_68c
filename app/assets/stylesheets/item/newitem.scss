@@ -520,3 +520,19 @@
     }
   }
 
+
+  .hidden{
+    visibility: hidden;
+  }
+
+  .labelform{
+    height:100%;
+    width:100%;
+    cursor: pointer;
+  }
+  .hiddenlabeltext{
+   width:60%;
+   margin:0 auto;
+   margin-top:60px;
+   cursor: pointer;
+  }
