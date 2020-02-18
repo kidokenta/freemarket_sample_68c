@@ -15,9 +15,9 @@ class OrdersController < ApplicationController
 
   private
 
-  def order_params
-    params.require(:order).mage(:item_id params[:id],:buyer_user_id current_user.id) 
-  end
+  # def order_params
+  #   params.require(:order).mage(:item_id params[:id],:buyer_user_id current_user.id) 
+  # end
 
 end
 
