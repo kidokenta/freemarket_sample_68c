@@ -13,8 +13,9 @@ Rails.application.routes.draw do
     resources :orders
   end
   resources :adresses
-  resources :items
-  resources :orders
+  resources :items do
+    resources :orders
+  end
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
