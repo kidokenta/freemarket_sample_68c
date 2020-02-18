@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   devise_for :users
   root "items#index"
   resources :users, only: :show
+<<<<<<< Updated upstream
   resources :items
+=======
+  resources :adresses
+  resources :items  do
+    resources :orders
+  end
+>>>>>>> Stashed changes
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
