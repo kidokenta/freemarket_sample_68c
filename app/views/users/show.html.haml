@@ -1,0 +1,67 @@
+-if !user_signed_in? 
+  = render partial:"items/header1" 
+-else
+  = render partial:"items/header2"
+.container
+  .l-side
+    %nav.mypage-nav
+      %ul.mypage-nav-list
+        %li.side_li
+          =link_to "トップページ","/",class: "side_a"
+        %li.side_li
+          =link_to "クレジット登録","/card/new",class: "side_a"
+        %li.side_li
+          =link_to "購入","#",class: "side_a"
+        %li.side_li
+          =link_to "出品","#",class: "side_a"
+        %li.side_li
+          =link_to "いいね一覧","#",class: "side_a"
+        %li.side_li
+          =link_to "ユーザー編集","#",class: "side_a"
+  .l-content
+    %section.mypage-user-icon
+      .usericon
+        %figure
+          =image_tag("/usericon.png",class:"icon_img")
+        %h2.bold
+          ユーザー名
+        .mypage-number
+          .hyouka
+            評価
+            %span.bold
+            0  
+          .show_items
+            出品数
+            %span.bold
+            0
+    .mypage-tab-container-notification-todo
+      %ul.mypage-tabs
+        %li.active
+          %h3.tab
+            =link_to"#",class:"aaa" do
+              お知らせ
+        %li.notactive
+          %h3.tab
+            =link_to"#",class:"aaa" do
+              やることリスト
+      .tab-container
+    .mypage-tab-container
+      %h2.mypage-tab-head
+        購入した商品
+      %ul.mypage-tabs
+        %li.active
+          %h3.tab
+            %a.torihiki
+              取引中
+        %li.notactive
+          %h3.tab
+            %a.kako
+              過去の取引
+      .tab-content
+= render partial:"items/appBanner"
+= render partial:"items/footer"
+=link_to "/items/new",class:"purchase" do
+  .purchaseBtn
+    %span.purchaseBtn__text
+      出品する
+    = image_tag("/icon_camera.png",class:"purchaseBtn__icon")
