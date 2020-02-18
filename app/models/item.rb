@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :images
-  belongs_to :user
+  belongs_to :user, foreign_key: 'user_id'
   belongs_to :order
   belongs_to :brand
   belongs_to :category

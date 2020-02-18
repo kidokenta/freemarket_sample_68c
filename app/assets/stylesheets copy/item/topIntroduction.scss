@@ -1,0 +1,82 @@
+.topIntroduction{
+  width: 100%;
+  margin-top: 90px;
+  .subtitle{
+    font-size: 26px;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    position: relative;
+  }
+  .lists{
+    text-align: center;
+    display: flex;
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto;
+    .list{
+    width: 30%;
+    margin: 16px 5% 0 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .list_pict{
+      position: relative;
+      margin-bottom: 20px;
+      .number{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4%;
+        font-size: 30px;
+        text-align: center;
+        margin: 0 5px 0 0;
+        padding: 10px 20px;
+        background-color: #3CCACE;
+        color: #fff;
+      }
+    }
+    .list_text{
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 50px;
+      margin: 0 0 0 2px;
+    }
+    .list_description {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 16px 0 0;
+      font-weight: bold;
+    }
+  }
+    .list--last{
+    width: 30%;
+    margin: 16px 5% 0 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  }
+}
+
+
+span.text{
+  color: #3CCACE;
+}
+
+.unko
+{
+  margin:0 auto;
+  height:4px;
+  width:70px;
+  background-color:#3CCACE;
+}
+
+.intro{
+  width: 100%;
+}

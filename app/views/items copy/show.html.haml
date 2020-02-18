@@ -1,0 +1,53 @@
+/ ヘッダー
+- if user_signed_in?
+  = render partial: "header2"
+- else
+  = render partial: "header1"
+.item--show
+  .item--show--main
+    .item--show--main--title
+      = @item.item_name
+    .item--show--main--contents
+      .item--show--main--contents__left
+        -# %img{:src => "#{@item.imeges}"}/
+      .item--show--main--contents__right
+        %table.item-show-table
+          %tr
+            %td.item-show-td 出品者
+            %td= link_to @seller_user.nickname , user_path(@seller_user)
+          %tr
+            %td.item-show-td カテゴリー
+            %td
+          %tr
+            %td.item-show-td ブランド
+            %td
+          %tr
+            %td.item-show-td 商品のサイズ
+            %td= @item.item_size
+          %tr
+            %td.item-show-td 商品の状態
+            %td= condition
+          %tr
+            %td.item-show-td 送料の負担
+            %td= shipping_fee
+          %tr
+            %td.item-show-td 配送方法
+            %td= shipping_company
+          %tr
+            %td.item-show-td 発送元地域
+            %td= @item.shipping_region
+          %tr
+            %td.item-show-td 発送日の目安
+            %td= shipping_days
+    .item--show--main--price
+      %span#price
+        = @item.price
+      %span#tax (税込)
+      %span#shipping_fee= shipping_fee
+  - if @item.seller_user_id == current_user.id
+    = render partial: "edit-btm"
+    = render partial: "comment-form"
+  - else
+    = render partial: "show-buybtm"
+    = render partial: "comment-form"
+
