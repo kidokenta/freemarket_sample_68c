@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :adresses
   resources :items
+  resources :orders
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
