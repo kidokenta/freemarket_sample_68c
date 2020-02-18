@@ -10,7 +10,7 @@
       .productList
         =link_to '', '#',class: "item-card-link"
         .productList-img
-          =image_tag "#{new_image(item.image}", class:"new-item"
+          =image_tag "#{new_image(item).image}", class: "new-item"
         .productList-body
           %h2.item-title
             =item.name
@@ -44,3 +44,5 @@
               %li.item (税込)
             .productList-body__like
               %p 0
+              %p.like-star ★
+
