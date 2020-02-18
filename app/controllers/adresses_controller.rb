@@ -2,11 +2,12 @@ class AdressesController < ApplicationController
 
   def new
     @adress = Adress.new
-
   end
 
   def create
   end
+
+  
 
   private
   def adress_params
