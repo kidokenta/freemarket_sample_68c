@@ -1,0 +1,44 @@
+.item--show {
+  background-color: $base_background-color;
+  width: 100vw;
+  height: max-content;
+  min-height: 100vh;
+  padding-top: 50px;
+  &--main {
+    width: 700px;
+    height: 500px;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    &--title {
+      margin-top: 20px;
+    }
+    &--contents {
+      display: flex;
+      margin-top: 20px;
+      &__left {
+        width: 50%;
+        height: 400px;
+        & img {
+          width: 200px;
+        }
+      }
+      &__right {
+        width: 50%;
+        .item-show-table {
+          margin: 0 auto;
+          & td {
+            border:  solid 1px black;
+            width: 150px;
+            padding: 8px;
+            text-align: left;
+          }
+          .item-show-td {
+            background-color: $base_background-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+!!!
+%html
+  %body
+    %section.footer
+      %ul.contents_footer
+        %li.content_footer
+          %h2.content_footer__head FUIMAについて
+          %ul.b
+            %li
+              = link_to "会社概要（運営会社",root_path, class: "menu"
+            %li
+              = link_to "プライバシーポリシー",root_path, class: "menu"
+            %li
+              = link_to "FURIMA利用規約",root_path, class: "menu"
+            %li
+              = link_to "ポイントに関する特約",root_path, class: "menu"
+        %li.content_footer
+          %h2.content_footer__head FURIMAを見る
+          %ul.b
+            %li
+              = link_to "会社概要（運営会社）",root_path, class: "menu"
+            %li
+              = link_to "プライバシーポリシー",root_path, class: "menu"
+        %li.content_footer
+          %h2.content_footer__head ヘルプ＆ガイド
+          %ul.b
+            %li
+              = link_to "FURIMAガイド",root_path, class: "menu"
+            %li
+              = link_to "FURIMAロゴ利用ガイドライン",root_path, class: "menu"
+            %li
+              = link_to "お知らせ",root_path, class: "menu"
+      .footer__logo
+        %a{:href => "http://furima.tokyo/"}
+          %img.FURIMA_img_footer{:src => "/logo-white.png"}/
+      %p © FURIMA

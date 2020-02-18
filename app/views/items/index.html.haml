@@ -10,8 +10,9 @@
   = render partial: "pickupContainer"
 = render partial:"appBanner"
 = render partial:"footer"
-%a.purchase{:href => "/items/new"}
+
+=link_to "/items/new", class:"purchase" do
   .purchaseBtn
     %span.purchaseBtn__text
       出品する
-    %img.purchaseBtn__icon{:src =>"icon_camera.png"}
+    =image_tag "/icon_camera.png", class:"purchaseBtn__icon"
