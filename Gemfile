@@ -88,3 +88,4 @@ gem 'fog-aws'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'rubocop', require: false
+gem 'ancestry'
