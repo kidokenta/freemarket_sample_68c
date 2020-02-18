@@ -157,7 +157,7 @@
       
     }
     .sellcontent-explain{
-      height:350px;
+      height:400px;
       width:700px;
       display:flex;
       justify-content: space-evenly;
@@ -180,6 +180,7 @@
       .sellcontent-explain-right{
         height:80%;
         width:60%;
+        position: relative;
         .sellcontent-explain-category{
           height:14px;
           width:150px;
@@ -210,6 +211,7 @@
           padding:0px 16px;
           position: relative;
           top:30px;
+          margin-bottom:5px;
 
         }
         .sellcontent-explain-status{
@@ -219,8 +221,8 @@
           padding-left:10px;
           font-weight:bold;
           font-size:14px;
-          position: relative;
-          bottom:-80px;
+          position: absolute;
+          bottom:50px;
           .require{
             background: #ea352d;;
             color:white;
@@ -239,8 +241,9 @@
           height:48px;
           width:400px;
           padding:0px 16px;
-          position: relative;
-          bottom:-80px;
+          position: absolute;;
+          bottom:0px;
+          right:11px;
       }
        }
 
