@@ -12,7 +12,7 @@
             %span.require 必須
             %p.upbtext 最大10枚までアップロードできます
           .sell-upload-box-drop
-            =f.label :images, class:"labelform" do
+            =f.label :image, class:"labelform" do
               .drop-box-text
                 %p.hiddenlabeltext
                   ドラッグアンドドロップ
@@ -38,7 +38,15 @@
           %p.sellcontent-explain-category
             カテゴリー
             %span.require 必須
-          = f.select :category_id, {class: 'content-explain1'}  
+            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
+            %p.sellcontent-explain-category
+            カテゴリー
+            %span.require 必須
+            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
+            %p.sellcontent-explain-category
+            カテゴリー
+            %span.require 必須
+            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
           %p.sellcontent-explain-status
             商品の状態
           %select.content-explain2

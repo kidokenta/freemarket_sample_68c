@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def create
@@ -19,6 +20,16 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @seller_user = User.find_by(id: @item.seller_user_id)
     # 各条件はhelperに記載
+  end
+
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+       @children = Category.find(params[:parent_id]).children
+       #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
+      end
+    end
   end
 
   private
