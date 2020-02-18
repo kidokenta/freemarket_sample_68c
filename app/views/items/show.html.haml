@@ -6,7 +6,7 @@
 .item--show
   .item--show--main
     .item--show--main--title
-      = @item.item_name
+      = @item.name
     .item--show--main--contents
       .item--show--main--contents__left
         -# %img{:src => "#{@item.imeges}"}/
@@ -23,7 +23,7 @@
             %td
           %tr
             %td.item-show-td 商品のサイズ
-            %td= @item.item_size
+            %td= @item.size
           %tr
             %td.item-show-td 商品の状態
             %td= condition

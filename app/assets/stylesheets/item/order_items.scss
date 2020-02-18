@@ -1,0 +1,69 @@
+.l-container{
+  width: 700px;
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+}
+.tab-group{
+  display: flex;
+  justify-content: center;
+  }
+  .mypage-tab-head {
+    padding: 0 4%;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
+    }
+  .tab{
+    flex-grow: 1;
+    padding:5px;
+    list-style:none;
+    border:solid 1px #CCC;
+    text-align:center;
+    cursor:pointer;
+    }
+    .panel{
+      display:none;
+    }
+    .tab.is-active{
+      transition: all 0.2s ease-out;
+    }
+    .panel.is-show{
+      display:block;
+    }
+    .mypage-item-link{
+      display: block;
+      min-height: 36px;
+      padding: 16px;
+      color: #333;
+      }
+      .figure {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 48px;
+        height: 48px;
+        }
+        .is-higher-widt{
+          width: auto;
+          left: 50%;
+          right: auto;
+          height: 100%;
+          -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+          }
+          .mypage-item-body {
+            margin: 0 40px 0 68px;
+            }
+            .mypage-item-text {
+              overflow: hidden;
+              display: block;
+              display: -webkit-box;
+              max-height: 4.4em;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              text-overflow: ellipsis;
+              line-height: 1.5;
+              }
+              .mypage-item-list li:first-child {
+                border-bottom: 1px solid #eee;
+               }

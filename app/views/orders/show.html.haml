@@ -1,2 +1,53 @@
-%h1 Orders#show
-%p Find me in app/views/orders/show.html.haml
+.single-container
+  .single-header
+    %a.header_title_a{href: "#"}
+      %img.header_img{src: "/logo.png"}
+  .single-main
+    %section.l-single-container
+      %h2.l-single-head
+        購入内容の確認
+      %section.buy-content_buy-item
+        .buy-content-inner
+          %h3.buy-item-image
+            %img.order_img
+          .buy-item-detail
+            %p.buy-item-name
+              ニット帽 ホワイト白
+            %p.buy-price-ja               
+              %span
+                ¥700-
+              %span.item-shipping-fee
+                (税込)送料込み
+      %section.buy-content_buy-item2
+        .price
+          %h3.cost
+            支払い金額
+          %span.order_show¥700
+        .pay
+          %h3.how
+            支払い方法
+          - if !@card            
+          = link_to "#" do
+            登録してください
+          - else
+            %p
+              クレジットカード       
+        .point
+          %h3.send
+            配送先
+          = link_to "#" do
+            登録してください
+        .buy
+          .buy_btn
+            購入する
+  .single-footer
+    %nav.list
+      %ul.s
+        %li.s
+          プライバシーポリシー        
+        %li.s
+          メルカリ利用規約
+        %li.s
+          特定商取引に関する表記
+        %p.furima_logo
+          ©️FURIMA

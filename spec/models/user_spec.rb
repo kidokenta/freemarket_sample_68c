@@ -14,16 +14,16 @@ describe User do
       expect(user.errors[:nickname]).to include("は6文字以内で入力してください")
     end
     
-    it "famiry_nameが空では登録できないこと" do
-      user = build(:user, famiry_name: "")
+    it "family_nameが空では登録できないこと" do
+      user = build(:user, family_name: "")
       user.valid?
-      expect(user.errors[:famiry_name]).to include("を入力してください")
+      expect(user.errors[:family_name]).to include("を入力してください")
     end
     
     it "famiry_name_kanaが空では登録できないこと" do
-      user = build(:user, famiry_name_kana: "")
+      user = build(:user, family_name_kana: "")
       user.valid?
-      expect(user.errors[:famiry_name_kana]).to include("を入力してください")
+      expect(user.errors[:family_name_kana]).to include("を入力してください")
     end
     
     it "first_nameが空では登録できないこと" do
@@ -72,7 +72,7 @@ describe User do
     it "passwordが入力されていてもpassword_confirmationが空では登録できないこと" do
       user = build(:user, password_confirmation: "")
       user.valid?
-      expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
+      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
 
     it "全て揃えば登録可" do
@@ -92,7 +92,7 @@ describe User do
     end
     
     it "famiry_nameが全角平仮名、カタカナ、漢字では登録できること" do
-      user = build(:user, famiry_name: "あ亜ア")
+      user = build(:user, family_name: "あ亜ア")
       expect(user).to be_valid
     end
     
@@ -102,12 +102,17 @@ describe User do
     end
     
     it "famiry_name_kanaが全角カタカナでは登録できること" do
-      user = build(:user, famiry_name_kana: "アアア")
+      user = build(:user, family_name_kana: "アアア")
       expect(user).to be_valid
     end
     
     it "first_name_kanaが全角カタカナでは登録できること" do
       user = build(:user, first_name: "アアア")
+      expect(user).to be_valid
+    end
+
+    it "phonenumberがなくても登録できること" do
+      user = build(:user, phonenumber: "")
       expect(user).to be_valid
     end
     

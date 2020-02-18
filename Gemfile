@@ -85,3 +85,7 @@ gem 'factory_bot_rails'
 
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'payjp'
+gem 'dotenv-rails'
+gem 'rubocop', require: false
+gem 'ancestry'

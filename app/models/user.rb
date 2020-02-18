@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :family_name_kana   , presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :first_name_kana    , presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birthday           , presence: true
+  # validates :phonenumber  , format: { with:  /\A\d{10}$|^\d{11}\z/ }
 
   has_many :items
   has_many :likes
