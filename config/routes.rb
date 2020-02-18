@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   root "items#index"
   resources :categories, only: :index
   resources :users, only: :show
+  resources :items
+  resources :adresses
+  resources :items  do
+    resources :orders
+  end
   resources :adresses
   resources :items
   resources :orders
