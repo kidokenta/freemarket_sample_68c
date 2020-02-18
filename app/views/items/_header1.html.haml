@@ -22,10 +22,10 @@
           .nav
             %ul.listsleft
               %li.listsleft__item.listsleft__item--first
-                #catBtn.btm_a{href: "#"} カテゴリー
+                =link_to "カテゴリー" ,"#", class: "btm_a"
                 .tree.displayNone
                   %li.listsLeft__item
-                    #brandBtn.btm_a{href: "#"} ブランド
+                    =link_to "ブランド" ,"#", class: "btm_a"
                     %ul.brandsPulldown.displayNone
                   %ul.listsRight
                     %li.listsRight__item.listsRight__item--login
