@@ -14,5 +14,6 @@ class OrdersController < ApplicationController
     redirect_to ("/") and return
   end
 
+end
 
 
