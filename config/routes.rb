@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "items#index"
   resources :users, only: :show
+  resources :adresses
   resources :items
   resources :card, only: [:new, :show] do
     collection do
