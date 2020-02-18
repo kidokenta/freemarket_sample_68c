@@ -3,7 +3,6 @@
   width: 100vw;
   background-color: #f8f8f8;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
-  box-sizing: border-box;
 }
 
 .purchaseBtn {
@@ -16,7 +15,6 @@
   position: fixed;
   padding: 15px;
   transition: all 1s linear 0s;
-  box-sizing: border-box;
   cursor: pointer;
   .purchaseBtn__text{
     color: #fff;
@@ -33,3 +31,10 @@
     opacity: 0.6;
   }
 }
+
+
+
+
+
+
+

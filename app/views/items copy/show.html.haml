@@ -6,7 +6,7 @@
 .item--show
   .item--show--main
     .item--show--main--title
-      = @item.name
+      = @item.item_name
     .item--show--main--contents
       .item--show--main--contents__left
         -# %img{:src => "#{@item.imeges}"}/
@@ -23,7 +23,7 @@
             %td
           %tr
             %td.item-show-td 商品のサイズ
-            %td= @item.size
+            %td= @item.item_size
           %tr
             %td.item-show-td 商品の状態
             %td= condition
@@ -50,3 +50,4 @@
   - else
     = render partial: "show-buybtm"
     = render partial: "comment-form"
+

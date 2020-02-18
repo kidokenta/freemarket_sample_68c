@@ -1,0 +1,37 @@
+.topKeyFeatures {
+  background-color: white;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+}
+  h2.head {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: 26px;
+    font-weight: bold;
+    }
+  .items{
+    max-width: calc(1020px + 20px);
+    margin: 0 auto;
+    display: flex;
+    &__section-item{
+      max-width: calc(0.3 * 100%);
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+      img.top-icon{
+        margin: 0 auto;
+        line-height: 120px;
+        width: 70%;
+        }
+      h3.item__subtitle{
+        margin: 38px 0 10px;
+        font-size: 19px;
+        }
+      p.item__detail{
+        margin: 0 0 40px;
+        font-size: 17px;
+        text-align: left;
+      }
+      }

@@ -11,7 +11,7 @@
     width: 100%;
     margin: 0 auto;
     padding-left: 35px;
-    max-width: 1280px;
+
     .content_subtitle{
       font-size: 60px;
       color:#fff;
@@ -19,6 +19,7 @@
       display: block;
       text-shadow: 0 0 5px rgba(0,0,0,0.4)
     }
+
     .content_text{
       font-size: 18px;
       color: #fff;
@@ -27,5 +28,26 @@
       line-height: 1.77778;
       text-shadow: 0 0 5px rgba(0,0,0,0.4)
     }
+
+    .content_btn{
+      display: flex;
+      margin: 24px 0 0 0;
+
+      .aBtn{
+        width: 180px;
+        margin-right: 10px;
+      } 
+      .gBtn {
+        width: 180px;
+      }
+
+    }
+
+ }
+}
+img.app{
+  width:100%;
+  &:hover{
+    opacity: 0.6;
   }
 }

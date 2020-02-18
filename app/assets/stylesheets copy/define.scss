@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+  }
+
 $base_fontcolor:#3CCACE;
 $base_background-color:#d2d2d2;
 h1,h2{
@@ -16,14 +20,3 @@ li{
   background-color:#3CCACE;
   }
 
-  .content_btn{
-    display: flex;
-    margin: 24px 0 0 0;
-  }
-    .Btn{
-      width: 180px;
-      padding-right: 10px;
-      &:hover{
-        opacity: 0.6;
-      }
-    } 
