@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
     @card = Card.new
   end
 
+
   def create
     @order = Order.create(order_params)
     @order = Item.update(status: 3)
@@ -19,3 +20,4 @@ class OrdersController < ApplicationController
   end
 
 end
+

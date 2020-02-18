@@ -19,6 +19,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @seller_user = User.find_by(id: @item.seller_user_id)
+    @images = Image.where(item_id: @item.id)
+    @first_image = Image.find_by(item_id: @item.id)
     # 各条件はhelperに記載
   end
 
