@@ -6,11 +6,11 @@
   %h2.productHead__new-item
     = link_to '新規投稿商品', '#', class: "new-item-link"
   .productLists
-    - @new_items.zip(@new_images) do |item,image|
+    - @new_items.each do |item|
       .productList
         =link_to '', '#',class: "item-card-link"
         .productList-img
-          %img.new-item{src: "#{image.image}"}/
+          %img.new-item{src: "#{new_image(item).image}"}/
         .productList-body
           %h2.item-title
             =item.name
@@ -29,11 +29,11 @@
   %h2.productHead__new-item
     = link_to 'アーカイバ', '#', class: "new-item-link"
   .productLists
-    - @new_items.zip(@new_images) do |item,image|
+    - @new_items.each do |item|
       .productList
         =link_to '', '#',class: "item-card-link"
         .productList-img
-          %img.new-item{src: "#{image.image}"}/
+          %img.new-item{src: "#{new_image(item).image}"}/
         .productList-body
           %h2.item-title
             =item.name
@@ -45,3 +45,19 @@
             .productList-body__like
               %p 0
               %p.like-star ★
+    -# - @new_items.zip(@new_images) do |item,image|
+    -#   .productList
+    -#     =link_to '', '#',class: "item-card-link"
+    -#     .productList-img
+          -# %img.new-item{src: "#{image.image}"}/
+        -# .productList-body
+        -#   %h2.item-title
+        -#     =item.name
+        -#   .productList-body__detail
+        -#     %ul
+        -#       %li.item
+        -#         ="#{item.price}円"
+        -#       %li.item (税込)
+        -#     .productList-body__like
+        -#       %p 0
+        -#       %p.like-star ★

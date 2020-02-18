@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @new_items = Item.all.order(created_at: "desc").limit(3)
-    @new_images = Image.all.order(created_at: "desc").limit(3)
+    @images = Image.all
   end
   
   def new
