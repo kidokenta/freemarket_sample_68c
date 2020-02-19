@@ -38,9 +38,7 @@
           %p.sellcontent-explain-category
             カテゴリー
             %span.require 必須
-            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
-            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
-            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
+            = f.select :category_id,@category_parent_array,{},{class: 'content-explain1', id: "parent-category"}
           %p.sellcontent-explain-status
             商品の状態
           %select.content-explain2
