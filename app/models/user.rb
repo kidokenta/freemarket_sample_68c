@@ -13,7 +13,8 @@ class User < ApplicationRecord
   # validates :phonenumber  , format: { with:  /\A\d{10}$|^\d{11}\z/ }
 
   has_many :items
-  has_many :likes
+  has_many :likes,dependent: :destroy
+  has_many :like_items,through: :likes,source: :item
   has_many :comments
   has_many :orders
   has_one :adress
