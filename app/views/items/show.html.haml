@@ -51,9 +51,10 @@
         .other-content__like ★ お気に入り 0
         .other-content__inappropriate-repot ■不適切な商品の通報
 
-  - if @item.seller_user_id == current_user.id
-    = render partial: "edit-btm"
-    = render partial: "comment-form"
-  - else
-    = render partial: "show-buybtm"
-    = render partial: "comment-form"
+  - if user_signed_in?
+    - if @item.seller_user_id == current_user.id
+      = render partial: "edit-btm"
+      = render partial: "comment-form"
+    - else
+      = render partial: "show-buybtm"
+      = render partial: "comment-form"
