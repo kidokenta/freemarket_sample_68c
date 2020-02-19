@@ -1,1 +1,64 @@
-aaa
+= render partial:"items/header1" 
+.category_lappar
+  .breadCrumbs
+    .breadCrumbs.ul
+      .li FURIMA
+      .li.fa.fa-angle-right
+        >
+      .li カテゴリー一覧
+
+.category_lappar2
+  .category-index.l-single-container
+    .visible-sp
+      .search-category
+        .gray.clearfix
+          カテゴリー一覧
+        .category-list-nav.slide-nav-parent.text-center.clearfix
+          - @parents.each do |parent|
+            = link_to "#{parent.name}", class: "category-list-a" 
+.titleBox.titleBox--index
+  .catTitle{:href => "/categories/1", :id => "レディース"} レディース
+  .subtitle トップス
+  .catContents
+    .catItems
+      - @tops.each do |top|
+        = link_to "#{top.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb
+  .subtitle ジャケット/アウター
+  .catContents
+    .catItems
+      - @jakets.each do |jaket|
+        = link_to "#{jaket.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb
+  .subtitle パンツ
+  .catContents
+    .catItems
+      - @pants.each do |pant|
+        = link_to "#{pant.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb
+  .subtitle スカート
+  .catContents
+    .catItems
+      - @skirts.each do |skirt|
+        = link_to "#{skirt.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb
+  .subtitle ワンピース
+  .catContents
+    .catItems
+      - @onepieces.each do |onepiece|
+        = link_to "#{onepiece.name}", class: "category-list-b"   
+.titleBox.titleBox--index
+  .catTitleb
+  .subtitle ワンピース
+  .catContents
+    .catItems
+      - @onepieces.each do |onepiece|
+        = link_to "#{onepiece.name}", class: "category-list-b"
+            
+= render partial:"items/appBanner"
+= render partial:"items/footer"
+

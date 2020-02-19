@@ -1,3 +1,9 @@
+user_spec.rb
+spec/models/user_spec.rb
+
+
+
+
 require 'rails_helper'
 describe User do
   describe '#create' do
@@ -118,4 +124,3 @@ describe User do
     
   end
 end
-
