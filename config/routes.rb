@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :items do
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
+    resources :likes, only:[:create,:destroy]
   end
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
     #Ajaxで動くアクションのルートを作成
