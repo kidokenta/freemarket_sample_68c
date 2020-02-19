@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   end
   resources :adresses
   resources :items do
-    resources :orders
+    patch  :buy,      on: :member
+    get  :comfirm,      on: :member
   end
   resources :card, only: [:new, :show] do
     collection do
