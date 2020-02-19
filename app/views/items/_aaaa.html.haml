@@ -1,0 +1,7 @@
+.image
+  .image__main
+    = image_tag @first_image.image ,class:"image__main__photo"
+  .image__sub
+    - @images.each do |image|
+      .image__sub__thumb
+        = image_tag image.image ,class:"image__sub__thumb__photo"
