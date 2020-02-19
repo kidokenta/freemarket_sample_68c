@@ -13,12 +13,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(post_params)
+    @item = Item.create(item_params)
   end
 
   def show
     @item = Item.find(params[:id])
     @seller_user = User.find_by(id: @item.seller_user_id)
+    @images = Image.where(item_id: @item.id)
+    @first_image = Image.find_by(item_id: @item.id)
     # 各条件はhelperに記載
   end
 
@@ -34,7 +36,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-
     params.require(:item).permit(:name,:explain,:category_id,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_company,:shipping_region,:price,:size).merge(seller_user_id: current_user.id)
   end
 

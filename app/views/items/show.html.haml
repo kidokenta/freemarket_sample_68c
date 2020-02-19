@@ -9,7 +9,7 @@
       = @item.name
     .item--show--main--contents
       .item--show--main--contents__left
-        -# %img{:src => "#{@item.imeges}"}/
+        = render partial: "aaaa"
       .item--show--main--contents__right
         %table.item-show-table
           %tr
@@ -39,15 +39,14 @@
           %tr
             %td.item-show-td 発送日の目安
             %td= shipping_days
-    .item--show--main--price
-      %span#price
-        = @item.price
-      %span#tax (税込)
-      %span#shipping_fee= shipping_fee
+  .item--show--main--price
+    %span#price
+      = @item.price
+    %span#tax (税込)
+    %span#shipping_fee= shipping_fee
   - if @item.seller_user_id == current_user.id
     = render partial: "edit-btm"
     = render partial: "comment-form"
   - else
     = render partial: "show-buybtm"
     = render partial: "comment-form"
-

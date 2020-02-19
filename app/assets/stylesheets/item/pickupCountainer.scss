@@ -1,7 +1,6 @@
 .pickupContainer{
   text-align: center;
   padding: 26px;
-  box-sizing: border-box;
   h2.productHead{
   &__new-item{
     font-size: 24px;
@@ -21,11 +20,12 @@
   .productList{
     background-color: white;
     display: inline-block;
-}
-}
-    .productList:hover {
+    &:hover {
       opacity: .5;
     }
+  }
+}
+
       .productList-img{
         position: relative;
         margin: 0;
@@ -43,13 +43,13 @@
       overflow: hidden;
       font-size: 16px;
     }
-    &__detail{
-      display: inline-block;
-      display: flex;
-      justify-content: space-between;
+        &__detail{
+          display: inline-block;
+          display: flex;
+          justify-content: space-between;
+        }
+        &__like{
+          display: flex;
+        }
+      }
     }
-    &__like{
-      display: flex;
-    }
-  }
-}

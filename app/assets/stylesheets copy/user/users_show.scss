@@ -1,0 +1,144 @@
+.container{
+  height: 1020px;
+  width: 100%;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: center;
+  .l-side {
+    width: 280px;
+    height: max-content;
+    background-color:lime;
+    margin: 100px 40px 0 0;
+    nav.mypage-nav{
+      height: max-content;
+      width:100%;
+      background-color: silver;
+      ul.mypage-nav-list{
+        width: 100%;
+        height: 50px;
+        li.side_li{
+          height: 50px;
+          width: 100%;
+          background-color: tan;
+          a.side_a{
+            height: 100%;
+            width: 100%;
+            background-color: teal;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            &:hover{
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+     }
+  }
+  .l-content{
+    height: 865px;
+    width: 700px;
+    .mypage-user-icon{
+      margin-top: 100px;
+      height: 200px;
+      width: 100%;
+      background-image:image-url("material/pict/bg-back.jpg");
+      display: flex;
+      align-items: center;
+      .usericon{
+        height: 100px;
+        width: 100%;
+        
+        figure {
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+          img.icon_img{
+              vertical-align: middle;
+              height: 100%;
+              width: 100%;
+            }
+          }
+          h2.bold {
+            margin: 8px 0 0;
+            font-size: 16px;
+            text-align: center;
+
+          }
+          .mypage-number{
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .mypage-tab-container-notification-todo{
+      height: 200px;
+      width: 100%;
+      background-color: magenta;
+      .mypage-tabs{
+        background: #eee;
+        height: 80px;
+        width:100%;
+        display: block;
+        display: flex;
+        text-align: center;
+        li.active {
+          background: #fff;
+          width: 50%;
+          height: 100%;
+          display: inline-block;
+         }
+         li.notactive{
+           height: 100%;
+           width: 50%;
+           display: inline-block;
+         }
+      }
+      .tab-container{
+        height: 200px;
+        width: 100%;
+        background-color:white;
+      }
+    }
+    .mypage-tab-container{
+    height: max-content;
+    width: 100%;
+    background-color: salmon;
+    margin-top: 150px;
+    .mypage-tab-head {
+      padding: 0 4%;
+      background: #fafafa;
+      font-size: 20px;
+      line-height: 72px;
+      text-align: center;
+      }
+    ul.mypage-tabs{
+      background: #eee;
+      display: flex;
+      font-size: 20px;
+      text-align: center;
+      line-height: 100px;
+      li.active{
+        height: 100px;
+        width: 50%;
+        display: inline-block;
+        }
+      li.notactive{
+        height: 100px;
+        width: 50%;
+        display: inline-block;
+        }
+      }
+      .tab-content{
+        height: 160px;
+        width: 100%;
+        background-color: white;
+      }
+    }
+  }

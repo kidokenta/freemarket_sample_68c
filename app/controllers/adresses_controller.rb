@@ -5,7 +5,7 @@ class AdressesController < ApplicationController
   end
 
   def create
-    @adress = Adress.create(adress_params)
+    @adress = Adress.new(adress_params)
     if @adress.save
       redirect_to root_path
     end

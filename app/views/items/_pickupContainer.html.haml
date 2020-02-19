@@ -10,7 +10,7 @@
       .productList
         =link_to '', '#',class: "item-card-link"
         .productList-img
-          %img.new-item{src: "#{new_image(item).image}"}/
+          =image_tag "#{new_image(item).image}", class: "new-item"
         .productList-body
           %h2.item-title
             =item.name
@@ -33,7 +33,7 @@
       .productList
         =link_to '', '#',class: "item-card-link"
         .productList-img
-          %img.new-item{src: "#{new_image(item).image}"}/
+          =image_tag "#{new_image(item).image}", class: "new-item"
         .productList-body
           %h2.item-title
             =item.name
@@ -45,19 +45,4 @@
             .productList-body__like
               %p 0
               %p.like-star ★
-    -# - @new_items.zip(@new_images) do |item,image|
-    -#   .productList
-    -#     =link_to '', '#',class: "item-card-link"
-    -#     .productList-img
-          -# %img.new-item{src: "#{image.image}"}/
-        -# .productList-body
-        -#   %h2.item-title
-        -#     =item.name
-        -#   .productList-body__detail
-        -#     %ul
-        -#       %li.item
-        -#         ="#{item.price}円"
-        -#       %li.item (税込)
-        -#     .productList-body__like
-        -#       %p 0
-        -#       %p.like-star ★
+
