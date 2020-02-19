@@ -34,6 +34,21 @@ class CategoriesController < ApplicationController
     @list23s = Category.where(ancestry: "200/335")
     @list24s = Category.where(ancestry: "200/340")
     @list25s = Category.where(ancestry: "200/344")
+    @list26s = Category.where(ancestry: "346/347") #ベビー・キッズ
+    @list27s = Category.where(ancestry: "346/359")
+    @list28s = Category.where(ancestry: "346/359")
+    @list29s = Category.where(ancestry: "346/368")
+    @list30s = Category.where(ancestry: "346/396")
+    @list31s = Category.where(ancestry: "346/411")
+    @list31s = Category.where(ancestry: "346/420")
+    @list32s = Category.where(ancestry: "346/420")
+    @list33s = Category.where(ancestry: "346/426")
+    @list34s = Category.where(ancestry: "346/441")
+    @list35s = Category.where(ancestry: "346/448")
+    @list36s = Category.where(ancestry: "346/448")
+    @list37s = Category.where(ancestry: "346/458")
+    @list38s = Category.where(ancestry: "346/464")
+    
   end
 
   def new
