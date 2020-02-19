@@ -30,4 +30,4 @@ class CategoriesController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
  end
 end
-end
+
