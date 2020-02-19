@@ -34,13 +34,21 @@
         .sellcontent-explain-left
           %p.sellcontent-explain-left-title
             商品の詳細
-        .sellcontent-explain-right
-          %p.sellcontent-explain-category
-            カテゴリー
-            %span.require 必須
-            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
-            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
-            = f.collection_select :category_id,@parents,:id,:name,{prompt: "---"},class: 'content-explain1', id: "parent-form", name: 'item[category_ids][]'
+        .listing-form-box
+          .listing-product-detail__category
+            = f.label 'カテゴリー', class: 'listing-default__label'
+            %span.listing-default--require 必須
+            .listing-select-wrapper
+              .listing-select-wrapper__box
+              //親カテゴリーのセレクトボックスの生成
+              = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+        -# .sellcontent-explain-right
+          -# %p.sellcontent-explain-category
+          -#   カテゴリー
+          -#   %span.require 必須
+          -#   = f.select :category_id,@category_parent_array,{},{class: 'content-explain1', id: "parent-category"}
+          -#   %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
           %p.sellcontent-explain-status
             商品の状態
           %select.content-explain2

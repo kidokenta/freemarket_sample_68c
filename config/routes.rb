@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   resources :items do
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
-  end
-  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+  end
+  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
   resources :adresses
   resources :card, only: [:new, :show] do
     collection do

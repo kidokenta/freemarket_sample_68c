@@ -75,7 +75,6 @@ gem 'pry-byebug'
 gem 'pry-doc'
 gem 'devise'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'devise'
 gem 'rails-i18n'
 
 gem 'haml-rails'

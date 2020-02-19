@@ -12,7 +12,7 @@ class Item < ApplicationRecord
 
 
   has_many :comments
-  has_many :likes, dependnt: :destroy
+  has_many :likes, dependent: :destroy
   has_many :liking_users,through: :likes,source: :user
   has_many :images
   belongs_to :user
