@@ -1,27 +1,22 @@
 Rails.application.routes.draw do
+  root "items#index"
   get 'card/new'
   get 'card/show'
-  get 'orders/show'
   get 'categories/index'
   devise_for :users
-  root "items#index"
   resources :users, only: :show
-  resources :items
   resources :adresses
+  resources :items do
+    patch  :buy,      on: :member
+    get  :comfirm,      on: :member
+  end
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-  resources :items  do
-    resources :orders
-  end
   resources :adresses
-  resources :items do
-    patch  :buy,      on: :member
-    get  :comfirm,      on: :member
-  end
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
