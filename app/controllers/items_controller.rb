@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :redirect_root, except: :index
+  before_action :redirect_root, except: [:index, :show]
 
   def index
     @new_items = Item.all.order(created_at: "desc").limit(3)
