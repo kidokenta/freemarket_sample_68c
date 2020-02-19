@@ -1,0 +1,82 @@
+.breadCrumbs{
+  display: flex;
+  width: 100%;
+  border-top: 1px solid #eee;
+  position: relative;
+  padding: 0 40px;
+  }
+  .breadCrumbs ul {
+    padding: 17px 0 16px;
+    width: 100%;
+    max-width: 1040px;
+    font-size: 14px;
+    margin: 0 auto;
+    }
+
+
+    .category-index {
+      background: transparent;
+      }
+      .search-category {
+        width: 700px;
+        margin: 0 auto;
+        padding: 20px 0;
+        }
+        .gray.clearfix {
+          padding: 8px 0;
+          font-size: 22px;
+          line-height: 1.4
+          }
+          .category-list-nav a {
+            background-color: #fff;
+            float: left;
+            border-radius: 4px;
+            min-width: 80px;
+            line-height: 40px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.4);
+            text-align: center;
+            padding: 0 30px;
+            margin: 5px;
+            color: #333;
+            text-decoration: none;
+            }
+            // .category_lappar2{
+            //   height: 100vh;
+            //   }
+            .titleBox {
+              margin: 8px 0;
+              display: inline-block;
+              width: calc(100% / 2);
+              padding: 0 350px;
+              width: 700px;
+              }
+            .titleBox a{
+              margin: 8px 0;
+              display: inline-block;
+              width: calc(100% / 2);
+              float: left;
+              }
+              .catTitle {
+                text-decoration: none;
+                display: block;
+                border-radius: 5px 5px 0 0;
+                padding: 16px 10px 8px;
+                background-color: #3CCACE;
+                color: #fff;
+                text-align: left;
+                font-weight: bold;
+                font-size: 22px;
+                }
+              .subtitle {
+                color: #333;
+                font-weight: bold;
+                font-size: 16px;
+                text-decoration: none;
+                margin: 15px 10px;
+                }
+              .catItems{
+                margin: 0 0 0 20px;
+                }
+                .catContents{
+                  padding: 16px;
+                }
