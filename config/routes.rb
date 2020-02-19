@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :adresses
   resources :items do
-    resources :orders
+    patch  :buy,      on: :member
+    get  :comfirm,      on: :member
   end
   resources :card, only: [:new, :show] do
     collection do
