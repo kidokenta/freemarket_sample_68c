@@ -44,10 +44,12 @@ class ItemsController < ApplicationController
     @card = Card.find_by(user_id: current_user.id)
     @adress = Adress.find_by(user_id: current_user.id)
     @first_image = Image.find_by(item_id: @item.id)
-    card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = "sk_test_fd3e60d1e815b60021e7f5d9"
-    customer = Payjp::Customer.retrieve(card.customer_id)
-    @default_card_information = customer.cards.retrieve(card.card_id)
+    if @card
+      card = Card.where(user_id: current_user.id).first
+      Payjp.api_key = "sk_test_fd3e60d1e815b60021e7f5d9"
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
   end
 
   def buy
@@ -59,11 +61,17 @@ class ItemsController < ApplicationController
     @card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = 'sk_test_fd3e60d1e815b60021e7f5d9'
     charge = Payjp::Charge.create(
-    amount: @item.price,
-    customer: @card.customer_id, #顧客ID
-    card: params['payjp-token'],
-    currency: 'jpy'
+      amount: @item.price,
+      customer: @card.customer_id, #顧客ID
+      card: params['payjp-token'],
+      currency: 'jpy'
     )
+    redirect_to action: "transaction"
+  end
+  
+  def transaction
+    @item = Item.find(params[:id])
+    @first_image = Image.find_by(item_id: @item.id)
   end
 
 
