@@ -422,6 +422,10 @@
              float:right;
              position: relative;
              bottom:20px;
+             ::placeholder{
+               float:right;
+
+             }
            }
 
           }
@@ -538,4 +542,8 @@
    margin:0 auto;
    margin-top:60px;
    cursor: pointer;
+  }
+
+  .hidden2{
+    display:none;
   }

@@ -15,6 +15,7 @@ class Item < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liking_users,through: :likes,source: :user
   has_many :images
+  accepts_nested_attributes_for :images
   belongs_to :user
   belongs_to :brand
   belongs_to :category

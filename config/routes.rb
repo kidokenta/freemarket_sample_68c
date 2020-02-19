@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'images/create'
   root "items#index"
   get 'card/new'
   get 'card/show'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :adresses
   resources :items do
+    resources :images, only: :create
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
     #Ajaxで動くアクションのルートを作成
