@@ -49,4 +49,25 @@ module ItemsHelper
     end
   end
 
+  def transaction_message_for_buyer
+    if @item.status == 3
+      transaction_message_for_buyer = "商品を購入しました発送までお待ちください"
+    elsif @item.status == 4
+      transaction_message_for_buyer = "商品が発送されました"
+    elsif @item.status == 5
+      transaction_message_for_buyer = "取引完了"
+    end
+  end
+
+  def transaction_message_for_seller
+    if @item.status == 3
+      transaction_message_for_seller = "商品が購入されました。発送をお願いします"
+    elsif @item.status == 4
+      transaction_message_for_seller = "商品を発送しました"
+    elsif @item.status == 5
+      transaction_message_for_seller = "取引完了"
+    end
+  end
+
+
 end

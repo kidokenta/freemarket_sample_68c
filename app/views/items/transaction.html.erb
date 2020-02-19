@@ -1,0 +1,52 @@
+<div class="single-header">
+  <img src="/logo.png" class="header_img">
+</div>
+
+
+<div class="transaction--head">
+  <h2>取引画面</h2>
+</div>
+<div class="transaction--top">
+  <% if @item.buyer_user_id == current_user.id %>
+    <h4 class="transaction--message"><%= transaction_message_for_buyer %></h4>
+  <% elsif @item.seller_user_id == current_user.id %>
+    <%= transaction_message_for_seller %>
+  <% end %>
+</div>
+
+<%= link_to item_path ,id:"transaction--item--link" do %>
+  <div class="transaction--item">
+    <div class="transaction--item--top">
+      <%= image_tag "#{@first_image.image}" ,class:"transaction--item--image" %>
+      <%= @item.name %>
+    </div>
+    <div class="transaction--item--bottom">
+      <p class="transaction--item--info">購入金額：<%= number_to_currency(@item.price) %></p>
+      <p class="transaction--item--info">商品サイズ：<%= @item.size %></p>
+      <p class="transaction--item--info">送料：<%= shipping_fee %></p>
+      <p class="transaction--item--info">発送までの日数：<%= shipping_days %></p>
+    </div>
+  </div>
+<% end %>
+
+<div class="transaction--actions">
+  <% if @item.buyer_user_id == current_user.id %>
+    <% if @item.status == 3 %>
+    <p class="transaction--action--info">商品を購入しました。<br>発送までお待ちください。</p>
+    <% elsif @item.status == 4 %>
+      <p class="transaction--action--info">商品が発送されました。<br>到着後受け取りボタンを押してください。</p>
+      <%= link_to "商品を受け取りました", "#", class:"transaction--action--btn" %>
+    <% elsif @item.status == 5 %>
+      <p class="transaction--action--info">取引完了です。<br>ご利用ありがとうございます。</p>
+    <% end %>
+  <% elsif @item.seller_user_id == current_user.id %>
+    <% if @item.status == 3 %>
+      <p class="transaction--action--info">商品が購入されました。<br>発送をお願いします。</p>
+      <%= link_to "商品を発送しました", "#", class:"transaction--action--btn" %>
+    <% elsif @item.status == 4 %>
+      <p class="transaction--action--info">商品発送済み。<br>受け取りまでお待ちください。</p>
+    <% elsif @item.status == 5 %>
+      <p class="transaction--action--info">商品が受け取られました。<br>ご利用ありがとうございます。</p>
+    <% end %>
+  <% end %>
+</div>
