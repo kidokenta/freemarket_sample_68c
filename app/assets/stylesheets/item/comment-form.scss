@@ -1,6 +1,11 @@
-.item-detail-message{
-  width: 700px;
+.item-detail{
+  padding-top: 10px;
+  width:700px;
+  margin: 0 auto;
   margin: 8px auto;
+  background-color:white;
+  &__message{
+    padding:10px;
   }
   .message-content{
     padding: 24px;
@@ -9,11 +14,12 @@
     .message-form{
       margin: 0;
       }
-      .message-form p {
+      p.comment-rule {
         margin: 8px 0 0;
-        padding: 8px;
+        padding: 10px;
         font-size: 14px;
         background: #fff6de;
+        text-align: left;
         }
         .textarea-default {
           display: block;
@@ -36,18 +42,19 @@
             text-align: center;
             }
           .btn-gray {
-            background: #aaa;
-            border: 1px solid #aaa;
+            background: $base_fontcolor;
+            border: 1px solid  $base_fontcolor;
             color: #fff;
             }
           .btn-default {
-            display: block;
-            width: 100%;
+            width: 40%;
+            font-size: 18px;
             line-height: 48px;
-            font-size: 14px;
-            border: 1px solid transparent;
-            -webkit-transition: all ease-out .3s;
-            transition: all ease-out .3s;
-            cursor: pointer;
-            text-align: center;
+            background: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 100px;
+            display: inline-block;
             }
+}

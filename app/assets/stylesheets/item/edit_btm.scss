@@ -1,12 +1,17 @@
-.edit_btm{
-  display: block;
-  margin-top: 16px;
-  background: $base_fontcolor;
-  font-size: 14px;
-  color: #fff;
-  line-height: 56px;
-  text-align: center;
-  font-weight: 600;
-  -webkit-transition: all ease-out .3s;
-  transition: all ease-out .3s;
+.edit-box{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  width:70%;
+  margin: 0 auto;
+  &__edit-btm{
+    width: 40%;
+    font-size: 18px;
+    line-height: 48px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 100px;
+    display: inline-block;
   }
+}
