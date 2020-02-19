@@ -89,3 +89,4 @@ gem 'dotenv-rails'
 gem 'rubocop', require: false
 gem 'ancestry'
 gem "font-awesome-rails"
+gem 'active_hash'

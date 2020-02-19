@@ -1,0 +1,69 @@
+.single-header{
+  height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #d2d2d2;
+  img.header_img{
+    height: 50px;
+    margin-top: 15px;
+  }
+}
+
+.transaction--head {
+  text-align: center;
+  padding-top: 60px;
+}
+.transaction--top {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: peachpuff;
+  width: 450px;
+  padding: 50px;
+  .transaction--message {
+  }
+}
+
+#transaction--item--link {
+  text-decoration: none;
+  color: black;
+}
+.transaction--item {
+  width: 470px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 30px;
+  border: 1px solid gray;
+  &--top {
+    display: flex;
+    justify-content: space-between;
+    .transaction--item--image {
+      width: 200px;
+    }
+  }
+  &--bottom {
+    margin-top: 20px;
+    text-align: left;
+    .transaction--item--info {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.transaction--actions {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  .transaction--action--info {
+    margin-bottom: 50px;
+  }
+  .transaction--action--btn {
+    text-decoration: none;
+    background-color: $base-fontcolor;
+    color: white;
+    padding: 10px 100px;
+  }
+}

@@ -4,9 +4,11 @@
   width:100vw;
   overflow: scroll;
   .newtitle{
-    height:128px;
-    line-height:128px;
+    height:100px;
+    line-height:100px;
     text-align: center;
+    padding-top:3px;
+    padding-bottom:10px;
     font-size:40px;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   }
@@ -422,6 +424,10 @@
              float:right;
              position: relative;
              bottom:20px;
+             ::placeholder{
+               float:right;
+
+             }
            }
 
           }
@@ -539,3 +545,8 @@
    margin-top:60px;
    cursor: pointer;
   }
+
+  .hidden2{
+    display:none;
+  }
+  

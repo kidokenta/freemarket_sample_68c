@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'images/create'
   root "items#index"
   get 'card/new'
   get 'card/show'
@@ -7,16 +8,19 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :adresses
   resources :items do
+    resources :images, only: :create
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
     resources :likes, only:[:create,:destroy]
   end
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
-    #Ajaxで動くアクションのルートを作成
+    get  :transaction,      on: :member
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+  end
+  resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :adresses
   resources :card, only: [:new, :show] do
     collection do
@@ -25,5 +29,4 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-end
 end

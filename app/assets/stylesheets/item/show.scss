@@ -28,12 +28,16 @@
       }
       .item--show--main--content--price{
         margin: 0 auto;
-        padding: 20px;
+        padding: 0 20px 50px;
           h2.item-price{
             padding: 10px 0;
             display: inline-block;
-      }
-    }
+          }
+        }
+        .item-name-box{
+          text-align: left;
+          padding: 0 0 10px 80px;
+        }
     .item--show--main--contents__low {
         .item-show-table {
           width: 80%;
