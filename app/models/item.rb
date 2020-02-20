@@ -16,6 +16,7 @@ class Item < ApplicationRecord
     validates :category, inclusion: { in: %w(small medium large),
     message: "%{value}は有効な値ではありません" }, allow_nil: true
  
+
   has_many :comments
   has_many :likes
   has_many :images
