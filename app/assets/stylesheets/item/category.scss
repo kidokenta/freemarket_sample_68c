@@ -90,7 +90,21 @@
                   margin: 8px 0;
                   display: inline-block;
                   width: calc(100% / 2);
+                  color: #333;
+                  font-weight: bold;
+                  font-size: 16px;
+                  text-decoration: none;
+                  display: flow-root;
                   }
+                .test-d {
+                  margin: 8px 0;
+                  display: inline-block;
+                  width: calc(100% / 2);
+                  float: left;
+                  color: #ffb340;
+                  text-decoration: none;
+                  font-size: 14px;
+                }
               .catItems{
                 margin: 0 0 0 20px;
                 }
