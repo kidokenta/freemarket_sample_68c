@@ -35,8 +35,8 @@ class ItemsController < ApplicationController
 
   def create
     binding.pry
-    item = current_user.items.new(item_params)
-    item.save
+    @item = Item.new(item_params)
+    @item.save
     binding.pry
     redirect_to root_path
   end

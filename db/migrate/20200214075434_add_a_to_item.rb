@@ -6,8 +6,8 @@ class AddAToItem < ActiveRecord::Migration[5.2]
     add_column :items, :brand_id ,:integer
     add_column :items, :status ,:integer
     add_column :items, :condition ,:integer
-    add_column :items, :shipping_fee ,:integer
-    add_column :items, :shipping_days ,:integer
+    add_column :items, :shipping_fee ,:string
+    add_column :items, :shipping_days ,:string
     add_column :items, :shipping_company ,:integer
     add_column :items, :shipping_region ,:string
     add_column :items, :price ,:integer
