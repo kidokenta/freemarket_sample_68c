@@ -17,6 +17,11 @@
   display: flex;
   justify-content: space-around;
   height: max-content;
+  a.item-card-link{
+    text-decoration: none;
+    color: black;
+  }
+}
   .productList{
     background-color: white;
     display: inline-block;
@@ -24,7 +29,7 @@
       opacity: .5;
     }
   }
-}
+
 
       .productList-img{
         position: relative;
