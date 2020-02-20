@@ -27,19 +27,19 @@
           font-size: 22px;
           line-height: 1.4
           }
-          .category-list-nav a {
-            background-color: #fff;
-            float: left;
-            border-radius: 4px;
-            min-width: 80px;
-            line-height: 40px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.4);
-            text-align: center;
-            padding: 0 30px;
-            margin: 5px;
-            color: #333;
-            text-decoration: none;
-            }
+          // .category-list-nav a {
+          //   background-color: #fff;
+          //   float: left;
+          //   border-radius: 4px;
+          //   min-width: 80px;
+          //   line-height: 40px;
+          //   box-shadow: 0 0 5px rgba(0,0,0,0.4);
+          //   text-align: center;
+          //   padding: 0 30px;
+          //   margin: 5px;
+          //   color: #333;
+          //   text-decoration: none;
+          //   }
             // .category_lappar2{
             //   height: 100vh;
             //   }
@@ -56,7 +56,7 @@
               width: calc(100% / 2);
               float: left;
               }
-              .catTitle {
+              .catTitle{
                 text-decoration: none;
                 display: block;
                 border-radius: 5px 5px 0 0;
@@ -67,16 +67,40 @@
                 font-weight: bold;
                 font-size: 22px;
                 }
-              .subtitle {
-                color: #333;
-                font-weight: bold;
-                font-size: 16px;
-                text-decoration: none;
-                margin: 15px 10px;
+                .catTitlea{
+                  margin: 8px 0;
+                  display: inline-block;
+                  width: calc(100% / 2);
+                  float: left;
+                  }
+
+
+                .test-b {
+                  text-decoration: none;
+                  display: block;
+                  border-radius: 5px 5px 0 0;
+                  padding: 16px 10px 8px;
+                  background-color: #3CCACE;
+                  color: #fff;
+                  text-align: left;
+                  font-weight: bold;
+                  font-size: 22px;
                 }
+                .test-c {
+                  margin: 8px 0;
+                  display: inline-block;
+                  width: calc(100% / 2);
+                  }
               .catItems{
                 margin: 0 0 0 20px;
                 }
                 .catContents{
                   padding: 16px;
                 }
+                .list-1{
+                  color: #333;
+                  font-weight: bold;
+                  font-size: 16px;
+                  text-decoration: none;
+                }
+               

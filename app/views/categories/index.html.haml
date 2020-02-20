@@ -14,8 +14,11 @@
         .gray.clearfix
           カテゴリー一覧
         .category-list-nav.slide-nav-parent.text-center.clearfix
-          - @parents.each do |parent|
-            = link_to "#{parent.name}", class: "category-list-a" 
+          - @parents_first.each do |parent| 
+            = link_to "#{parent.name}", "#",class: "test-b"
+            - category_aaa(parent).each do |v|
+              = link_to "#{v.name}", "#", class: "test-c"
+
 .titleBox.titleBox--index
   .catTitle{:href => "/categories/1", :id => "レディース"} レディース
   .subtitle トップス
@@ -348,12 +351,109 @@
         = link_to "#{list38.name}", class: "category-list-b" 
 .titleBox.titleBox--index
   .catTitle インテリア・住まい・小物
-  .subtitle ベビー服(女の子用) ~95cm
+  .subtitle キッチン/食器
   .catContents
     .catItems
-      - @list26s.each do |list26|
-        = link_to "#{list26.name}", class: "category-list-b" 
+      - @list39s.each do |list39|
+        = link_to "#{list39.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle ベッド/マットレス
+  .catContents
+    .catItems
+      - @list40s.each do |list40|
+        = link_to "#{list40.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle ソファ/ソファベッド
+  .catContents
+    .catItems
+      - @list41s.each do |list41|
+        = link_to "#{list41.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle 椅子/チェア
+  .catContents
+    .catItems
+      - @list42s.each do |list42|
+        = link_to "#{list42.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle 机/テーブル
+  .catContents
+    .catItems
+      - @list43s.each do |list43|
+        = link_to "#{list43.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle 収納家具
+  .catContents
+    .catItems
+      - @list44s.each do |list44|
+        = link_to "#{list44.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle ラグ/カーペット/マット
+  .catContents
+    .catItems
+      - @list45s.each do |list45|
+        = link_to "#{list45.name}", class: "category-list-b"
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle カーテン/ブラインド
+  .catContents
+    .catItems
+      - @list46s.each do |list46|
+        = link_to "#{list46.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle ライト/照明
+  .catContents
+    .catItems
+      - @list47s.each do |list47|
+        = link_to "#{list47.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle 寝具
+  .catContents
+    .catItems
+      - @list48s.each do |list48|
+        = link_to "#{list48.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle インテリア小物
+  .catContents
+    .catItems
+      - @list49s.each do |list49|
+        = link_to "#{list49.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle 季節/年中行事
+  .catContents
+    .catItems
+      - @list50s.each do |list50|
+        = link_to "#{list50.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle その他
+  .catContents
+    .catItems
+      - @list51s.each do |list51|
+        = link_to "#{list51.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitle 本・音楽・ゲーム
+  .subtitle 本
+  .catContents
+    .catItems
+      - @list52s.each do |list52|
+        = link_to "#{list52.name}", class: "category-list-b" 
+.titleBox.titleBox--index
+  .catTitleb 
+  .subtitle 漫画
+  .catContents
+    .catItems
+      - @list53s.each do |list53|
+        = link_to "#{list53.name}", class: "category-list-b" 
 
 = render partial:"items/appBanner"
 = render partial:"items/footer"
-
