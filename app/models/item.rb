@@ -16,17 +16,14 @@ class Item < ApplicationRecord
     validates :category, inclusion: { in: %w(small medium large),
     message: "%{value}は有効な値ではありません" }, allow_nil: true
  
-    
-
-
 
   has_many :comments
   has_many :likes
   has_many :images
   accepts_nested_attributes_for :images
+  belongs_to :brand, optional:true
+  belongs_to :category, optional:true
   has_many :user
-  belongs_to :brand, optional: true
-  belongs_to :category, optional: true
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
