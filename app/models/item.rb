@@ -23,9 +23,9 @@ class Item < ApplicationRecord
   has_many :likes
   has_many :images
   accepts_nested_attributes_for :images
-  belongs_to :user
-  belongs_to :brand
-  belongs_to :category
+  has_many :user
+  belongs_to :brand, optional: true
+  belongs_to :category, optional: true
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
