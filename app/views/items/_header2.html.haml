@@ -22,7 +22,7 @@
           .nav
             %ul.listsleft
               %li.listsleft__item.listsleft__item--first
-                =link_to "カテゴリー" ,"#", class: "btm_a"
+                =link_to "カテゴリー" ,categories_path, class: "btm_a"
                 .tree.displayNone
                   %li.listsLeft__item
                     =link_to "ブランド" ,"#", class: "btm_a"
@@ -31,7 +31,7 @@
                     %li.listsRight__item.listsRight__item--iine
                       = link_to "いいね一覧", root_path, class: "btm_a"
                     %li.listsRight__item.listsRight__item--mypage
-                      = link_to "マイページ", root_path, class: "btm_a"
+                      = link_to "マイページ", user_path(current_user.id), class: "btm_a"
                     %li.listsRight__item.listsRight__item--mypage
                       = link_to "ログアウト！！", destroy_user_session_path, class: "btm_a", method: "delete"
                      
