@@ -7,7 +7,7 @@
       .breadCrumbs.ul
         .li FURIMA
         .li.fa.fa-angle-right
-          >
+          
         .li カテゴリー一覧
         .btn{:onclick => "scrollToTop()"}
   .category_lappar2
@@ -21,5 +21,5 @@
               = link_to "#{parent.name}", "#",class: "test-b"
               - category_aaa(parent).each do |v|
                 = link_to "#{v.name}", "#", class: "test-c"
-                - category_bbb(parent).each do |v|
-                  = link_to "#{v.name}", "#", class: "test-d2122"
+                - category_bbb(parent).each do |v2|
+                  = link_to "#{v2.name}", "#", class: "test-d2122"
