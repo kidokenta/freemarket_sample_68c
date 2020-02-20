@@ -7,4 +7,12 @@ module CategoriesHelper
     @ppp = @next_parent.ancestry
     @vvv = Category.where(ancestry: @ppp)
   end
+  def category_bbb(parent)
+    @bbb2 = parent.id
+    @bbb2 += 2
+    @next_parent2 = Category.find_by(id: @bbb2)
+    @ppp2 = @next_parent2.ancestry
+    @vvv2 = Category.where(ancestry: @ppp2)
+  end
+
 end
