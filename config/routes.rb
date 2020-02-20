@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users,:controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions',
+    :passwords => 'users/passwords'
+  }
   get 'images/create'
   root "items#index"
   get 'card/new'
   get 'card/show'
   get 'categories/index'
-  devise_for :users
   resources :users, only: :show
   resources :adresses
   resources :items do

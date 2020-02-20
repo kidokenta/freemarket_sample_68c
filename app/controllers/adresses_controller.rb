@@ -7,7 +7,7 @@ class AdressesController < ApplicationController
   def create
     @adress = Adress.new(adress_params)
     if @adress.save
-      redirect_to root_path
+      redirect_to card_new_path
     end
   end
 
