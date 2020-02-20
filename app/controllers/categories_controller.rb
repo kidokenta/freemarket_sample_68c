@@ -51,21 +51,17 @@ class CategoriesController < ApplicationController
     @list36s = Category.where(ancestry: "346/448")
     @list37s = Category.where(ancestry: "346/458")
     @list38s = Category.where(ancestry: "346/464")
-    @list39s = Category.where(ancestry: "481/482") #インテリア・住まい・小物
-    @list40s = Category.where(ancestry: "481/494") 
-    @list41s = Category.where(ancestry: "481/509") 
-    @list42s = Category.where(ancestry: "481/523")
-    @list43s = Category.where(ancestry: "481/533")
-    @list44s = Category.where(ancestry: "481/544")
-    @list45s = Category.where(ancestry: "481/557")
-    @list46s = Category.where(ancestry: "481/564")
-    @list47s = Category.where(ancestry: "481/570")
-    @list48s = Category.where(ancestry: "481/575")
-    @list49s = Category.where(ancestry: "481/580")
-    @list50s = Category.where(ancestry: "481/605")
-    @list51s = Category.where(ancestry: "481/623")
-    @list52s = Category.where(ancestry: "625/626")
-    @list53s = Category.where(ancestry: "625/642")
+    
+  end
+
   
- end
+    def create
+      @category = @item.categories.new(category_params)
+    end
+  
+    private
+    def category_params
+      params.require(:category).permit(:category)
+    end
+
 end
