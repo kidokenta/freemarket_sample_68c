@@ -1,6 +1,87 @@
-// Place all the styles related to the card controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.hidden-number{
-  display:none;
+.card--top{
+  width: 100vw;
+  .card--top--header{
+    height: 80px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #d2d2d2;
+    a.header_title_a{
+      height: 30%;
+      width: 30%;
+      img.header_img{
+        height: 50px;
+        margin-top: 15px;
+      }
+    }
+  }
+  .card--top--title {
+    text-align: center;
+    margin: 40px 0;
+  }
+}
+
+.card--main {
+  background-color: lighten($color: lightgrey, $amount: 10);
+  width: 400px;
+  padding: 40px 0 20px 0;
+  border-radius: 20px;
+  margin: 0 auto;
+  .card--images {
+    text-align: center;
+    background-color: lightgrey;
+    padding: 10px 0;
+    .card--image {
+      width: 50px;
+      vertical-align: middle;
+    }
+  }
+  #charge-form {
+    padding: 20px;
+    #card_number {
+      width: 300px;
+      height: 30px;
+      border: gray solid 1px;
+      margin: 10px 0;
+      font-size: 15px;
+      padding: 0 5px;
+    }
+    #exp_month {
+      margin: 10px 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 7px 65px 7px 10px;
+      line-height: 1.1em;
+      border-radius: 5px;
+      border: gray solid 1px;
+      background-color: white;
+    }
+    #exp_year {
+      margin: 10px 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 7px 65px 7px 10px;
+      line-height: 1.1em;
+      border: gray solid 1px;
+      background-color: white;
+    }
+    #cvc {
+      margin: 10px 0;
+      width: 200px;
+      height: 30px;
+      font-size: 15px;
+      padding: 0 5px;
+      border: gray solid 1px;
+    }
+    #token_submit {
+      margin: 0 auto;
+      background-color: $base-fontcolor;
+      color: white;
+      padding: 5px 50px;
+      margin: 20px 0 0 0 ;
+      font-size: 15px;
+    }
+  }
 }
