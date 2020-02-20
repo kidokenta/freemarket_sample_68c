@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :images, only: :create
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
-    resources :likes, only:[:create,:destroy]
+    resource :likes, only:[:create,:destroy]
   end
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
     get  :transaction,      on: :member

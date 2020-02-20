@@ -1,0 +1,9 @@
+.other-content__like
+  %i.fas.fa-thumbs-up
+    お気に入り
+  -if user_signed_in?
+    -if item.liked_by?(current_user)
+      =link_to item.likes.count,item_likes_path(item.id), method: :delete,remote: true
+    -else
+      =link_to item.likes.count,item_likes_path(item.id),method: :post,remote: true
+  - else
