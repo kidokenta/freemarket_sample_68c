@@ -42,17 +42,17 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
+  def self.show
     @seller_user = User.find_by(id: @item.seller_user_id)
     @images = Image.where(item_id: @item.id)
-    @first_image = Image.find_by(item_id: @item.id)
+    transaction
     # 各条件はhelperに記載
   end
   
-  def comfirm
+  def self.comfirm
     @card = Card.find_by(user_id: current_user.id)
     @adress = Adress.find_by(user_id: current_user.id)
-    @first_image = Image.find_by(item_id: @item.id)
+    transaction
     if @card
       card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
     redirect_to action: "transaction"
   end
   
-  def transaction
+  def self.transaction
     @first_image = Image.find_by(item_id: @item.id)
   end
 
@@ -91,6 +91,8 @@ class ItemsController < ApplicationController
       end
     end
   end
+
+  private_class_method :transaction
 
   private
   def item_params
