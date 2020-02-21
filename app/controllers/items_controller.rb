@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
     @first_image = Image.find_by(item_id: @item.id)
     if @card
       card = Card.where(user_id: current_user.id).first
-      Payjp.api_key = "sk_test_fd3e60d1e815b60021e7f5d9"
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
     @item.buyer_user_id = current_user.id
     @item.save!(validate: false)
     @card = Card.find_by(user_id: current_user.id)
-    Payjp.api_key = 'sk_test_fd3e60d1e815b60021e7f5d9'
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
       amount: @item.price,
       customer: @card.customer_id, #顧客ID
