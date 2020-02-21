@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
           @sizes = related_size_parent.children #紐づいたサイズ（親）の子供の配列を取得
        end
     end
- end
+  end
 
 
   def create

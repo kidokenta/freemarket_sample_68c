@@ -22,10 +22,9 @@ Rails.application.routes.draw do
     get  :comfirm,      on: :member
     get  :transaction,      on: :member
     resource :likes, only:[:create,:destroy,:show]
-    resources :categories, only: [:index, :show, :new, :edit, :destroy] do
-    end
   end
-
+  
+  resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :adresses
   resources :card, only: [:new, :show] do
     collection do
