@@ -42,7 +42,7 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 =f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# =f.select :brand, @item_status,{},{class:"content-explain2"}
+                =f.select :brand, @item_status,{},{class:"content-explain2"}
               %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
           %p.sellcontent-explain-status
             商品の状態
