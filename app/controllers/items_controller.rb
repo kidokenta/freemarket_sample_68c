@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
     @category_parent_array = ["---","898/970"]
        #データベースから、親カテゴリーのみ抽出し、配列化
-    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name,:id)
   end
 
   def get_category_children
@@ -92,7 +92,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:explain,:category_id,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_company,:shipping_region,:price,:size,images_attributes:[:image]).merge(seller_user_id: current_user.id)
+    params.require(:item,).permit(:name,:explain,:category_id,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,images_attributes:[:image]).merge(seller_user_id: current_user.id)
   end
 
   def redirect_root
