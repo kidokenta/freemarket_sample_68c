@@ -13,13 +13,14 @@
             %p.upbtext 最大10枚までアップロードできます
           .sell-upload-box-drop
             =f.fields_for :images do |i|
-              =i.label :image, class:"labelform" do
+              =i.label :image, class:"labelform" ,id:"img-file" do
                 .drop-box-text
                   %p.hiddenlabeltext
                     ドラッグアンドドロップ
                     %br/
                     またはクリックしてファイルをアップロード  
                     = i.file_field :image, class: "hidden"
+          .item-num-0#image-box__container
       .sellcontent1
         .sellcontentwrapper1
           .content-title1
@@ -41,7 +42,7 @@
             %span.listing-default--require 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
-                -# =f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                =f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category' , name:""}
                 -# =f.select :brand, @item_status,{},{class:"content-explain2"}
               %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
           %p.sellcontent-explain-status
