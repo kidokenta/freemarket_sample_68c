@@ -15,16 +15,16 @@ Rails.application.routes.draw do
     resources :images, only: :create
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
-    resource :likes, only:[:create,:destroy]
-  end
-  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
-    get  :transaction,      on: :member
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+    resource :likes, only:[:create,:destroy]
   end
-  resources :categories, only: [:index, :show, :new, :edit, :destroy]
+  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
+    get  :transaction,      on: :member
+  end
+
   resources :adresses
   resources :card, only: [:new, :show] do
     collection do
