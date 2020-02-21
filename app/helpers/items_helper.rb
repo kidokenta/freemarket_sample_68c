@@ -1,5 +1,7 @@
 module ItemsHelper
 
+
+
   def condition
     if @item.condition == 0
       condition = "新品・未使用"

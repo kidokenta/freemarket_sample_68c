@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
   before_action :redirect_root, except: [:index, :show]
+  before_action :set_item, only: [:buy, :show,:comfirm,:transaction]
+
 
   def index
     @new_items = Item.where(status: 0).order(created_at: "desc").limit(3)
@@ -17,9 +19,7 @@ class ItemsController < ApplicationController
     @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
     @category_parent_array = ["---","898/970"]
        #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
   end
 
   def get_category_children
@@ -35,12 +35,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    redirect_to root_path
+    if @item.save
+      redirect_to root_path
+    else
+      frash[:nitice] = "出品に失敗しました"
+    end
   end
 
   def show
-    @item = Item.find(params[:id])
     @seller_user = User.find_by(id: @item.seller_user_id)
     @images = Image.where(item_id: @item.id)
     @first_image = Image.find_by(item_id: @item.id)
@@ -48,7 +50,6 @@ class ItemsController < ApplicationController
   end
   
   def comfirm
-    @item = Item.find(params[:id])
     @card = Card.find_by(user_id: current_user.id)
     @adress = Adress.find_by(user_id: current_user.id)
     @first_image = Image.find_by(item_id: @item.id)
@@ -61,7 +62,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @item = Item.find(params[:id])
     @adress = Adress.find_by(user_id: current_user.id)
     @item.status = 3
     @item.buyer_user_id = current_user.id
@@ -78,7 +78,6 @@ class ItemsController < ApplicationController
   end
   
   def transaction
-    @item = Item.find(params[:id])
     @first_image = Image.find_by(item_id: @item.id)
   end
 
@@ -100,6 +99,10 @@ class ItemsController < ApplicationController
 
   def redirect_root
     redirect_to root_path unless user_signed_in?
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end

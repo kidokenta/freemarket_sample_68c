@@ -1,7 +1,7 @@
 .single-container
   .single-header
-    %a.header_title_a{href: root_path}
-      %img.header_img{src: "/logo.png"}
+    = link_to root_path, class: "header_title_a" do
+      =image_tag "/logo.png", class:"header_img"
   .single-main
     %section.l-single-container
       %h2.l-single-head
@@ -13,7 +13,7 @@
           .buy-item-detail
             %p.buy-item-name
               = @item.name
-            %p.buy-price-ja               
+            %p.buy-price-ja
               %span
                 = number_to_currency(@item.price)
               %span.item-shipping-fee
@@ -27,7 +27,7 @@
         .pay
           %h3.how
             支払い方法
-          - if !@card            
+          - if !@card
             = link_to new_card_path do
               登録してください
           - else
