@@ -28,7 +28,7 @@
       background-color: white;
       border-bottom:1px solid rgb(230, 228, 228);
       .sell-upload-box{
-        height:300px;
+         height:300px;
         .upload-box-header{
           height:16px;
           width:540px;
@@ -54,6 +54,14 @@
             padding-top:2px;
             padding-top:5px;
             font-size:14px;
+          }
+          .centerboxtitle{
+            position: absolute;
+            top:110px;
+            left:150px;
+            z-index:100;
+            font-weight:normal;
+            pointer-events: none;
           }
         }
         .sell-upload-box-drop{
@@ -550,3 +558,65 @@
     display:none;
   }
   
+  
+  .listing-select-wrapper__box--select{
+    height:48px;
+    width:400px;
+    padding:0px 16px;
+    margin-bottom:5px;
+    .require{
+      background: #ea352d;;
+      color:white;
+      font-weight:bold;
+      border-radius: 5px;
+      height:5px;
+      width:10px;
+      font-size:14px;
+      padding:2px;
+      position: relative;
+      bottom:2px;
+      left:5px;
+    }
+  }
+  .require{
+    background: #ea352d;;
+    color:white;
+    font-weight:bold;
+    border-radius: 5px;
+    height:5px;
+    width:10px;
+    font-size:14px;
+    padding:2px;
+    position: relative;
+    bottom:2px;
+    left:5px;
+  }
+
+  .content-explain2{
+    display:none;
+  }
+
+  .content-explain3{
+    height:48px;
+    width:400px;
+    padding:0px 16px;
+  }
+  .listing-default__label{
+  height:14px;
+  width:150px;
+  padding-bottom:10px;
+  padding-left:10px;
+  font-weight:bold;
+  font-size:14px;
+  padding-top:10px;
+          }
+          .sellcontent-explain-status{
+            height:14px;
+  width:150px;
+  padding-bottom:10px;
+  padding-left:10px;
+  font-weight:bold;
+  font-size:14px;
+  padding-top:10px;
+
+          }

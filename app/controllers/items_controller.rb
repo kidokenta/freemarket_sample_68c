@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
-    4.times{@item.images.build}
+    10.times{@item.images.build}
     # @item_status = ["選択してください","新品"、"未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
     @item_status = [0,1,2,3,4]
     @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      flash[:nitice] = "出品に失敗しました"
+      flash[:notice] = "出品に失敗しました"
     end
   end
 
