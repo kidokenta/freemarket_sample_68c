@@ -12,13 +12,25 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :adresses
   resources :items do
+    collection do
+      get 'get_size', defaults: { format: 'json' }
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
     resources :images, only: :create
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
+<<<<<<< Updated upstream
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+=======
+    resource :likes, only:[:create,:destroy,:show]
+  end
+  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
+    get  :transaction,      on: :member
+>>>>>>> Stashed changes
     resource :likes, only:[:create,:destroy]
   end
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
