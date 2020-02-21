@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     patch  :buy,      on: :member
     get  :comfirm,      on: :member
     collection do
+      get 'get_size', defaults: { format: 'json' }
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
