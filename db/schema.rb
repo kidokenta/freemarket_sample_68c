@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_083716) do
+ActiveRecord::Schema.define(version: 2020_02_21_073627) do
 
   create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postal_code", null: false
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 2020_02_18_083716) do
     t.string "ancestry"
   end
 
+  create_table "category_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "items_size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
     t.integer "item_id", null: false
@@ -71,11 +78,18 @@ ActiveRecord::Schema.define(version: 2020_02_18_083716) do
     t.integer "shipping_fee"
     t.integer "shipping_days"
     t.integer "shipping_company"
-    t.string "shipping_region"
+    t.string "shipping_region", default: ""
     t.integer "price"
-    t.string "size"
+    t.string "size", default: ""
     t.integer "seller_user_id"
     t.integer "buyer_user_id"
+  end
+
+  create_table "items_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "size"
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,6 +102,11 @@ ActiveRecord::Schema.define(version: 2020_02_18_083716) do
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "item_id", null: false
     t.integer "buyer_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
