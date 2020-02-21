@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_073627) do
+ActiveRecord::Schema.define(version: 2020_02_21_113710) do
 
   create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postal_code", null: false
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_073627) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "explain"
-    t.integer "category_id"
     t.integer "brand_id"
     t.integer "status"
     t.integer "condition"
@@ -83,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_02_21_073627) do
     t.string "size"
     t.integer "seller_user_id"
     t.integer "buyer_user_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "items_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -134,4 +135,5 @@ ActiveRecord::Schema.define(version: 2020_02_21_073627) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "categories"
 end
