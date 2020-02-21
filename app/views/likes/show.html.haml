@@ -1,0 +1,23 @@
+-if !user_signed_in? 
+  = render partial:"items/header1" 
+-else
+  = render partial:"items/header2"
+.likes_main
+  .likes_main_title
+    %h1.like
+      いいね!一覧
+  .likes_main_box
+    .likes_main_box_show
+      .likes_main_box_show_img
+      .likes_main_box_show_body
+        .likes_main_box_show_body_name
+          - @item.each do |item|
+            =item.name
+          - @like_items.each do |unko|
+            =unko.name
+        .likes_main_box_show_body_price
+          ¥700-
+      .like_icon
+        =link_to "#" do
+          %i.fas.fa-angle-right
+

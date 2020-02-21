@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   before_action :set_adress, only: [:comfirm,:buy]
 
 
+  
   def index
     @new_items = Item.where(status: 0).order(created_at: "desc").limit(3)
     @images = Image.all
@@ -14,7 +15,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
-    @item.images.build
+    4.times{@item.images.build}
     # @item_status = ["選択してください","新品"、"未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
     @item_status = [0,1,2,3,4]
     @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
@@ -36,17 +37,25 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  def get_size
+    selected_grandchild = Category.find("#{params[:grandchild_id]}") #孫カテゴリーを取得
+    if related_size_parent = selected_grandchild.products_sizes[0] #孫カテゴリーと紐付くサイズ（親）があれば取得
+       @sizes = related_size_parent.children #紐づいたサイズ（親）の子供の配列を取得
+    else
+       selected_child = Category.find("#{params[:grandchild_id]}").parent #孫カテゴリーの親を取得
+       if related_size_parent = selected_child.products_sizes[0] #孫カテゴリーの親と紐付くサイズ（親）があれば取得
+          @sizes = related_size_parent.children #紐づいたサイズ（親）の子供の配列を取得
+       end
+    end
+ end
+
+
   def create
-    binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
-<<<<<<< Updated upstream
-      frash[:nitice] = "出品に失敗しました"
-=======
       flush[:nitice] = "出品に失敗しました"
->>>>>>> Stashed changes
     end
   end
 
