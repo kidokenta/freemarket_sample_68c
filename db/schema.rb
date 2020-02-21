@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 2020_02_21_073627) do
     t.integer "shipping_fee"
     t.integer "shipping_days"
     t.integer "shipping_company"
-    t.string "shipping_region", default: ""
+    t.string "shipping_region"
     t.integer "price"
-    t.string "size", default: ""
+    t.string "size"
     t.integer "seller_user_id"
     t.integer "buyer_user_id"
   end
