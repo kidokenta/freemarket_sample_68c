@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
 
   before_action :redirect_root, except: [:index, :show]
   before_action :set_item, only: [:buy, :show,:comfirm,:transaction]
+  before_action :set_image, only: [:show,:comfirm,:transaction]
+  before_action :set_card, only: [:comfirm,:buy]
+  before_action :set_adress, only: [:comfirm,:buy]
 
 
   def index
@@ -42,17 +45,13 @@ class ItemsController < ApplicationController
     end
   end
 
-  def self.show
+  def show
     @seller_user = User.find_by(id: @item.seller_user_id)
     @images = Image.where(item_id: @item.id)
-    transaction
     # 各条件はhelperに記載
   end
   
-  def self.comfirm
-    @card = Card.find_by(user_id: current_user.id)
-    @adress = Adress.find_by(user_id: current_user.id)
-    transaction
+  def comfirm
     if @card
       card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -62,11 +61,9 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @adress = Adress.find_by(user_id: current_user.id)
     @item.status = 3
     @item.buyer_user_id = current_user.id
     @item.save!(validate: false)
-    @card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
       amount: @item.price,
@@ -77,8 +74,7 @@ class ItemsController < ApplicationController
     redirect_to action: "transaction"
   end
   
-  def self.transaction
-    @first_image = Image.find_by(item_id: @item.id)
+  def transaction
   end
 
 
@@ -105,6 +101,18 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_image
+    @first_image = Image.find_by(item_id: @item.id)
+  end
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
+  end
+
+  def set_adress
+    @adress = Adress.find_by(user_id: current_user.id)
   end
 
 end
