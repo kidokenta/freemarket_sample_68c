@@ -22,17 +22,8 @@ Rails.application.routes.draw do
     get  :comfirm,      on: :member
     get  :transaction,      on: :member
     resource :likes, only:[:create,:destroy,:show]
-  end
-  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
-    resource :likes, only:[:create,:destroy,:show]
-  end
-  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
-    get  :transaction,      on: :member
-
-    resource :likes, only:[:create,:destroy]
-  end
-  resources :categories, only: [:index, :show, :new, :edit, :destroy] do
-    get  :transaction,      on: :member
+    resources :categories, only: [:index, :show, :new, :edit, :destroy] do
+    end
   end
 
   resources :adresses
