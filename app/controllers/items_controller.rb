@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      flash[:nitice] = "出品に失敗しました"
+      flush[:nitice] = "出品に失敗しました"
     end
   end
 
