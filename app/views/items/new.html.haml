@@ -11,7 +11,6 @@
             出品画像
             %span.require 必須
             %p.upbtext 最大10枚までアップロードできます
-          .item-num-0#image-box__container
           .sell-upload-box-drop
             =f.fields_for :images do |i|
               =i.label :image, class:"labelform" ,id:"img-file" do
@@ -21,6 +20,7 @@
                     %br/
                     またはクリックしてファイルをアップロード  
                     = i.file_field :image, class: "hidden"
+          .item-num-0#image-box__container
       .sellcontent1
         .sellcontentwrapper1
           .content-title1
