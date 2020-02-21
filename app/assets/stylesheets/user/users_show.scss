@@ -1,5 +1,5 @@
 .container{
-  height: 1020px;
+  height: 1420px;
   width: 100%;
   background-color: lightseagreen;
   display: flex;
@@ -39,7 +39,7 @@
      }
   }
   .l-content{
-    height: 865px;
+    height: 800px;
     width: 700px;
     .mypage-user-icon{
       margin-top: 100px;
@@ -78,36 +78,13 @@
       }
     }
     .mypage-tab-container-notification-todo{
-      height: 200px;
+      height: 500px;
       width: 100%;
       background-color: magenta;
-      .mypage-tabs{
-        background: #eee;
-        height: 80px;
-        width:100%;
-        display: block;
-        display: flex;
-        text-align: center;
-        li.active {
-          background: #fff;
-          width: 50%;
-          height: 100%;
-          display: inline-block;
-         }
-         li.notactive{
-           height: 100%;
-           width: 50%;
-           display: inline-block;
-         }
-      }
-      .tab-container{
-        height: 200px;
-        width: 100%;
-        background-color:white;
-      }
+      box-sizing: border-box;
+      overflow: scroll;
     }
     .mypage-tab-container{
-    height: max-content;
     width: 100%;
     background-color: salmon;
     margin-top: 150px;
