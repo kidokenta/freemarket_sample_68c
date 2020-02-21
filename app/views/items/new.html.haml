@@ -11,15 +11,16 @@
             出品画像
             %span.require 必須
             %p.upbtext 最大10枚までアップロードできます
+            .centerboxtitle
+              %p.centerboxtext
+              ドラッグアンドドロップ
+              %br/
+              またはクリックしてファイルをアップロード  
           .sell-upload-box-drop
             =f.fields_for :images do |i|
               =i.label :image, class:"labelform" ,id:"img-file" do
-                .drop-box-text
-                  %p.hiddenlabeltext
-                    ドラッグアンドドロップ
-                    %br/
-                    またはクリックしてファイルをアップロード  
-                    = i.file_field :image, class: "hidden"
+                .drop-box-text 
+                  = i.file_field :image, class: "hidden"
           .item-num-0#image-box__container
       .sellcontent1
         .sellcontentwrapper1
@@ -39,16 +40,16 @@
         .listing-form-box
           .listing-product-detail__category
             = f.label 'カテゴリー', class: 'listing-default__label'
-            %span.listing-default--require 必須
+            %span.require 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
                 =f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category' , name:""}
                 -# =f.select :brand, @item_status,{},{class:"content-explain2"}
-              %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
           %p.sellcontent-explain-status
             商品の状態
+            %span.require 必須
           =f.select :status, @item_status,{},{class:"content-explain2"}
-          =f.select :condition, @item_status,{},{class: "content-explain2"}
+          =f.select :condition, @item_status,{},{class: "content-explain3"}
       .sellcontent-shipping 
         .sellcontent-shipping-left
           %p.sellcontent-shipping-left-title
