@@ -1,0 +1,73 @@
+.single-container
+  .single-header
+    = link_to root_path, class: "header_title_a" do
+      =image_tag "/logo.png", class:"header_img"
+  .single-main
+    %section.l-single-container
+      %h2.l-single-head
+        購入内容の確認
+      %section.buy-content_buy-item
+        .buy-content-inner
+          .buy-item-image
+            =image_tag "#{@first_image.image}", class: "order_img"
+          .buy-item-detail
+            %p.buy-item-name
+              = @item.name
+            %p.buy-price-ja
+              %span
+                = number_to_currency(@item.price)
+              %span.item-shipping-fee
+                = shipping_fee
+      %section.buy-content_buy-item2
+        .price
+          %h3.cost
+            支払い金額
+          %p.order_price
+            = number_to_currency(@item.price)
+        .pay
+          %h3.how
+            支払い方法
+          - if !@card
+            = link_to new_card_path do
+              登録してください
+          - else
+            %p.card_info
+              = "**** **** **** " + @default_card_information.last4
+              %br
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year      
+        .adress
+          %h3.send
+            配送先
+          .adress_info
+            - if !@adress
+              = link_to new_adress_path do
+                登録してください
+            - else
+              %span 〒
+              %span.adress_postal_code
+                =@adress.postal_code.to_s.insert(3, "-")
+              %p.adress_top
+                =@adress.prefecture
+                =@adress.town
+              %p.adress_middle
+                =@adress.number
+              %p.adress_bottom
+                =@adress.name
+        .buy
+          - if @adress  && @card
+            = button_to '購入する', buy_item_path(params[:id]),method: :patch , class:"buy_btn"
+          - else
+
+  .single-footer
+    %nav.list
+      %ul.s
+        %li.s
+          プライバシーポリシー
+        %li.s
+          メルカリ利用規約
+        %li.s
+          特定商取引に関する表記
+        %p.furima_logo
+          ©️FURIMA
