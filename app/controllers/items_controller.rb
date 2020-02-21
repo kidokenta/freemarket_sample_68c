@@ -88,7 +88,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  private_class_method :transaction
 
   private
   def item_params
