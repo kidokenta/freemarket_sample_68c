@@ -51,7 +51,6 @@ class ItemsController < ApplicationController
 
 
   def create
-    binding.pry
     @item = Item.create(item_params.merge(category_id: params[:category_id]))
     if @item.save
       redirect_to root_path
