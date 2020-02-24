@@ -74,17 +74,12 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
-    # @user = User.find(params[:id])
-    # if @item.update
-    #   redirect_to items_path, notice: ''
-    # else
-    #   #updateを失敗すると編集ページへ
-    #   redirect_to edit_item_path
-    # end
-
-    redirect_to root_path
-    # redirect_to item_path(@item.id)
+    if @item.update(edit_params)
+      redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
+    else
+      #updateを失敗すると編集ページへ
+      redirect_to edit_item_path
+    end
   end
 
   def show
@@ -134,6 +129,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name,:explain,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image]).merge(seller_user_id: current_user.id)
+  end
+
+  def edit_params
+    params.require(:item).permit(:name,:explain,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image, :id]).merge(seller_user_id: current_user.id)
   end
 
   def redirect_root

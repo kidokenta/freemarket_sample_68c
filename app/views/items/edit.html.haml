@@ -12,9 +12,6 @@
             %span.require 必須
             %p.upbtext 最大10枚までアップロードできます
             .centerboxtitle
-            -# サイズ修正
-            - @images.each do |image|
-              = image_tag image.image.url, class: "edit-image"
               -# %p.centerboxtext
               -# ドラッグアンドドロップ
               -# %br/
@@ -24,6 +21,8 @@
               =i.label :image, class:"labelform" ,id:"img-file" do
                 .drop-box-text 
                   = i.file_field :image, class: "hidden"
+                  - @images.each do |image|
+                    = image_tag image.image.url, class: "edit-image"
           .item-num-0#image-box__container
       .sellcontent1
         .sellcontentwrapper1
@@ -63,6 +62,13 @@
             %p.sellcontent-shipping-hutan-title
               配送料の負担
               %span.require 必須
+              -# = f.collection_select :shipping_fee, Item.all, :shipping_fee
+
+
+              -# syntax
+              -# = f.select (shipping_fee,@item_shipping_fee("empty"=>false,"selected"=>@item.shipping_fee))
+
+              
               -# = f.select :shipping_fee, @item_shipping_fee{@item.shipping_fee}
 
               -# 本家
