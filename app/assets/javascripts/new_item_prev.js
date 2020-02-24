@@ -2,7 +2,7 @@ $(function(){
   //querySelectorでfile_fieldを取得
   var file_field = document.querySelector('input[type=file]')
   //fileが選択された時に発火するイベント
-  $('#img-file').change(function(){
+  $('.labelform').change(function(){
     //選択したfileのオブジェクトをpropで取得
     console.log("hello")
     var file = $('input[type="file"]').prop('files')[0];
@@ -22,7 +22,7 @@ $(function(){
       </div>
     </div>`
       //image_box__container要素の前にhtmlを差し込む
-      $('#image-box__container').after(html);
+      $('.image-box__container').after(html);
     }
     fileReader.readAsDataURL(file);
   });
