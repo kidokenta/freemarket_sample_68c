@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :redirect_root, except: [:index, :show]
   before_action :set_item, only: [:buy, :show,:comfirm,:transaction,:edit,:update]
+
   before_action :set_image, only: [:show,:comfirm,:transaction]
   before_action :set_card, only: [:comfirm,:buy]
   before_action :set_adress, only: [:comfirm,:buy]
