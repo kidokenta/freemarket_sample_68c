@@ -1,0 +1,21 @@
+.delete-box{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  width:70%;
+  margin: 0 auto;
+  &__delete-btm{
+    width: 40%;
+    font-size: 18px;
+    line-height: 48px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 100px;
+    display: inline-block;
+    a.delete-btn-link{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

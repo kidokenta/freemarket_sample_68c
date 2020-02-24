@@ -87,6 +87,12 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
     # 各条件はhelperに記載
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to user_path(current_user.id)
+  end
   
   def comfirm
     if @card
