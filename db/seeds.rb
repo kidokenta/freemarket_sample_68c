@@ -329,7 +329,7 @@ others_9.children.create([{name: "すべて"}])
 
 
 # .create(name: "XXS以下")
-Items_Size.create(size: "XS(SS)")
+# Items_Size.create(size: "XS(SS)")
 # Size.create(name: "S")
 # Size.create(name: "M")
 # Size.create(name: "L")
