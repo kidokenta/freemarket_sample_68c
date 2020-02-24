@@ -10,8 +10,8 @@ class Item < ApplicationRecord
   # validates :category_id, presence: true
   validates :seller_user_id, presence: true
   validates :brand, inclusion: { in: %w(small medium large),message: "%{value}は有効な値ではありません" }, allow_nil: true
+  mount_uploader :item, ImagesUploader
  
-
   has_many :comments
   has_many :users
   has_many :likes
