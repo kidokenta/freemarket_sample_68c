@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :redirect_root, except: [:index, :show]
-  before_action :set_item, only: [:buy, :show,:comfirm,:transaction]
+  before_action :set_item, only: [:buy, :show,:comfirm,:transaction,:edit,:update]
   before_action :set_image, only: [:show,:comfirm,:transaction]
   before_action :set_card, only: [:comfirm,:buy]
   before_action :set_adress, only: [:comfirm,:buy]
@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     10.times{@item.images.build}
     @item_condition = [["新品、未使用","0"],["未使用に近い","1"],["目立った傷や汚れなし","2"],["やや傷や汚れあり","3"],["傷や汚れあり","4"],["全体的に状態が悪い","5"],["ゴミ","6"]]
     @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
-    @item_shipping_region = ["選択してください","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
+    @results = Country.where('prefecture_id IN(?)', params[:prefecture_id])
     @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
     #データベースから、親カテゴリーのみ抽出し、配列化
     @category_parent_array = Category.where(ancestry: nil).pluck(:name,:id)
@@ -64,7 +64,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @item_status = [0,1,2,3,4]
     @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
     @item_shipping_region = ["選択してください","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
@@ -77,7 +76,6 @@ class ItemsController < ApplicationController
 
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(edit_params)
       redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
     else
@@ -89,6 +87,7 @@ class ItemsController < ApplicationController
   def show
     @seller_user = User.find_by(id: @item.seller_user_id)
     @images = Image.where(item_id: @item.id)
+    @results = Country.where('prefecture_id IN(?)', params[:prefecture_name])
     # 各条件はhelperに記載
   end
   

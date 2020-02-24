@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   validates :price, presence: true, length: { maximum: 6 ,minimum: 3}
   validates :category_id, presence: true
   validates :seller_user_id, presence: true
-
+  
  
   has_many :comments
   has_many :users
@@ -23,4 +23,8 @@ class Item < ApplicationRecord
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+   belongs_to_active_hash :prefecture
+
 end
