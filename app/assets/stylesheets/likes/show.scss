@@ -1,9 +1,5 @@
-.likes_main{
-  height:calc(100vh - 82px);
-  width: 100vw;
-  background-color: lightslategray;
-  padding-top: 20px;
-  &_title{
+
+  .likes_main_title{
     height: 50px;
     width: 80%;
     background-color: gray;
@@ -15,13 +11,13 @@
       color: white;
     }
   }
-  &_box{
-      width: 80%;
-      height: 500px;
+  .likes_main_box{
+      width: 100%;
+      height: calc(100% -50px);
       overflow: scroll;
       background-color: lightsteelblue;
       margin: 0 auto;
-      &_show{
+      .likes_main_box_show{
         height: 100px;
         width: 100%;
         background-color:white;
@@ -29,13 +25,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &_img{
+        .likes_main_box_show_img{
           height: 60px;
           width: 60px;
           background-color: yellow;
           margin-left: 10px;
         }
-        &_body{
+        .likes_main_box_show_body{
           height: 60%;
           width: 80%;
           margin-left: 10px;
@@ -66,4 +62,3 @@
         }
       }
   }
-}
