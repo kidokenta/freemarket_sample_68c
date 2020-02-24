@@ -16,14 +16,13 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     10.times{@item.images.build}
-    # @item_status = ["選択してください","新品"、"未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
-    @item_status = [0,1,2,3,4]
+    @item_condition = [["新品、未使用","0"],["未使用に近い","1"],["目立った傷や汚れなし","2"],["やや傷や汚れあり","3"],["傷や汚れあり","4"],["全体的に状態が悪い","5"],["ゴミ","6"]]
     @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
     @item_shipping_region = ["選択してください","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
     @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
-    @category_parent_array = ["---","898/970"]
-       #データベースから、親カテゴリーのみ抽出し、配列化
+    #データベースから、親カテゴリーのみ抽出し、配列化
     @category_parent_array = Category.where(ancestry: nil).pluck(:name,:id)
+    @size_parent_array = Size.where(ancestry: nil).pluck(:size,:id)
   end
 
   def get_category_children
@@ -31,10 +30,16 @@ class ItemsController < ApplicationController
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
- # 子カテゴリーが選択された後に動くアクション
+  
+  # 子カテゴリーが選択された後に動くアクション
   def get_category_grandchildren
-   #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  def get_size_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @size_children = Size.find_by(size: "#{params[:parent_size]}", ancestry: nil).children
   end
 
   def get_size
@@ -50,8 +55,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item = Item.create(item_params.merge(category_id: params[:category_id]))
+    @item = Item.create(item_params)
     if @item.save
       redirect_to root_path
     else
@@ -128,7 +132,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:explain,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image]).merge(seller_user_id: current_user.id)
+    params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
   end
 
   def edit_params

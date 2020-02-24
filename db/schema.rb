@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_113710) do
+ActiveRecord::Schema.define(version: 2020_02_24_075458) do
 
   create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postal_code", null: false
@@ -21,12 +21,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_113710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-  end
-
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -42,13 +36,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_113710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
-  end
-
-  create_table "category_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "items_size_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,26 +58,18 @@ ActiveRecord::Schema.define(version: 2020_02_21_113710) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "explain"
-    t.integer "brand_id"
     t.integer "status"
     t.integer "condition"
     t.integer "shipping_fee"
     t.integer "shipping_days"
-    t.integer "shipping_company"
     t.string "shipping_region"
     t.integer "price"
-    t.string "size"
     t.integer "seller_user_id"
     t.integer "buyer_user_id"
     t.bigint "category_id"
+    t.string "brand"
+    t.integer "size_id"
     t.index ["category_id"], name: "index_items_on_category_id"
-  end
-
-  create_table "items_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "size"
-    t.string "ancestry"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -108,6 +87,8 @@ ActiveRecord::Schema.define(version: 2020_02_21_113710) do
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "size"
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
