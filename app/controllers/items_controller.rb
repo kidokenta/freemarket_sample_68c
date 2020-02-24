@@ -91,6 +91,12 @@ class ItemsController < ApplicationController
     @results = Country.where('prefecture_id IN(?)', params[:prefecture_name])
     # 各条件はhelperに記載
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to user_path(current_user.id)
+  end
   
   def comfirm
     if @card
