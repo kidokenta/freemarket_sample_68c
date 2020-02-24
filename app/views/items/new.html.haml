@@ -43,13 +43,20 @@
             %span.require 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
-                =f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category' , name:""}
-                -# =f.select :brand, @item_status,{},{class:"content-explain2"}
+                =f.select :category_id, @category_parent_array, {include_blank: true}, {class: 'listing-select-wrapper__box--select', id: 'parent_category' , name:""}
+          %p.sellcontent-explain-status
+            ブランド
+            %span.require 必須
+          =f.text_field :brand, class:"content-text3", placeholder: "ブランド名 (必須15文字まで)", type: "text"
           %p.sellcontent-explain-status
             商品の状態
             %span.require 必須
-          =f.select :status, @item_status,{},{class:"content-explain2"}
-          =f.select :condition, @item_status,{},{class: "content-explain3"}
+          =f.hidden_field :status, :value => 0
+          =f.select :condition, @item_condition,{include_blank: true},{class: "content-explain3"}
+          .listing-product-detail__size
+            %p.sellcontent-explain-status
+              サイズ
+            =f.select :size_id, @size_parent_array, {include_blank: true}, {class: 'listing-select-wrapper__box--select', id: 'parent_size' , name:""}
       .sellcontent-shipping 
         .sellcontent-shipping-left
           %p.sellcontent-shipping-left-title
@@ -65,7 +72,7 @@
             %p.sellcontent-shipping-region-title
               発送元の地域
               %span.require 必須
-            =f.select :shipping_region, @item_shipping_region,{},{class:"content-region "}  
+            =f.collection_select :shipping_region, Prefecture.all,:id,:name,{},{class:"content-region "}  
           .sellcontent-shipping-days  
             %p.sellcontent-shipping-days-title
               発送までの日数

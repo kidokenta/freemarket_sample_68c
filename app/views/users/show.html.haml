@@ -39,17 +39,17 @@
         %h1.like
           いいね!一覧
       .likes_main_box
-        .likes_main_box_show
-          .likes_main_box_show_img
-          .likes_main_box_show_body
-            .likes_main_box_show_body_name
-              - @like_items.each do |item|
+        - @like_items.each do |item|
+          .likes_main_box_show
+            .likes_main_box_show_img
+            .likes_main_box_show_body
+              .likes_main_box_show_body_name
                 =item.name
-            .likes_main_box_show_body_price
-              ¥700-
-          .like_icon
-            =link_to "#" do
-              %i.fas.fa-angle-right
+              .likes_main_box_show_body_price
+                =item.price
+            .like_icon
+              =link_to "#" do
+                %i.fas.fa-angle-right
     .mypage-tab-container
       %h2.mypage-tab-head
         購入した商品
