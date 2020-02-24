@@ -11,8 +11,8 @@ class Item < ApplicationRecord
   validates :price, presence: true, length: { maximum: 6 ,minimum: 3}
   validates :category_id, presence: true
   validates :seller_user_id, presence: true
- 
 
+ 
   has_many :comments
   has_many :users
   has_many :likes

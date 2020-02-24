@@ -54,13 +54,35 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def create
     @item = Item.create(item_params)
     if @item.save
       redirect_to root_path
     else
       flash[:notice] = "出品に失敗しました"
+    end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+    @item_status = [0,1,2,3,4]
+    @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
+    @item_shipping_region = ["選択してください","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
+    @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
+    @category_parent_array = ["---","898/970"]
+       #データベースから、親カテゴリーのみ抽出し、配列化
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name,:id)
+    @images = Image.where(item_id: @item.id)
+  end
+
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(edit_params)
+      redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
+    else
+      #updateを失敗すると編集ページへ
+      redirect_to edit_item_path
     end
   end
 
@@ -111,6 +133,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
+  end
+
+  def edit_params
+    params.require(:item).permit(:name,:explain,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image, :id]).merge(seller_user_id: current_user.id)
   end
 
   def redirect_root
