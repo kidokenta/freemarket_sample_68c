@@ -42,8 +42,6 @@
         - @like_items.each do |item|
           .likes_main_box_show
             .likes_main_box_show_img
-              -item.each do |i|
-                = image_tag i.image.url
             .likes_main_box_show_body
               .likes_main_box_show_body_name
                 =item.name
