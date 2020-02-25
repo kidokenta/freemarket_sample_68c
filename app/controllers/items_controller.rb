@@ -56,6 +56,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -90,6 +91,7 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
     @results = Country.where('prefecture_id IN(?)', params[:prefecture_name])
     # 各条件はhelperに記載
+    @size = Size.find_by(id: @item.size_id)
   end
 
   def destroy
