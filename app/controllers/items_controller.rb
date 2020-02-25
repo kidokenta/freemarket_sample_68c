@@ -100,6 +100,12 @@ class ItemsController < ApplicationController
     @size = Size.find_by(id: @item.size)
     # 各条件はhelperに記載
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to user_path(current_user.id)
+  end
   
   def comfirm
     if @card

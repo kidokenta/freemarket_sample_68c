@@ -1,0 +1,3 @@
+.delete-box
+  .delete-box__delete-btm
+    = link_to '削除', item_path(@item.id), method: :destoroy, data: { confirm: '削除しますか？' }
