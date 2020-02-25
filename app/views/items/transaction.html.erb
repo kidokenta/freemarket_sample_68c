@@ -22,7 +22,7 @@
     </div>
     <div class="transaction--item--bottom">
       <p class="transaction--item--info">購入金額：<%= number_to_currency(@item.price) %></p>
-      <p class="transaction--item--info">商品サイズ：<%= @item.size %></p>
+      <p class="transaction--item--info">商品サイズ：<%= @size.size %></p>
       <p class="transaction--item--info">送料：<%= shipping_fee %></p>
       <p class="transaction--item--info">発送までの日数：<%= shipping_days %></p>
     </div>
