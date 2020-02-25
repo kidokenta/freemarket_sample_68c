@@ -31,16 +31,13 @@
             %td
           %tr
             %th.item-show-td 商品のサイズ
-            %td= @item.size
+            %td= @size.size
           %tr
             %th.item-show-td 商品の状態
             %td= condition
           %tr
             %th.item-show-td 送料の負担
             %td= shipping_fee
-          %tr
-            %th.item-show-td 配送方法
-            %td= shipping_company
           %tr
             %th.item-show-td 発送元地域
             %td= @item.shipping_region
@@ -54,6 +51,9 @@
   - if user_signed_in?
     - if @item.seller_user_id == current_user.id
       = render partial: "edit-btm"
+      .delete-box
+        .delete-box__delete-btm
+          = link_to '削除', item_path(@item.id), method: :delete, data: { confirm: '削除しますか？' },class: "delete-btn-link"
       = render partial: "comment-form"
     - else
       = render partial: "show-buybtm"
