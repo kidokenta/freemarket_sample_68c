@@ -31,7 +31,7 @@
             %td
           %tr
             %th.item-show-td 商品のサイズ
-            %td= @size.size
+            %td= @size.size if @size.size present?
           %tr
             %th.item-show-td 商品の状態
             %td= condition
