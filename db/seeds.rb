@@ -332,4 +332,3 @@ size_1 = Size.create(size: "服のサイズ")
 size_1.children.create([{size: "XXS以下"},{size: "XS(SS)"},{size: "S"},{size: "M"},{size: "L"},{size: "XL(LL)"},{size: "2XL(3L)"},{size: "3XL(4L)"},{size: "4XL(5L)以上"},{size: "FREE SIZE"}])
 size_2 = Size.create(size: "靴のサイズ")
 size_2.children.create([{size: "22cm"},{size: "22.5cm"},{size: "23cm"},{size: "23.5cm"},{size: "24cm"},{size: "24.5cm"},{size: "25cm"},{size: "25.5cm"},{size: "26cm"},{size: "26.5cm"},{size: "27cm"},{size: "27.5cm"},{size: "28cm"},{size: "28.5cm"},{size: "29cm"},{size: "29.5cm"},{size: "30cm"},{size: "30cm以上"}])
-

@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       flash[:notice] = "出品に失敗しました"
+      redirect_to new_item_path
     end
   end
 
