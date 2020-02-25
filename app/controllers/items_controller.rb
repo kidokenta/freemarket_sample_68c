@@ -130,6 +130,7 @@ class ItemsController < ApplicationController
   end
   
   def transaction
+    @size = Size.find_by(id: @item.size_id)
   end
 
 
