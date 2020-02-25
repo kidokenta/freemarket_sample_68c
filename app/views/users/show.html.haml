@@ -35,22 +35,7 @@
             %span.bold
             0
     .mypage-tab-container-notification-todo
-      .likes_main_title
-        %h1.like
-          いいね!一覧
-      .likes_main_box
-        - @like_items.each do |item|
-          .likes_main_box_show
-            .likes_main_box_show_img
-              = image_tag like_item_image(item).image.url , class: :img_show
-            .likes_main_box_show_body
-              .likes_main_box_show_body_name
-                =item.name
-              .likes_main_box_show_body_price
-                =item.price
-            .like_icon
-              =link_to item_path(item.id) do
-                %i.fas.fa-angle-right
+
     .mypage-tab-container
       %h2.mypage-tab-head
         購入した商品
