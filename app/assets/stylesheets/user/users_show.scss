@@ -1,7 +1,7 @@
 .container{
   height: 1420px;
   width: 100%;
-  background-color: lightseagreen;
+  background-color:rgb(242, 242, 242);
   display: flex;
   justify-content: center;
   .l-side {
@@ -19,11 +19,11 @@
         li.side_li{
           height: 50px;
           width: 100%;
-          background-color: tan;
+          background-color:black;
           a.side_a{
             height: 100%;
             width: 100%;
-            background-color: teal;
+            background-color:#3CCACE;
             display: inline-block;
             text-align: center;
             line-height: 50px;
@@ -80,7 +80,7 @@
     .mypage-tab-container-notification-todo{
       height: 500px;
       width: 100%;
-      background-color: magenta;
+      background-color: #d2d2d2;
       box-sizing: border-box;
       overflow: scroll;
     }
