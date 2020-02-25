@@ -97,8 +97,6 @@ class ItemsController < ApplicationController
     @seller_user = User.find_by(id: @item.seller_user_id)
     @images = Image.where(item_id: @item.id)
     @results = Country.where('prefecture_id IN(?)', params[:prefecture_name])
-    @size = Size.find_by(id: @item.size)
-    # 各条件はhelperに記載
     @size = Size.find_by(id: @item.size_id)
   end
 
