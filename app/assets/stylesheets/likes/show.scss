@@ -2,7 +2,6 @@
   .likes_main_title{
     height: 50px;
     width: 80%;
-    background-color: gray;
     margin: 0 auto;
     h1.like{
       line-height: 50px;
@@ -15,7 +14,6 @@
       width: 100%;
       height: calc(100% -50px);
       overflow: scroll;
-      background-color: lightsteelblue;
       margin: 0 auto;
       .likes_main_box_show{
         height: 100px;
@@ -35,24 +33,20 @@
           height: 60%;
           width: 80%;
           margin-left: 10px;
-          background-color: lightseagreen;
           }
           .likes_main_box_show_body_name{
             height: 50%;
             width: 100%;
-            background-color: lightsteelblue;
             font-size: 20px;
             font-weight: bold;
           }
           .likes_main_box_show_body_price{
             height: 50%;
             width: 100%;
-            background-color: lightyellow;
           }
           .like_icon{
             height: 30px;
             width: 30px;
-            background-color: greenyellow;
             line-height: 30px;
             margin-left:10px;
             text-align: center;
@@ -61,4 +55,10 @@
             color: #d2d2d2;
         }
       }
+  }
+
+
+  .img_show{
+    width: 100%;
+    height: 100%;
   }
