@@ -18,6 +18,7 @@ class Item < ApplicationRecord
   has_many :likes
   has_many :images, dependent: :destroy
   belongs_to :category ,optional:true
+  belongs_to :size, optional:true
 
   accepts_nested_attributes_for :images
   def liked_by?(user)
