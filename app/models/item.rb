@@ -12,7 +12,6 @@ class Item < ApplicationRecord
   validates :category_id, presence: true
   validates :seller_user_id, presence: true
 
-
   has_many :comments
   has_many :users
   has_many :likes
