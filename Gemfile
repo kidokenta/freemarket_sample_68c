@@ -90,3 +90,4 @@ gem 'ancestry'
 gem "font-awesome-rails"
 gem 'active_hash'
 gem 'dotenv-rails'
+gem 'gretel'
