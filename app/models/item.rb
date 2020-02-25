@@ -11,7 +11,6 @@ class Item < ApplicationRecord
   validates :price, presence: true, length: { maximum: 6 ,minimum: 3}
   validates :category_id, presence: true
   validates :seller_user_id, presence: true
-  # validates :brand, inclusion: { in: %w(small medium large),message: "%{value}は有効な値ではありません" }, allow_nil: true
 
 
   has_many :comments
