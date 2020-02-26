@@ -21,10 +21,12 @@
               またはクリックしてファイルをアップロード  
           .sell-upload-box-drop
             =f.fields_for :images do |i|
-              =i.label :image, class:"labelform" , id:"img-file-form" do
-                .drop-box-text 
-                  = i.file_field :image, class: "hidden"
-          .item-num-0.image-box__container
+              .input-area
+                =i.label :image, class:"labelform" , id:"img-file-form" do
+                  .drop-box-text 
+                    = i.file_field :image, id:"img-file"
+          #image-box-1
+            .item-num-0.image-box__container
       .sellcontent1
         .sellcontentwrapper1
           .content-title1
