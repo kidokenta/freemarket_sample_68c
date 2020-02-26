@@ -1,53 +1,70 @@
-.newtitle {
-  text-align: center;
-  #header--icon {
-    height: 50px;
-    padding-top: 30px;
-  }
-}
-
-.new--user--select {
+.new--user--modal {
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;
-  height: calc(100vh - 320px);
-  text-align: center;
-  &--contents {
-    height: 300px;
-    width: 500px;
-    margin: 0 auto;
-    margin-top: calc(50vh - 250px);
-    padding-top: 50px;
-    .new--user--select--content {
+  height: 100vh;
+  position: fixed;
+  top:0;
+  z-index: 4;
+  display: none;
+  .new--user--select {
+    width: 100vw;
+    height: calc(100vh - 320px);
+    margin-top: calc(50vh - 120px);
+    text-align: center;
+    &--contents {
+      height: 240px;
+      width: 400px;
       margin: 0 auto;
-      width: 300px;
-      height: 50px;
-      margin-bottom: 50px;
-      .session-link {
-        text-decoration: none;
-        .email {
-          width: 300px;
-          height: 50px;
-          background-color:$base_fontcolor;
-          border-radius: 10px;
-          line-height: 50px;
-          color: white;
-        }
-        .google {
-          width: 300px;
-          height: 50px;
-          border-radius: 10px;
-          background-color: red;
-          line-height: 50px;
-          color: white;
-        }
-        .facebook {
-          width: 300px;
-          height: 50px;
-          background-color: #385185;
-          line-height: 50px;
-          border-radius: 10px;
-          color: white;
+      margin-top: 20px;
+      padding-top: 30px;
+      border-bottom: solid 1px lightgray;
+      border-top: solid 1px lightgray;
+      position: relative;
+      .close-button {
+        color: white;
+        font-size: 30px;
+        position: absolute;
+        top: -40px;
+        right: 20px;
+        cursor: pointer;
+      }
+      .new--user--select--content {
+        margin: 0 auto;
+        width: 300px;
+        height: 50px;
+        margin-bottom: 30px;
+        .session-link {
+          text-decoration: none;
+          .email {
+            width: 300px;
+            height: 50px;
+            background-color:$base_fontcolor;
+            border-radius: 10px;
+            line-height: 50px;
+            color: white;
+          }
+          .google {
+            width: 300px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: red;
+            line-height: 50px;
+            color: white;
+          }
+          .facebook {
+            width: 300px;
+            height: 50px;
+            background-color: #385185;
+            line-height: 50px;
+            border-radius: 10px;
+            color: white;
+          }
         }
       }
     }
   }
+}
+
+.open {
+  display: block;
 }

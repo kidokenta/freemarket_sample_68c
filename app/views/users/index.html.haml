@@ -1,14 +1,13 @@
-.newtitle
-  = image_tag("/logo.png", id: "header--icon", class: "newtitle")
-
 .new--user--select
+  %h2 新規登録
   .new--user--select--contents
     .new--user--select--content
       = link_to new_user_registration_path ,class:"session-link" do
-        %p.email メールアドレスで登録 
+        %i.fas.fa-envelope.email &emsp;メールアドレスで登録 
     .new--user--select--content#google
       = link_to user_google_oauth2_omniauth_authorize_path, method: :post ,class:"session-link" do
         %i.fab.fa-google.google &emsp;googleで登録 
     .new--user--select--content#facebook
       = link_to  user_facebook_omniauth_authorize_path, method: :post ,class:"session-link" do
         %i.fab.fa-facebook-square.facebook &emsp;Facebookで登録
+    
