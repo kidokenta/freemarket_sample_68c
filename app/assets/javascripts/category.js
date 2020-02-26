@@ -13,10 +13,3 @@ $(function(){
 function scrollToTop() {
   scrollTo(0, 0)
  }
-
-// $(function(){
-//     $('.test-d').click(function(){
-//         var text = $(this).text();
-//         alert('テキスト:' + text);
-//     });
-// });
