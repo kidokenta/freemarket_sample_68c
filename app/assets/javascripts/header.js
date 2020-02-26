@@ -5,4 +5,10 @@ $(function(){
   $(".close-button").click(function(){
     $(".new--user--modal").removeClass("open");
   })
+  $(".login-user").click(function(){
+    $(".login--user--modal").addClass("open");
+  })
+  $(".close-button").click(function(){
+    $(".login--user--modal").removeClass("open");
+  })
 })
