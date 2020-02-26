@@ -20,6 +20,11 @@ class Item < ApplicationRecord
   belongs_to :category ,optional:true
   belongs_to :size, optional:true
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where('text LIKE(?)', "%#{search}%")
+  end
+
   accepts_nested_attributes_for :images
   def liked_by?(user)
     likes.where(user_id: user.id).exists?

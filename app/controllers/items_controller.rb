@@ -81,7 +81,9 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
   end
 
-
+  def search
+    @items = Item.search(params[:keyword])
+  end
   
 
 
