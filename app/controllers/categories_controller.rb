@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    # @parents  =  Category.all.order("id ASC").limit(1000) #レディース
+    @parents  =  Category.where(ancestry: nil).limit(13) #レディース
     @parents_first = Category.where(ancestry: nil)
     
 
