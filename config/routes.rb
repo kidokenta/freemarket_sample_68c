@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   root "items#index"
   get 'card/new'
   get 'card/show'
-  get 'categories/index'
   resources :users, only:[:show]
+  resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :adresses
   resources :items do
     collection do
@@ -26,7 +26,6 @@ Rails.application.routes.draw do
     resource :likes, only:[:create,:destroy,:show]
   end
   
-  resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :adresses
   resources :card, only: [:new, :show] do
     collection do
