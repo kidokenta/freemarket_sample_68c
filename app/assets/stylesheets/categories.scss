@@ -116,13 +116,13 @@
                   text-decoration:  none;
                   background-color: #2196F3;
                   border-radius: 5px;
-                  position:  relative;
                   height: 50px;
                   width: 50px;
                   cursor:pointer;
                   position: fixed;
+                  margin: 50px 0 0 950px;
                   }
-              .test::before {
+               .test::before {
                   content:  '';
                   width: 20px;
                   height: 20px;
@@ -136,6 +136,7 @@
                   left:  0;
                   right:  0;
                   margin:  auto;
+                  margin: 50px 0 0 950px;
                   }
                .category-list{
                 display: flow-root;
