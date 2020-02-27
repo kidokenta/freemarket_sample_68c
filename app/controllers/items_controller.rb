@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   before_action :set_image, only: [:show,:comfirm,:transaction]
   before_action :set_card, only: [:comfirm,:buy]
   before_action :set_adress, only: [:comfirm,:buy]
+  
 
 
   
@@ -81,12 +82,6 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
   end
 
-  def search
-    @items = Item.search(params[:keyword])
-  end
-  
-
-
   def update
     if @item.update(edit_params)
       redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
@@ -145,6 +140,7 @@ class ItemsController < ApplicationController
        #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
       end
     end
+    @items = Item.search(params[:keyword])
   end
 
 

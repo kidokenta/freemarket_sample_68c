@@ -11,9 +11,9 @@
                 =image_tag "/logo.png", class: "image_size_m"
                 / HURIMAアイコン
             .searchBox
-              = form_with(url: root_path, local: true, method: :get, class: "from_a") do |form|
-                = form.text_field :keyword, placeholder: "投稿を検索する", class: "searchBox--input",id: "searchInput" 
-                %button_a2{type: "submit"}
+              = form_with(url: search_items_path, local: true, method: :get, class: "from_a") do |form|
+                = form.text_field :keyword, placeholder: "投稿を検索する", class: "searchBox--input",id: "searchInput"
+                = form.submit "検索", class: "button_a2"
                   .searchBox__icon
                     =image_tag "/icon-search 1.png", class:"img_b"
 
