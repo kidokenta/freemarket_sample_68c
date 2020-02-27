@@ -19,6 +19,11 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'search'
     end
+    member do
+      get 'get_size_children_edit', defaults: { format: 'json' }
+      get 'get_category_children_edit', defaults: { format: 'json' }
+      get 'get_category_grandchildren_edit', defaults: { format: 'json' }
+    end
     resources :images, only: :create
     patch  :buy,      on: :member
     get  :comfirm,      on: :member

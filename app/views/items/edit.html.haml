@@ -18,6 +18,20 @@
               %i.fas.fa-camera
           .sell-upload-box-drop
             #image-box-1
+            - @images.each do |image|
+              .item-image
+                .item-image__content
+                  .item-image__content--icon
+                    = image_tag image.image.url, class:"item-edit-image"
+                .item-image__operetion
+                  .item-image__operetion--delete 削除
+              -# = @images.each do |image|
+              -#   .item-image
+              -#     .item-image__content
+              -#       .item-image__content--icon
+              -#         = image_tag image.image, size: "81x124"
+              -#           .item-image__operetion
+              -#             .item-image__operetion--delete 削除
             .item-num-0#image-box__container
               = f.fields_for :images do |i|
                 .input-area
@@ -43,7 +57,15 @@
             %span.require 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
-                =f.select :category_id, @category_parent_array, {include_blank: true}, {class: 'listing-select-wrapper__box--select', id: 'parent_category' , name:""}
+                =f.select :category_id, @category_parent_array, {selected: @selected_category_parent.id}, {class: 'listing-select-wrapper__box--select', id: 'parent_category_edit' , name:""}
+
+                .listing-select-wrapper__added#children_wrapper_edit
+                  .listing-select-wrapper__box
+                    =f.select :category_id, @category_children_array, ({selected: @selected_category_children.id, data:{category: @selected_category_children.id}}), {class: 'listing-select-wrapper__box--select', id: 'child_category_edit' , name:""}
+                .listing-select-wrapper__added#grandchildren_wrapper_edit
+                  .listing-select-wrapper__box 
+                    =f.select :category_id, @category_grandchildren_array, {selected: @selected_category.id}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category_edit' , name:"category_id"}
+
           %p.sellcontent-explain-status
             ブランド
             %span.require 必須
@@ -56,7 +78,10 @@
           .listing-product-detail__size
             %p.sellcontent-explain-status
               サイズ
-            =f.select :size_id, @size_parent_array, {selected: @size_parent.id}, {class: 'listing-select-wrapper__box--select', id: 'parent_size' , name:""}
+            =f.select :size_id, @size_parent_array, {selected: @size_parent.id}, {class: 'listing-select-wrapper__box--select', id: 'parent_size_edit' , name:""}
+            .listing-select-wrapper__added#children_wrapper_edit
+              .listing-select-wrapper__box
+                =f.select :size_id, @size_children_array, {selected: @size.id}, {class: 'listing-select-wrapper__box--select', id: 'child_size_edit' , name:"size"}
       .sellcontent-shipping 
         .sellcontent-shipping-left
           %p.sellcontent-shipping-left-title

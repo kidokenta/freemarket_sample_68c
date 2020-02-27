@@ -28,7 +28,7 @@ $(function(){
         var html= `<div class='item-image' data-image="${file.name}">
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
-                        <img src=${src} width="124" height="81" >
+                        <img src=${src} class="item-edit-image" >
                       </div>
                     </div>
                     <div class='item-image__operetion'>
@@ -53,7 +53,6 @@ $(function(){
       //inputタグに入ったファイルを削除
       $('input[type=file]').val(null)
       dataBox.clearData();
-      console.log(dataBox)
     }else{
       //プレビューが複数の場合
       $.each(file_field.files, function(i,input){
