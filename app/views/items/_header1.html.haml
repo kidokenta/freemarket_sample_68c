@@ -12,11 +12,10 @@
                 / HURIMAアイコン
             .searchBox
               = form_with(url: search_items_path, local: true, method: :get, class: "from_a") do |form|
-                = form.text_field :keyword, placeholder: "投稿を検索する", class: "searchBox--input",id: "searchInput"
+                = form.text_field :keyword, placeholder: "投稿を検索する", class: "searchBox--input",id: "searchInput" 
                 = form.submit "検索", class: "button_a2"
-                  .searchBox__icon
-                    =image_tag "/icon-search 1.png", class:"img_b"
-
+                .searchBox__icon
+                  =image_tag "/icon-search 1.png", class:"img_b"
               -# %form.from_a{"accept-charset": "UTF-8", action: "#", method: "get"}
               -#   %input{name: "utf8", type: "hidden", value: "✓"}/
               -#   %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
@@ -37,5 +36,4 @@
                     %li.listsRight__item.listsRight__item--login
                       %p.btm_a.login-user ログイン
                     %li.listsRight__item.listsRight__item--new
-                      %p.btm_a.new-user 新規会員登録
-              
+                      %p.btm_a.new-user 新規会員登録         
