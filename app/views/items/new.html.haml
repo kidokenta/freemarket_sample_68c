@@ -20,11 +20,15 @@
               %br/
               またはクリックしてファイルをアップロード  
           .sell-upload-box-drop
-            =f.fields_for :images do |i|
-              .input-area
-                =i.label :image, class:"labelform" , id:"img-file-form" do
-                  .drop-box-text 
-                    = i.file_field :image, id:"img-file"
+            %form
+              %input{:type => "file"}/
+            .preview
+
+            -# =f.fields_for :images do |i|
+            -#   .input-area
+            -#     =i.label :image, class:"labelform" , id:"img-file-form" do
+            -#       .drop-box-text 
+            -#         = i.file_field :image, id:"img-file"
           #image-box-1
             .item-num-0.image-box__container
       .sellcontent1
