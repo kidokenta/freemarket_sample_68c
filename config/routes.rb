@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   get 'categories/index'
-  resources :users, only:[:index,:show]
+  resources :users, only:[:show]
   resources :adresses
   resources :items do
     collection do
