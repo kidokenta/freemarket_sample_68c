@@ -1,6 +1,29 @@
-= form_with(url: root_path, local: true, method: :get, class: "search-form") do |form|
-  = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-  = form.submit "検索", class: "search-btn"
-.contents.row
-  -# - @items.each do |tweet|
-    -# = render partial: "tweet", locals: { tweet: tweet }
+- if user_signed_in?
+  = render partial: "header2"
+- else
+  = render partial: "header1"
+-if @items.length >= 1
+  .likes_main_title2
+    %h2.searchs
+      こちらのアイテムが検索されました
+  .mypage-tab-container-notification-todo2
+    .likes_main_box
+      - @items.each do |item|
+        .likes_main_box_show
+          .likes_main_box_show_img
+            = image_tag like_item_image(item).image.url , class: :img_show
+          .likes_main_box_show_body
+            .likes_main_box_show_body_name
+              =item.name
+            .likes_main_box_show_body_price
+              =item.price
+          .like_icon
+            %i.fas.fa-angle-right
+-else
+  .likes_main_title2
+    %h2.searchs
+      お探しのアイテムは見つかりません
+  .mypage-tab-container-notification-todo2
+= render partial:"appBanner"
+= render partial:"footer"
+
