@@ -25,10 +25,12 @@ $(function(){
       var html = buildHTML(data);
       $('.comments-history').append(html);
       $('.comment-formarea').val('');
-      $('.btn-send-comment').prop('disabled', false);
     })
     .fail(function(){
       alert('error');
+    })
+    .always(function(data){
+      $('.btn-send-comment').prop('disabled', false);
     })
   })
 });
