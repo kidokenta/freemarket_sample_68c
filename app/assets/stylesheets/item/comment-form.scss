@@ -1,60 +1,66 @@
-.item-detail{
-  padding-top: 10px;
-  width:700px;
-  margin: 0 auto;
-  margin: 8px auto;
-  background-color:white;
-  &__message{
-    padding:10px;
-  }
-  .message-content{
-    padding: 24px;
-    background-color: #fff;
+  .comment-rule{
+    width: 700px;
+    margin: 8px auto;
+    padding-top: 10px;
+    p.comment-rule{
+      padding: 5px;
+      font-size: 14px;
+      text-align: left;
     }
-    .message-form{
-      margin: 0;
-      }
-      p.comment-rule {
-        margin: 8px 0 0;
-        padding: 10px;
-        font-size: 14px;
-        background: #fff6de;
-        text-align: left;
-        }
-        .textarea-default {
-          display: block;
-          width: 100%;
-          max-width: 100%;
-          min-height: 104px;
-          width: 100%;
-          font-size: 16px;
-          box-sizing: border-box;
-          margin: 1em 0;
-          padding: .8em;
-          border-radius: 1em;
-          border: 2px solid #aaa;
-          border-radius: 1em;
+  }
+  .comment-wrapper{
+    width: 700px;
+    margin: 8px auto;
+    background-color: #d2d2d2;
+    padding: 24px;}
+    .comments-history{
+      .comments-box{
+        height: max-content;
+        height: 30px;
+        padding: 24px;
+        display: flex;
+        .comments-box__nickname{
+          overflow-wrap: break-word;
           }
-          .message-submit {
-            width: 100%;
-            margin: 8px 0 0;
-            font-size: 0;
-            text-align: center;
-            }
-          .btn-gray {
-            background: $base_fontcolor;
-            border: 1px solid  $base_fontcolor;
-            color: #fff;
-            }
-          .btn-default {
-            width: 40%;
+        .comments-box__text{
+        background-color: #fff;
+        border-radius: 100px;
+        width: 90%;
+        font-size: 18px;
+        text-align: left;
+        border: 15px solid transparent;
+        overflow-wrap: break-word;
+        height: max-content;
+        }
+      }
+    }
+        .comment-form{
+          margin: 10px;
+          .comment-formarea{
+            display: block;
+            width: 90%;
+            max-width: 100%;
+            min-height: 104px;
+            box-sizing: border-box;
+            padding: .8em;
+            margin: 36px;
+            border: 2px solid #aaa;
+            border-radius: 1em;
             font-size: 18px;
-            line-height: 48px;
-            background: #3CCACE;
-            border: 1px solid #3CCACE;
-            color: #fff;
-            font-size: 18px;
-            border-radius: 100px;
-            display: inline-block;
             }
-}
+            #new_comment{
+              padding: 16px;
+            }
+            .btn-send-comment {
+              margin-top: 8px;
+              padding: 8px 0 8px 0 ;
+              background: $base_fontcolor;
+              width: 40%;
+              line-height: 30px;
+              border: 1px solid #3CCACE;
+              color: #fff;
+              font-size: 18px;
+              border-radius: 100px;
+              display: inline-block;
+              }
+            }

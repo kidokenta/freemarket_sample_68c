@@ -54,7 +54,7 @@
       .delete-box
         .delete-box__delete-btm
           = link_to '削除', item_path(@item.id), method: :delete, data: { confirm: '削除しますか？' },class: "delete-btn-link"
-      = render partial: "comment-form"
+      = render partial: "comments/comment-form"
     - else
       = render partial: "show-buybtm"
-      = render partial: "comment-form"
+      = render partial: "comments/comment-form"

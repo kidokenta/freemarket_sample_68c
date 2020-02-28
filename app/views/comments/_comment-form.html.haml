@@ -1,0 +1,17 @@
+.comment-rule
+  %h2.comment-rule コメントの投稿には新規登録/ログインが必要です
+  %p.comment-rule ※相手のことを考え丁寧なコメントを心がけましょう<br>※不快な言葉遣いなどは利用制限や退会処分となることがあります。
+.comment-wrapper
+  - if @comments
+    .comments-history
+      - @comments.each do |comment|
+        .comments-box
+          .comments-box__nickname
+            = "#{comment.user.nickname}:"
+          .comments-box__text
+            = comment.text
+    .comment-form
+      - if current_user
+        = form_with(model: [@item, @comment], local: true, id:"new_comment") do |f|
+          =f.text_area :text, placeholder: "コメントする", class:"comment-formarea"
+          =f.submit "送信する", class:"btn-send-comment"

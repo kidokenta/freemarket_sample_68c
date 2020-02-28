@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :adresses
   resources :items do
+    resources :comments, only: :create
     collection do
       get 'get_size_children', defaults: { format: 'json' }
       get 'get_category_children', defaults: { format: 'json' }
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     get  :comfirm,      on: :member
     get  :transaction,      on: :member
     resource :likes, only:[:create,:destroy,:show]
-  end
+    end
   
   resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :adresses

@@ -8,12 +8,11 @@ class ItemsController < ApplicationController
   before_action :set_adress, only: [:comfirm,:buy]
 
 
-  
   def index
     @new_items = Item.where(status: 0).order(created_at: "desc").limit(3)
     @images = Image.all
   end
-  
+
   def new
     @item = Item.new
     10.times{@item.images.build}
@@ -24,6 +23,7 @@ class ItemsController < ApplicationController
     #データベースから、親カテゴリーのみ抽出し、配列化
     @category_parent_array = Category.where(ancestry: nil).pluck(:name,:id)
     @size_parent_array = Size.where(ancestry: nil).pluck(:size,:id)
+
   end
 
   def get_category_children
@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
-  
   # 子カテゴリーが選択された後に動くアクション
   def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
@@ -99,6 +98,10 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
     @results = Country.where('prefecture_id IN(?)', params[:prefecture_name])
     @size = Size.find_by(id: @item.size_id)
+    
+    # @item = Item.find(params[:id])
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def destroy
