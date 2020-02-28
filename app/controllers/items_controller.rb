@@ -81,7 +81,6 @@ class ItemsController < ApplicationController
   end
 
 
-  
 
 
   def update
@@ -98,8 +97,6 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
     @results = Country.where('prefecture_id IN(?)', params[:prefecture_name])
     @size = Size.find_by(id: @item.size_id)
-    
-    # @item = Item.find(params[:id])
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
   end

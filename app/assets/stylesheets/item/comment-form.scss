@@ -1,3 +1,9 @@
+@mixin border-color{
+width: 40%;
+line-height: 30px;
+border: 1px solid #3CCACE;
+color: #fff;
+}
   .comment-rule{
     width: 700px;
     margin: 8px auto;
@@ -21,6 +27,7 @@
         display: flex;
         .comments-box__nickname{
           overflow-wrap: break-word;
+          width: 50px;
           }
         .comments-box__text{
         background-color: #fff;
@@ -48,17 +55,11 @@
             border-radius: 1em;
             font-size: 18px;
             }
-            #new_comment{
-              padding: 16px;
-            }
             .btn-send-comment {
+              @include border-color;
+              background: $base_fontcolor;
               margin-top: 8px;
               padding: 8px 0 8px 0 ;
-              background: $base_fontcolor;
-              width: 40%;
-              line-height: 30px;
-              border: 1px solid #3CCACE;
-              color: #fff;
               font-size: 18px;
               border-radius: 100px;
               display: inline-block;
