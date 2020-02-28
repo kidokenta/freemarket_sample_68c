@@ -9,15 +9,13 @@
             %h1.mainHeader_icon
               =link_to root_path do
                 =image_tag "/logo.png",class: "image_size_m"
-                / HURIMAアイコン
             .searchBox
-              %form.from_a{"accept-charset": "UTF-8", action: "#", method: "get"}
-                %input{name: "utf8", type: "hidden", value: "✓"}/
-                %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
-                %button_a2{type: "submit"}
+              = form_with(url: search_items_path, local: true, method: :get, class: "from_a") do |form|
+                = form.text_field :keyword, placeholder: "投稿を検索する", class: "searchBox--input",id: "searchInput" 
+                %label{:for => "search_btn"}
                   .searchBox__icon
                     =image_tag "/icon-search 1.png", class:"img_b"
-                / <input type="hiden" name="authenticity_token" value="get">
+                    = form.submit "検索", class: "button_a2",id: "search_btn"
             %ul.resltLists
           .nav
             %ul.listsleft
@@ -34,4 +32,3 @@
                       = link_to "マイページ", user_path(current_user.id), class: "btm_a"
                     %li.listsRight__item.listsRight__item--mypage
                       = link_to "ログアウト！！", destroy_user_session_path, class: "btm_a", method: "delete"
-                     

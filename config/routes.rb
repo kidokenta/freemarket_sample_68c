@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users,:controllers => {
+    omniauth_callbacks: 'users/omniauth_callbacks',
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
     :passwords => 'users/passwords'
@@ -8,8 +9,8 @@ Rails.application.routes.draw do
   root "items#index"
   get 'card/new'
   get 'card/show'
-  get 'categories/index'
-  resources :users, only: :show
+  resources :users, only:[:show]
+  resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :adresses
   resources :items do
     resources :comments, only: [:new, :create]
@@ -17,6 +18,12 @@ Rails.application.routes.draw do
       get 'get_size_children', defaults: { format: 'json' }
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'search'
+    end
+    member do
+      get 'get_size_children_edit', defaults: { format: 'json' }
+      get 'get_category_children_edit', defaults: { format: 'json' }
+      get 'get_category_grandchildren_edit', defaults: { format: 'json' }
     end
     resources :images, only: :create
     patch  :buy,      on: :member
@@ -25,7 +32,6 @@ Rails.application.routes.draw do
     resource :likes, only:[:create,:destroy,:show]
     end
   
-  resources :categories, only: [:index, :show, :new, :edit, :destroy]
   resources :adresses
   resources :card, only: [:new, :show] do
     collection do

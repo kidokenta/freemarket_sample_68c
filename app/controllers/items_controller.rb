@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   before_action :set_image, only: [:show,:comfirm,:transaction]
   before_action :set_card, only: [:comfirm,:buy]
   before_action :set_adress, only: [:comfirm,:buy]
+  
 
 
   def index
@@ -26,6 +27,26 @@ class ItemsController < ApplicationController
 
   end
 
+  def edit
+    10.times{@item.images.build}
+    @item_condition = [["新品、未使用","0"],["未使用に近い","1"],["目立った傷や汚れなし","2"],["やや傷や汚れあり","3"],["傷や汚れあり","4"],["全体的に状態が悪い","5"],["ゴミ","6"]]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name,:id)
+    @size_parent_array = Size.where(ancestry: nil).pluck(:size,:id)
+    @item_status = [0,1,2,3,4]
+    @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
+    @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
+    @images = Image.where(item_id: @item.id)
+    @size = Size.find_by(id: @item.size_id)
+    @size_parent = Size.find_by(id: @item.size_id).parent
+    @size_children_array = Size.find_by(id: @size_parent.id).children.pluck(:size,:id)
+    @selected_category = Category.find_by(id: @item.category)
+    @selected_category_children = Category.find_by(id: @item.category).parent
+    @category_grandchildren_array = Category.find_by(id: @selected_category_children).children.pluck(:name,:id)
+    @selected_category_parent = Category.find_by(id: @item.category).root 
+    @category_children_array = Category.find_by(id: @selected_category_parent).children.pluck(:name,:id)
+  end
+
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -37,7 +58,23 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  def get_category_children_edit
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren_edit
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
   def get_size_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @size_children = Size.find_by(size: "#{params[:parent_size]}", ancestry: nil).children
+  end
+
+  def get_size_children_edit
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @size_children = Size.find_by(size: "#{params[:parent_size]}", ancestry: nil).children
   end
@@ -64,6 +101,7 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def edit
     10.times{@item.images.build}
     @item_condition = [["新品、未使用","0"],["未使用に近い","1"],["目立った傷や汚れなし","2"],["やや傷や汚れあり","3"],["傷や汚れあり","4"],["全体的に状態が悪い","5"],["ゴミ","6"]]
@@ -80,11 +118,9 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
   end
 
-
-
-
   def update
-    if @item.update(edit_params)
+
+    if @item.update(item_update_params) && params.require(:item).keys[0] == "images_attributes"
       redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
     else
       #updateを失敗すると編集ページへ
@@ -143,6 +179,7 @@ class ItemsController < ApplicationController
        #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
       end
     end
+    @items = Item.search(params[:keyword])
   end
 
 
@@ -151,8 +188,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
   end
 
-  def edit_params
-    params.require(:item).permit(:name,:explain,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image, :id]).merge(seller_user_id: current_user.id)
+  def item_update_params
+    params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image,:id]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
   end
 
   def redirect_root

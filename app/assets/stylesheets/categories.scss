@@ -1,0 +1,143 @@
+.breadCrumbs{
+  display: flex;
+  width: 100%;
+  border-top: 1px solid #eee;
+  position: relative;
+  padding: 0 40px;
+  }
+  .breadCrumbs ul {
+    padding: 17px 0 16px;
+    width: 100%;
+    max-width: 1040px;
+    font-size: 14px;
+    margin: 0 auto;
+    }
+    .category-index {
+      background: transparent;
+      }
+      .search-category {
+        width: 700px;
+        margin: 0 auto;
+        padding: 20px 0;
+        }
+        .gray.clearfix {
+          padding: 8px 0;
+          font-size: 22px;
+          line-height: 1.4
+          }
+          .test-d {
+            background-color: #fff;
+            float: left;
+            border-radius: 4px;
+            min-width: 80px;
+            line-height: 40px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.4);
+            text-align: center;
+            padding: 0 30px;
+            margin: 5px;
+            color: #333;
+            text-decoration: none;
+            }
+            .titleBox {
+              margin: 8px 0;
+              display: inline-block;
+              width: calc(100% / 2);
+              padding: 0 350px;
+              width: 700px;
+              }
+            .titleBox a{
+              margin: 8px 0;
+              display: inline-block;
+              width: calc(100% / 2);
+              float: left;
+              }
+              .catTitle{
+                text-decoration: none;
+                display: block;
+                border-radius: 5px 5px 0 0;
+                padding: 16px 10px 8px;
+                background-color: #3CCACE;
+                color: #fff;
+                text-align: left;
+                font-weight: bold;
+                font-size: 22px;
+                }
+                .catTitlea{
+                  margin: 8px 0;
+                  display: inline-block;
+                  width: calc(100% / 2);
+                  float: left;
+                  }
+                .test-b {
+                  text-decoration: none;
+                  display: block;
+                  border-radius: 5px 5px 0 0;
+                  padding: 16px 10px 8px;
+                  background-color: #3CCACE;
+                  color: #fff;
+                  text-align: left;
+                  font-weight: bold;
+                  font-size: 22px;
+                }
+                .test-c {
+                  margin: 8px 0;
+                  display: inline-block;
+                  width: calc(100% / 2);
+                  color: #333;
+                  font-weight: bold;
+                  font-size: 16px;
+                  text-decoration: none;
+                  display: flow-root;
+                  }
+                .test-d2122 {
+                  margin: 8px 0;
+                  display: inline-block;
+                  width: calc(100% / 3);
+                  
+                  color: #ffb340;
+                  text-decoration: none;
+                  font-size: 14px;
+                  }
+              .catItems{
+                margin: 0 0 0 20px;
+                  }
+                .catContents{
+                  padding: 16px;
+                  }
+                .list-1{
+                  color: #333;
+                  font-weight: bold;
+                  font-size: 16px;
+                  text-decoration: none;
+                  }
+                .test {
+                  display:  inline-block;
+                  color: #fff;
+                  text-decoration:  none;
+                  background-color: #2196F3;
+                  border-radius: 5px;
+                  height: 50px;
+                  width: 50px;
+                  cursor:pointer;
+                  position: fixed;
+                  margin: 50px 0 0 950px;
+                  }
+               .test::before {
+                  content:  '';
+                  width: 20px;
+                  height: 20px;
+                  display:  block;
+                  border-top: solid 2px;
+                  border-right: solid 2px;
+                  transform: rotate(-45deg);
+                  position:  absolute;
+                  top: 10px;
+                  bottom:  0;
+                  left:  0;
+                  right:  0;
+                  margin:  auto;
+                  margin: 50px 0 0 950px;
+                  }
+               .category-list{
+                display: flow-root;
+               }

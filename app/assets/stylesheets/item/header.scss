@@ -80,6 +80,7 @@
             background-size: 18px;
             padding-right: 30px;
             list-style: none;
+            cursor: pointer;
             }
         .listsRight{
           margin-left: auto;
@@ -90,4 +91,7 @@
             line-height: 38px;
             padding: 0 0 0 16px;
             }
+          }
+          #search_btn{
+            display: none;
           }
