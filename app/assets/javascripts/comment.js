@@ -24,7 +24,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.comments-history').append(html);
-      $('.comment-formarea').val('');
+      $('#new_comment')[0].reset();
+      $('.comments-history').animate({ scrollTop: $('.comments-history')[0].scrollHeight});
     })
     .fail(function(){
       alert('error');
