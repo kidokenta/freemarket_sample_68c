@@ -1,0 +1,139 @@
+.notifications
+  - flash.each do |key, value|
+    = content_tag(:div, value, class: key)
+.newwrapper
+  =form_for @item do |f|
+    .newtitle
+      = image_tag("/logo.png", id:"session--header--icon", class: "newtitle")
+    .newpagemain
+      .singlehead
+        商品の情報を入力
+      .sellform
+        .sell-upload-box
+          .upload-box-header
+            出品画像
+            %span.require 必須
+            %p.upbtext 最大10枚までアップロードできます
+            %label{for: "img-file"}
+              %i.fas.fa-camera
+          .sell-upload-box-drop
+            #image-box-1
+            - @images.each do |image|
+              .item-image
+                .item-image__content
+                  .item-image__content--icon
+                    = image_tag image.image.url, class:"item-edit-image"
+                .item-image__operetion
+                  .item-image__operetion--delete 削除
+            .item-num-0#image-box__container
+              = f.fields_for :images do |i|
+                .input-area
+                  = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+      .sellcontent1
+        .sellcontentwrapper1
+          .content-title1
+            商品名
+            %span.require 必須
+            = f.text_field :name, class:"content-text1", placeholder: "商品名 (必須40文字まで)", type: "text"
+        .sellcontentwrapper2
+          .content-title2
+            商品の説明
+            %span.require 必須
+            =f.text_field :explain, class:"content-text2", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など)", type: "textarea"
+      .sellcontent-explain
+        .sellcontent-explain-left
+          %p.sellcontent-explain-left-title
+            商品の詳細
+        .listing-form-box
+          .listing-product-detail__category
+            = f.label 'カテゴリー', class: 'listing-default__label'
+            %span.require 必須
+            .listing-select-wrapper
+              .listing-select-wrapper__box
+                =f.select :category_id, @category_parent_array, {selected: @selected_category_parent.id}, {class: 'listing-select-wrapper__box--select', id: 'parent_category_edit' , name:""}
+
+                .listing-select-wrapper__added#children_wrapper_edit
+                  .listing-select-wrapper__box
+                    =f.select :category_id, @category_children_array, ({selected: @selected_category_children.id, data:{category: @selected_category_children.id}}), {class: 'listing-select-wrapper__box--select', id: 'child_category_edit' , name:""}
+                .listing-select-wrapper__added#grandchildren_wrapper_edit
+                  .listing-select-wrapper__box 
+                    =f.select :category_id, @category_grandchildren_array, {selected: @selected_category.id}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category_edit' , name:"category_id"}
+
+          %p.sellcontent-explain-status
+            ブランド
+            %span.require 必須
+          =f.text_field :brand, class:"content-text3", placeholder: "ブランド名 (必須15文字まで)", type: "text"
+          %p.sellcontent-explain-status
+            商品の状態
+            %span.require 必須
+          =f.hidden_field :status, :value => 0
+          =f.select :condition, @item_condition,{selected: @size_parent.id},{class: "content-explain3"}
+          .listing-product-detail__size
+            %p.sellcontent-explain-status
+              サイズ
+            =f.select :size_id, @size_parent_array, {selected: @size_parent.id}, {class: 'listing-select-wrapper__box--select', id: 'parent_size_edit' , name:""}
+            .listing-select-wrapper__added#children_wrapper_edit
+              .listing-select-wrapper__box
+                =f.select :size_id, @size_children_array, {selected: @size.id}, {class: 'listing-select-wrapper__box--select', id: 'child_size_edit' , name:"size"}
+      .sellcontent-shipping 
+        .sellcontent-shipping-left
+          %p.sellcontent-shipping-left-title
+            配送について
+            %span.hatenabtn 
+        .sellcontent-shipping-right 
+          .sellcontent-shipping-hutan
+            %p.sellcontent-shipping-hutan-title
+              配送料の負担
+              %span.require 必須
+            =f.select :shipping_fee, @item_shipping_fee,{},{class:"content-hutan"} 
+          .sellcontent-shipping-region
+            %p.sellcontent-shipping-region-title
+              発送元の地域
+              %span.require 必須
+            =f.collection_select :shipping_region, Prefecture.all,:id,:name,{},{class:"content-region "}  
+          .sellcontent-shipping-days  
+            %p.sellcontent-shipping-days-title
+              発送までの日数
+              %span.require 必須
+            =f.select :shipping_days, @item_shipping_days,{},{class:"content-days"}
+      .sellcontent-price
+        .sellcontent-price-left
+          %p.sellcontent-price-left-title
+            販売価格(300~9,999,999)
+            %span.hatenabtn 
+        .sellcontent-price-right
+          .sellcontent-price-pricebox
+            %p.sellcontent-price-pricebox-title
+              価格
+              %span.require 必須
+            =f.text_field :price,{class:"contentpricebox",placeholder: "¥"} 
+          .sellcontent-price-feebox
+            %p.sellcontent-price-feebox-title
+              販売手数料(10%)
+          .sellcontent-price-profitbox
+            %p.sellcontent-price-profitbox-title
+              販売利益
+      .sellcontent-last
+        .sellcontent-last-in
+          %p.kiyaku
+          禁止されている出品、行為を必ずご確認ください。
+          %br
+          %p.kiyaku
+          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+          %br
+          %p.kiyaku
+          また、出品をもちまして加盟店規約に同意したことになります。
+          .sellcontent-last-in-btns
+            =f.submit "出品する", class:"inputbtn"
+            %button.inputbtnreturn 戻る
+    .new-footer
+      .new-footer-first
+        %ul
+          %li.new-footer-firsts
+            プライバシーポリシー  
+          %li.new-footer-firsts
+            フリマ利用規約
+          %li.new-footer-firsts
+            特定商取引に関する表記
+      .new-footer-second
+        = image_tag "/logo-white.png", class: "FURIMA_img_footer-new"
