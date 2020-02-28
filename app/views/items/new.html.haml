@@ -14,11 +14,6 @@
             出品画像
             %span.require 必須
             %p.upbtext 最大10枚までアップロードできます
-            -# .centerboxtitle
-            -#   %p.centerboxtext
-            -#   ドラッグアンドドロップ
-            -#   %br/
-            -#   またはクリックしてファイルをアップロード  
             %label{for: "img-file"}
               %i.fas.fa-camera
           .sell-upload-box-drop
@@ -26,7 +21,7 @@
             .item-num-0#image-box__container
               = f.fields_for :images do |i|
                 .input-area
-                  = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+                  = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
       .sellcontent1
         .sellcontentwrapper1
           .content-title1

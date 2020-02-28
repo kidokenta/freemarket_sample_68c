@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
     @size_parent_array = Size.where(ancestry: nil).pluck(:size,:id)
     @item_status = [0,1,2,3,4]
     @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
-    @item_shipping_region = ["選択してください","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
     @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
     @images = Image.where(item_id: @item.id)
     @size = Size.find_by(id: @item.size_id)
@@ -46,7 +45,6 @@ class ItemsController < ApplicationController
     @category_grandchildren_array = Category.find_by(id: @selected_category_children).children.pluck(:name,:id)
     @selected_category_parent = Category.find_by(id: @item.category).root 
     @category_children_array = Category.find_by(id: @selected_category_parent).children.pluck(:name,:id)
- 
   end
 
   def get_category_children
@@ -94,7 +92,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -104,10 +101,9 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def update
-    binding.pry
-    if @item.update
+
+    if @item.update(item_update_params) && params.require(:item).keys[0] == "images_attributes"
       redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
     else
       #updateを失敗すると編集ページへ
@@ -173,8 +169,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
   end
 
-  def edit_params
-    params.require(:item).permit(:name,:explain,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image, :id]).merge(seller_user_id: current_user.id)
+  def item_update_params
+    params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image,:id]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
   end
 
   def redirect_root
