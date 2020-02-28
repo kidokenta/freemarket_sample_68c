@@ -25,7 +25,8 @@ class Item < ApplicationRecord
     Item.where('name LIKE(?)', "%#{search}%")
   end
 
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
+  
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end

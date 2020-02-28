@@ -46,7 +46,6 @@ class ItemsController < ApplicationController
     @category_grandchildren_array = Category.find_by(id: @selected_category_children).children.pluck(:name,:id)
     @selected_category_parent = Category.find_by(id: @item.category).root 
     @category_children_array = Category.find_by(id: @selected_category_parent).children.pluck(:name,:id)
- 
   end
 
   def get_category_children
@@ -94,7 +93,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -104,10 +102,9 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def update
-    binding.pry
-    if @item.update
+
+    if @item.update(item_update_params) && params.require(:item).keys[0] == "images_attributes"
       redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
     else
       #updateを失敗すると編集ページへ
@@ -173,8 +170,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
   end
 
-  def edit_params
-    params.require(:item).permit(:name,:explain,:brand_id,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image, :id]).merge(seller_user_id: current_user.id)
+  def item_update_params
+    params.require(:item).permit(:name,:explain,:brand,:status,:condition,:shipping_fee,:shipping_days,:shipping_region,:price,:size,:category_id,images_attributes:[:image,:id]).merge(seller_user_id: current_user.id).merge(size_id: params[:size]).merge(category_id: params[:category_id])
   end
 
   def redirect_root
