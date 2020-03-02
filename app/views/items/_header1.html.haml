@@ -13,21 +13,15 @@
             .searchBox
               = form_with(url: search_items_path, local: true, method: :get, class: "from_a") do |form|
                 = form.text_field :keyword, placeholder: "投稿を検索する", class: "searchBox--input",id: "searchInput" 
-                = form.submit "検索", class: "button_a2"
-                .searchBox__icon
-                  =image_tag "/icon-search 1.png", class:"img_b"
-              -# %form.from_a{"accept-charset": "UTF-8", action: "#", method: "get"}
-              -#   %input{name: "utf8", type: "hidden", value: "✓"}/
-              -#   %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
-              -#   %button_a2{type: "submit"}
-              -#     .searchBox__icon
-              -#       =image_tag "/icon-search 1.png", class: "img_b"
-                / <input type="hiden" name="authenticity_token" value="get">
+                %label{:for => "search_btn"}
+                  .searchBox__icon
+                    =image_tag "/icon-search 1.png", class:"img_b"
+                    = form.submit "検索", class: "button_a2",id: "search_btn"
             %ul.resltLists
           .nav
             %ul.listsleft
               %li.listsleft__item.listsleft__item--first
-                =link_to "カテゴリー" ,"#", class: "btm_a"
+                =link_to "カテゴリー" ,categories_path, class: "btm_a"
                 .tree.displayNone
                   %li.listsLeft__item
                     =link_to "ブランド" ,"#", class: "btm_a"
