@@ -14,13 +14,11 @@
         %li.side_li
           =link_to "クレジット登録","/card/new",class: "side_a"
         %li.side_li
-          =link_to "購入","#",class: "side_a"
+          %p.side_b.buyed-btn 購入済み
         %li.side_li
-          =link_to "出品","#",class: "side_a"
+          %p.side_b.selled-btn 出品済み
         %li.side_li
-          =link_to "いいね一覧","#",class: "side_a"
-        %li.side_li
-          =link_to "ユーザー編集","#",class: "side_a"
+          %p.side_b.like-btn いいね一覧
   .l-content
     %section.mypage-user-icon
       .usericon
@@ -38,35 +36,61 @@
             %span.bold
             0
     .mypage-tab-container-notification-todo
-      .likes_main_title
-        %h1.like
-          いいね!一覧
-      .likes_main_box
-        - @like_items.each do |item|
-          .likes_main_box_show
-            .likes_main_box_show_img
-              = image_tag like_item_image(item).image.url , class: :img_show
-            .likes_main_box_show_body
-              .likes_main_box_show_body_name
-                =item.name
-              .likes_main_box_show_body_price
-                =item.price
-            .like_icon
-              =link_to item_path(item.id) do
-                %i.fas.fa-angle-right
-    .mypage-tab-container
-      %h2.mypage-tab-head
-        購入した商品
-      %ul.mypage-tabs
-        %li.active
-          %h3.tab
-            %a.torihiki
-              取引中
-        %li.notactive
-          %h3.tab
-            %a.kako
-              過去の取引
-      .tab-content
+      .mypage-contents-main.like-main.open
+        .mypage-contents-title
+          %h1.like
+            いいね!一覧
+        .mypage-contents-box
+          - @like_items.each do |item|
+            .mypage-contents-box-show
+              .mypage-contents-box-show-image
+                = image_tag like_item_image(item).image.url , class: :img_show
+              .mypage-contents-box-body
+                .mypage-contents-box-body-name
+                  =item.name
+                .mypage-contents-box-body-price
+                  =number_to_currency(item.price)
+              .mypage-contents-box-icon
+                =link_to item_path(item.id) do
+                  %i.fas.fa-angle-right
+
+      .mypage-contents-main.buyed-main
+        .mypage-contents-title
+          %h1.like
+            購入済み一覧
+        .mypage-contents-box
+          - @buyed_items.each do |item|
+            .mypage-contents-box-show
+              .mypage-contents-box-show-image
+                = image_tag buyed_item_image(item).image.url , class: :img_show
+              .mypage-contents-box-body
+                .mypage-contents-box-body-name
+                  =item.name
+                .mypage-contents-box-body-price
+                  =number_to_currency(item.price)
+              .mypage-contents-box-icon
+                =link_to item_path(item.id) do
+                  %i.fas.fa-angle-right
+
+      .mypage-contents-main.selled-main
+        .mypage-contents-title
+          %h1.like
+            出品済み一覧
+        .mypage-contents-box
+          - @selled_items.each do |item|
+            .mypage-contents-box-show
+              .mypage-contents-box-show-image
+                = image_tag buyed_item_image(item).image.url , class: :img_show
+              .mypage-contents-box-body
+                .mypage-contents-box-body-name
+                  =item.name
+                .mypage-contents-box-body-price
+                  =number_to_currency(item.price)
+              .mypage-contents-box-icon
+                =link_to item_path(item.id) do
+                  %i.fas.fa-angle-right
+
+
 = render partial:"items/appBanner"
 = render partial:"items/footer"
 =link_to "/items/new",class:"purchase" do
