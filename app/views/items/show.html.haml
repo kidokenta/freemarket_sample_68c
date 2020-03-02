@@ -24,10 +24,10 @@
             %td= link_to @seller_user.nickname , user_path(@seller_user)
           %tr
             %th.item-show-td カテゴリー
-            %td
+            %td= @categories.name
           %tr
             %th.item-show-td ブランド
-            %td
+            %td= @item.brand
           %tr
             %th.item-show-td 商品のサイズ
             %td= @size.size
@@ -39,7 +39,7 @@
             %td= shipping_fee
           %tr
             %th.item-show-td 発送元地域
-            %td= @item.shipping_region
+            %td= @country.prefecture.name
           %tr
             %th.item-show-td 発送日の目安
             %td= shipping_days

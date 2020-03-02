@@ -133,6 +133,8 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
     @results = Country.where('prefecture_id IN(?)', params[:prefecture_name])
     @size = Size.find_by(id: @item.size_id)
+    @categories = Category.find_by(id:@item.category_id)
+    @country = Country.create(prefecture_id:@item.shipping_region)
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
   end
