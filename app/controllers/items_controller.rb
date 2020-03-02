@@ -28,6 +28,23 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    10.times{@item.images.build}
+    @item_condition = [["新品、未使用","0"],["未使用に近い","1"],["目立った傷や汚れなし","2"],["やや傷や汚れあり","3"],["傷や汚れあり","4"],["全体的に状態が悪い","5"],["ゴミ","6"]]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name,:id)
+    @size_parent_array = Size.where(ancestry: nil).pluck(:size,:id)
+    @item_status = [0,1,2,3,4]
+    @item_shipping_fee = ["選択してください","送料込み(出品者負担)","着払い(購入者負担)"]
+    @item_shipping_days = ["選択してください","1~2日で発送","2~3日で発送","4~7日で発送"]
+    @images = Image.where(item_id: @item.id)
+    @size = Size.find_by(id: @item.size_id)
+    @size_parent = Size.find_by(id: @item.size_id).parent
+    @size_children_array = Size.find_by(id: @size_parent.id).children.pluck(:size,:id)
+    @selected_category = Category.find_by(id: @item.category)
+    @selected_category_children = Category.find_by(id: @item.category).parent
+    @category_grandchildren_array = Category.find_by(id: @selected_category_children).children.pluck(:name,:id)
+    @selected_category_parent = Category.find_by(id: @item.category).root 
+    @category_children_array = Category.find_by(id: @selected_category_parent).children.pluck(:name,:id)
   end
 
   def get_category_children
