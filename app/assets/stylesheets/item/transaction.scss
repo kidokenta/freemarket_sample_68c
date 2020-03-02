@@ -51,6 +51,7 @@
   }
 }
 
+
 .transaction--actions {
   width: 500px;
   margin: 0 auto;
@@ -65,5 +66,17 @@
     background-color: $base-fontcolor;
     color: white;
     padding: 10px 100px;
+  }
+  a.goto--home--link{
+    text-decoration: none;
+    border: solid 1px ;
+    width: 150px;
+    font-size: 18px;
+    line-height: 30px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    border-radius: 100px;
+    display: inline-block;
   }
 }
