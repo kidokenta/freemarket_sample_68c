@@ -118,8 +118,8 @@ class ItemsController < ApplicationController
   #   @images = Image.where(item_id: @item.id)
   # end
 
-  def update
 
+  def update
     if @item.update(item_update_params) && params.require(:item).keys[0] == "images_attributes"
       redirect_to item_path(@item.id), notice: '変更内容を保存しました。'
     else
@@ -127,6 +127,8 @@ class ItemsController < ApplicationController
       redirect_to edit_item_path
     end
   end
+
+
 
   def show
     @seller_user = User.find_by(id: @item.seller_user_id)

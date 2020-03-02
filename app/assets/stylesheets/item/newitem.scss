@@ -652,3 +652,39 @@
   padding:0px 16px;
   margin-bottom:5px;
 }
+
+.sell__image-select__ul-text {
+  display: inline-block;
+  float: left;
+  height: 162px;
+  width: 20%;
+  right: 0px;
+  cursor: pointer;
+  opacity: 0;
+  background-color: #f5f5f5;
+  border-left: 1px dashed #ccc;
+  border-right: 1px dashed #ccc;
+  .file_field {
+    display: none;
+  }
+  .sell__image-select__ul li {
+    width: 114px;
+    height: 116px;
+    margin: 0 auto;
+    & img {
+      object-fit: contain;
+    }
+  }
+  & .btn-box {
+    display: none;
+    & a {
+      display: inline-block;
+      float: left;
+      width: calc(50% - 1px);
+      height: 44px;
+      line-height: 44px;
+      border: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+  }
+}

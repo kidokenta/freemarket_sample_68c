@@ -40,4 +40,12 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+  namespace :api do
+    resources "destroy", controller: :items, only: :image_destroy, defaults: { format: 'json' } do
+      collection do
+        delete "image_destroy"
+      end
+    end
+  end
+
 end
