@@ -1,5 +1,6 @@
 $(function(){
   $(".new-user").click(function(){
+    console.log("hello")
     $(".new--user--modal").addClass("open");
   })
   $(".close-button").click(function(){
