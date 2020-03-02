@@ -31,7 +31,7 @@ $(function(){
                         <img src=${src} class="item-edit-image" >
                       </div>
                     </div>
-                    <div class='item-image__operetion'>
+                    <div class='__operetion'>
                       <div class='item-image__operetion--delete'>削除</div>
                     </div>
                   </div>`
