@@ -1,0 +1,33 @@
+!!!
+%html
+  %body
+    %section.header
+      / cssのファイルの場所を指定
+      %header.pcHeader
+        .headerInner
+          .mainHeader
+            %h1.mainHeader_icon
+              =link_to root_path do
+                =image_tag "/logo.png", class: "image_size_m"
+                / HURIMAアイコン
+            .searchBox
+              = form_with(url: search_items_path, local: true, method: :get, class: "from_a") do |form|
+                = form.text_field :keyword, placeholder: "投稿を検索する", class: "searchBox--input",id: "searchInput" 
+                %label{:for => "search_btn"}
+                  .searchBox__icon
+                    =image_tag "/icon-search 1.png", class:"img_b"
+                    = form.submit "検索", class: "button_a2",id: "search_btn"
+            %ul.resltLists
+          .nav
+            %ul.listsleft
+              %li.listsleft__item.listsleft__item--first
+                =link_to "カテゴリー" ,categories_path, class: "btm_a"
+                .tree.displayNone
+                  %li.listsLeft__item
+                    =link_to "ブランド" ,"#", class: "btm_a"
+                    %ul.brandsPulldown.displayNone
+                  %ul.listsRight
+                    %li.listsRight__item.listsRight__item--login
+                      %p.btm_a.login-user ログイン
+                    %li.listsRight__item.listsRight__item--new
+                      %p.btm_a.new-user 新規会員登録         
