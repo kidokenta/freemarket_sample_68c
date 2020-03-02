@@ -16,9 +16,10 @@
             .likes_main_box_show_body_name
               =item.name
             .likes_main_box_show_body_price
-              =item.price
+              #{item.price}円
           .like_icon
-            %i.fas.fa-angle-right
+            =link_to item_path(item.id) do
+              %i.fas.fa-angle-right
 -else
   .likes_main_title2
     %h2.searchs
