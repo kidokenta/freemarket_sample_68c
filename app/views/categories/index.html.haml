@@ -1,3 +1,8 @@
+- if user_signed_in?
+  = render partial: "header2"
+- else
+  = render partial: "header1"
+  
 .category_lappar
   .breadCrumbs
     .breadCrumbs.ul
@@ -22,3 +27,5 @@
               = link_to "#{v.name}", "#", class: "test-c"
               - category_bbb(parent).each do |v2|
                 = link_to "#{v2.name}", "#", class: "test-d2122"
+= render partial:"appBanner"
+= render partial:"footer"

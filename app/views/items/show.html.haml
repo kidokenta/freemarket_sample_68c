@@ -25,7 +25,13 @@
         %table.item-show-table
           %tr
             %th.item-show-td 出品者
-            %td= link_to @seller_user.nickname , user_path(@seller_user)
+            - if user_signed_in?
+              - if @item.seller_user_id == current_user.id
+                %td= link_to @seller_user.nickname ,user_path(@seller_user)
+              - else
+                %td= @seller_user.nickname
+            - else
+              %td= @seller_user.nickname
           %tr
             %th.item-show-td カテゴリー
             %td= @categories.name
