@@ -7,4 +7,8 @@ module UsersHelper
     @image = Image.find_by(item_id: item.id)
   end
 
+  def buyed_item_image(item)
+    @image = Image.find_by(item_id: item.id)
+  end
+
 end
