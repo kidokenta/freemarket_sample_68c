@@ -31,4 +31,4 @@
                     %li.listsRight__item.listsRight__item--mypage
                       = link_to "マイページ", user_path(current_user.id), class: "btm_a"
                     %li.listsRight__item.listsRight__item--mypage
-                      = link_to "ログアウト！！", destroy_user_session_path, class: "btm_a", method: "delete"
+                      = link_to "ログアウト", destroy_user_session_path, class: "btm_a", method: "delete"

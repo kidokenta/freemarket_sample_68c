@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :redirect_root, except: [:index, :show]
-  before_action :set_item, only: [:buy, :show,:comfirm,:transaction,:edit,:update]
+  before_action :set_item, only: [:buy, :show,:comfirm,:transaction,:update]
 
   before_action :set_image, only: [:show,:comfirm,:transaction]
   before_action :set_card, only: [:comfirm,:buy]
@@ -27,6 +27,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    # @item = Item.where("id = ?", 0)
     10.times{@item.images.build}
     @item_condition = [["新品、未使用","0"],["未使用に近い","1"],["目立った傷や汚れなし","2"],["やや傷や汚れあり","3"],["傷や汚れあり","4"],["全体的に状態が悪い","5"],["ゴミ","6"]]
     #データベースから、親カテゴリーのみ抽出し、配列化
