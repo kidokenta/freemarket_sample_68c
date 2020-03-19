@@ -64,7 +64,7 @@
             %p.sellcontent-shipping-hutan-title
               配送料の負担
               %span.require 必須
-            =f.select :shipping_fee, @item_shipping_fee,{},{class:"content-hutan"} 
+            =f.select :shipping_fee, @item_shipping_fee,{include_blank: true},{class:"content-hutan"} 
           .sellcontent-shipping-region
             %p.sellcontent-shipping-region-title
               発送元の地域
@@ -74,7 +74,7 @@
             %p.sellcontent-shipping-days-title
               発送までの日数
               %span.require 必須
-            =f.select :shipping_days, @item_shipping_days,{},{class:"content-days"}
+            =f.select :shipping_days, @item_shipping_days,{include_blank: true},{class:"content-days"}
       .sellcontent-price
         .sellcontent-price-left
           %p.sellcontent-price-left-title
